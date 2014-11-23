@@ -14,6 +14,8 @@
 		DA1B5BC21A216943006D317A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA1B5BC11A216943006D317A /* Images.xcassets */; };
 		DA1B5BC51A216943006D317A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA1B5BC31A216943006D317A /* LaunchScreen.xib */; };
 		DA1B5BD11A216943006D317A /* Gantt_CenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1B5BD01A216943006D317A /* Gantt_CenterTests.m */; };
+		DA1B5BDF1A216B31006D317A /* HBGCNoBeaconLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1B5BDE1A216B31006D317A /* HBGCNoBeaconLandingViewController.m */; };
+		DA1B5BE21A216BCE006D317A /* HBGCApplicationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1B5BE11A216BCE006D317A /* HBGCApplicationManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		DA1B5BCA1A216943006D317A /* Gantt CenterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gantt CenterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1B5BCF1A216943006D317A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA1B5BD01A216943006D317A /* Gantt_CenterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Gantt_CenterTests.m; sourceTree = "<group>"; };
+		DA1B5BDD1A216B31006D317A /* HBGCNoBeaconLandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCNoBeaconLandingViewController.h; sourceTree = "<group>"; };
+		DA1B5BDE1A216B31006D317A /* HBGCNoBeaconLandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCNoBeaconLandingViewController.m; sourceTree = "<group>"; };
+		DA1B5BE01A216BCE006D317A /* HBGCApplicationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HBGCApplicationManager.h; path = Managers/HBGCApplicationManager.h; sourceTree = "<group>"; };
+		DA1B5BE11A216BCE006D317A /* HBGCApplicationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HBGCApplicationManager.m; path = Managers/HBGCApplicationManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +87,11 @@
 		DA1B5BB31A216943006D317A /* Gantt Center */ = {
 			isa = PBXGroup;
 			children = (
+				DA1B5BDC1A216AAC006D317A /* Utilities */,
+				DA1B5BDB1A216AA7006D317A /* Controllers */,
+				DA1B5BDA1A216AA2006D317A /* Managers */,
 				DA1B5BB81A216943006D317A /* AppDelegate.h */,
 				DA1B5BB91A216943006D317A /* AppDelegate.m */,
-				DA1B5BBB1A216943006D317A /* ViewController.h */,
-				DA1B5BBC1A216943006D317A /* ViewController.m */,
 				DA1B5BBE1A216943006D317A /* Main.storyboard */,
 				DA1B5BC11A216943006D317A /* Images.xcassets */,
 				DA1B5BC31A216943006D317A /* LaunchScreen.xib */,
@@ -117,6 +124,34 @@
 				DA1B5BCF1A216943006D317A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DA1B5BDA1A216AA2006D317A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				DA1B5BE01A216BCE006D317A /* HBGCApplicationManager.h */,
+				DA1B5BE11A216BCE006D317A /* HBGCApplicationManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		DA1B5BDB1A216AA7006D317A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DA1B5BBB1A216943006D317A /* ViewController.h */,
+				DA1B5BBC1A216943006D317A /* ViewController.m */,
+				DA1B5BDD1A216B31006D317A /* HBGCNoBeaconLandingViewController.h */,
+				DA1B5BDE1A216B31006D317A /* HBGCNoBeaconLandingViewController.m */,
+			);
+			name = Controllers;
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		DA1B5BDC1A216AAC006D317A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +254,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA1B5BE21A216BCE006D317A /* HBGCApplicationManager.m in Sources */,
 				DA1B5BBD1A216943006D317A /* ViewController.m in Sources */,
 				DA1B5BBA1A216943006D317A /* AppDelegate.m in Sources */,
 				DA1B5BB71A216943006D317A /* main.m in Sources */,
+				DA1B5BDF1A216B31006D317A /* HBGCNoBeaconLandingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +381,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Gantt Center/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -354,6 +392,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Gantt Center/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
