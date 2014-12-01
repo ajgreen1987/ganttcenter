@@ -14,12 +14,22 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    [[self view] setUserInteractionEnabled:NO];
+    
+    [[self view] addSubview:[[HBGCApplicationManager appManager] currentActivityIndicator]];
+    [[[HBGCApplicationManager appManager] currentActivityIndicator] startAnimating];
+    
+    NSURL *url = [NSURL URLWithString:@"https://api.myjson.com/bins/582br"];
+    
+    [[[HBGCApplicationManager appManager] networkManager] retrieveJSONFromURL:url];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

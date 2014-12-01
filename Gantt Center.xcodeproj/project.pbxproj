@@ -16,6 +16,9 @@
 		DA1B5BD11A216943006D317A /* Gantt_CenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1B5BD01A216943006D317A /* Gantt_CenterTests.m */; };
 		DA1B5BDF1A216B31006D317A /* HBGCNoBeaconLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1B5BDE1A216B31006D317A /* HBGCNoBeaconLandingViewController.m */; };
 		DA1B5BE21A216BCE006D317A /* HBGCApplicationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1B5BE11A216BCE006D317A /* HBGCApplicationManager.m */; };
+		DA1B5BE71A216E82006D317A /* HBGCNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1B5BE61A216E82006D317A /* HBGCNetworkManager.m */; };
+		DA3AE2121A2BA86500816EB0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3AE2111A2BA86500816EB0 /* SystemConfiguration.framework */; };
+		DA3AE2151A2C0CD500816EB0 /* MONActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3AE2141A2C0CD500816EB0 /* MONActivityIndicatorView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,11 @@
 		DA1B5BDE1A216B31006D317A /* HBGCNoBeaconLandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCNoBeaconLandingViewController.m; sourceTree = "<group>"; };
 		DA1B5BE01A216BCE006D317A /* HBGCApplicationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HBGCApplicationManager.h; path = Managers/HBGCApplicationManager.h; sourceTree = "<group>"; };
 		DA1B5BE11A216BCE006D317A /* HBGCApplicationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HBGCApplicationManager.m; path = Managers/HBGCApplicationManager.m; sourceTree = "<group>"; };
+		DA1B5BE51A216E82006D317A /* HBGCNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HBGCNetworkManager.h; path = Managers/HBGCNetworkManager.h; sourceTree = "<group>"; };
+		DA1B5BE61A216E82006D317A /* HBGCNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HBGCNetworkManager.m; path = Managers/HBGCNetworkManager.m; sourceTree = "<group>"; };
+		DA3AE2111A2BA86500816EB0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		DA3AE2131A2C0CD500816EB0 /* MONActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MONActivityIndicatorView.h; sourceTree = "<group>"; };
+		DA3AE2141A2C0CD500816EB0 /* MONActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MONActivityIndicatorView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA3AE2121A2BA86500816EB0 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +78,7 @@
 		DA1B5BA81A216943006D317A = {
 			isa = PBXGroup;
 			children = (
+				DA3AE2111A2BA86500816EB0 /* SystemConfiguration.framework */,
 				DA1B5BB31A216943006D317A /* Gantt Center */,
 				DA1B5BCD1A216943006D317A /* Gantt CenterTests */,
 				DA1B5BB21A216943006D317A /* Products */,
@@ -131,6 +141,8 @@
 			children = (
 				DA1B5BE01A216BCE006D317A /* HBGCApplicationManager.h */,
 				DA1B5BE11A216BCE006D317A /* HBGCApplicationManager.m */,
+				DA1B5BE51A216E82006D317A /* HBGCNetworkManager.h */,
+				DA1B5BE61A216E82006D317A /* HBGCNetworkManager.m */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -150,8 +162,10 @@
 		DA1B5BDC1A216AAC006D317A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				DA3AE2131A2C0CD500816EB0 /* MONActivityIndicatorView.h */,
+				DA3AE2141A2C0CD500816EB0 /* MONActivityIndicatorView.m */,
 			);
-			name = Utilities;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,10 +268,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA3AE2151A2C0CD500816EB0 /* MONActivityIndicatorView.m in Sources */,
 				DA1B5BE21A216BCE006D317A /* HBGCApplicationManager.m in Sources */,
 				DA1B5BBD1A216943006D317A /* ViewController.m in Sources */,
 				DA1B5BBA1A216943006D317A /* AppDelegate.m in Sources */,
 				DA1B5BB71A216943006D317A /* main.m in Sources */,
+				DA1B5BE71A216E82006D317A /* HBGCNetworkManager.m in Sources */,
 				DA1B5BDF1A216B31006D317A /* HBGCNoBeaconLandingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,6 +467,7 @@
 				DA1B5BD61A216943006D317A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA1B5BD71A216943006D317A /* Build configuration list for PBXNativeTarget "Gantt CenterTests" */ = {
 			isa = XCConfigurationList;
@@ -459,6 +476,7 @@
 				DA1B5BD91A216943006D317A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

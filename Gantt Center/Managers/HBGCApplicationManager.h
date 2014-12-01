@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HBGCNetworkManager.h"
+#import "MONActivityIndicatorView.h"
 
-@interface HBGCApplicationManager : NSObject
+@interface HBGCApplicationManager : NSObject <HBGCNetworkDelegate>
+
++ (instancetype) appManager;
+- (MONActivityIndicatorView*) currentActivityIndicator;
+
+@property (nonatomic, strong) HBGCNetworkManager *networkManager;
+@property (nonatomic, strong) NSDictionary *currentJSON;
 
 @end
