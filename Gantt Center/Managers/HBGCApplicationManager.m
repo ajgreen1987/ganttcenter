@@ -49,6 +49,10 @@ static HBGCApplicationManager *sharedAppManager;
 - (void) didParseResponse:(NSDictionary *)aResponse
 {
     self.currentJSON = aResponse;
+    
+    // All instances of TestClass will be notified
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_PARSED_JSON
+                                                        object:self];
 }
 
 
@@ -56,12 +60,12 @@ static HBGCApplicationManager *sharedAppManager;
  */
 - (MONActivityIndicatorView*) currentActivityIndicator
 {
-    if (self.activityIndicator == nil)
+    if (sharedAppManager.activityIndicator == nil)
     {
-        self.activityIndicator = [[MONActivityIndicatorView alloc] init];
+        sharedAppManager.activityIndicator = [[MONActivityIndicatorView alloc] init];
     }
     
-    return self.activityIndicator;
+    return sharedAppManager.activityIndicator;
 }
 
 @end

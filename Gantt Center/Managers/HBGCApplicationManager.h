@@ -10,6 +10,13 @@
 #import "HBGCNetworkManager.h"
 #import "MONActivityIndicatorView.h"
 
+#define NOTIFICATION_PARSED_JSON @"JSON"
+
+#define UPCOMING_EVENTS_KEY @"Events"
+#define UPCOMING_EVENTS_THUMBNAIL_KEY @"Thumbnail"
+#define UPCOMING_EVENTS_WEBSITE_KEY @"Website"
+
+
 @interface HBGCApplicationManager : NSObject <HBGCNetworkDelegate>
 
 + (instancetype) appManager;

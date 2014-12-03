@@ -106,7 +106,9 @@
                                    
                                    if (self.delegate)
                                    {
-                                       [self.delegate didParseResponse:receivedJSONObject];
+                                       dispatch_async (dispatch_get_main_queue(), ^{
+                                           [self.delegate didParseResponse:receivedJSONObject];
+                                       });
                                    }
                                }];
     }
