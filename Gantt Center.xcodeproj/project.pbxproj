@@ -21,7 +21,11 @@
 		DA3AE21C1A2C193000816EB0 /* HBGCUpcomingEventsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3AE21B1A2C193000816EB0 /* HBGCUpcomingEventsObject.m */; };
 		DA3AE21E1A2C196C00816EB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3AE21D1A2C196C00816EB0 /* Foundation.framework */; };
 		DA3AE2201A2C19A800816EB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3AE21F1A2C19A800816EB0 /* UIKit.framework */; };
-		DA3AE22B1A2C38E400816EB0 /* KIImagePager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3AE22A1A2C38E400816EB0 /* KIImagePager.m */; };
+		DAA5F6DF1A2ED53400AFB389 /* HBGCZoneObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA5F6DE1A2ED53400AFB389 /* HBGCZoneObject.m */; };
+		DAA5F6E31A2ED55200AFB389 /* HBGCBeaconObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA5F6E21A2ED55200AFB389 /* HBGCBeaconObject.m */; };
+		DAA5F6E61A2ED57100AFB389 /* HBGCContentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA5F6E51A2ED57100AFB389 /* HBGCContentObject.m */; };
+		DAA5F6E91A2ED59400AFB389 /* HBGCSocialZoneObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA5F6E81A2ED59400AFB389 /* HBGCSocialZoneObject.m */; };
+		DAA5F6EC1A2ED64E00AFB389 /* HBGCSocialNetworksObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA5F6EB1A2ED64E00AFB389 /* HBGCSocialNetworksObject.m */; };
 		DAF499821A2E937D000E27F3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAF499801A2E937D000E27F3 /* LaunchScreen.xib */; };
 		DAF499851A2E9684000E27F3 /* HBGCLandingPageContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF499841A2E9684000E27F3 /* HBGCLandingPageContainerViewController.m */; };
 		DAF499891A2E96D0000E27F3 /* HBGCBeaconZonesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF499871A2E96D0000E27F3 /* HBGCBeaconZonesViewController.m */; };
@@ -67,8 +71,17 @@
 		DA3AE21B1A2C193000816EB0 /* HBGCUpcomingEventsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCUpcomingEventsObject.m; sourceTree = "<group>"; };
 		DA3AE21D1A2C196C00816EB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DA3AE21F1A2C19A800816EB0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		DA3AE2291A2C38E400816EB0 /* KIImagePager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIImagePager.h; sourceTree = "<group>"; };
-		DA3AE22A1A2C38E400816EB0 /* KIImagePager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIImagePager.m; sourceTree = "<group>"; };
+		DAA5F6DD1A2ED53400AFB389 /* HBGCZoneObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCZoneObject.h; sourceTree = "<group>"; };
+		DAA5F6DE1A2ED53400AFB389 /* HBGCZoneObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCZoneObject.m; sourceTree = "<group>"; };
+		DAA5F6E11A2ED55200AFB389 /* HBGCBeaconObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCBeaconObject.h; sourceTree = "<group>"; };
+		DAA5F6E21A2ED55200AFB389 /* HBGCBeaconObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCBeaconObject.m; sourceTree = "<group>"; };
+		DAA5F6E41A2ED57100AFB389 /* HBGCContentObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCContentObject.h; sourceTree = "<group>"; };
+		DAA5F6E51A2ED57100AFB389 /* HBGCContentObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCContentObject.m; sourceTree = "<group>"; };
+		DAA5F6E71A2ED59400AFB389 /* HBGCSocialZoneObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCSocialZoneObject.h; sourceTree = "<group>"; };
+		DAA5F6E81A2ED59400AFB389 /* HBGCSocialZoneObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCSocialZoneObject.m; sourceTree = "<group>"; };
+		DAA5F6EA1A2ED64E00AFB389 /* HBGCSocialNetworksObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCSocialNetworksObject.h; sourceTree = "<group>"; };
+		DAA5F6EB1A2ED64E00AFB389 /* HBGCSocialNetworksObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCSocialNetworksObject.m; sourceTree = "<group>"; };
+		DAA5F6ED1A2ED7FB00AFB389 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		DAF499811A2E937D000E27F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DAF499831A2E9684000E27F3 /* HBGCLandingPageContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCLandingPageContainerViewController.h; sourceTree = "<group>"; };
 		DAF499841A2E9684000E27F3 /* HBGCLandingPageContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCLandingPageContainerViewController.m; sourceTree = "<group>"; };
@@ -146,6 +159,7 @@
 			children = (
 				DA1B5BB51A216943006D317A /* Info.plist */,
 				DA1B5BB61A216943006D317A /* main.m */,
+				DAA5F6ED1A2ED7FB00AFB389 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -198,8 +212,6 @@
 			children = (
 				DAF4998B1A2E9873000E27F3 /* AJGAsyncImageView.h */,
 				DAF4998C1A2E9873000E27F3 /* AJGAsyncImageView.m */,
-				DA3AE2291A2C38E400816EB0 /* KIImagePager.h */,
-				DA3AE22A1A2C38E400816EB0 /* KIImagePager.m */,
 				DA3AE2131A2C0CD500816EB0 /* MONActivityIndicatorView.h */,
 				DA3AE2141A2C0CD500816EB0 /* MONActivityIndicatorView.m */,
 			);
@@ -209,10 +221,28 @@
 		DA3AE2191A2C18C800816EB0 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				DAA5F6E01A2ED54000AFB389 /* Zones */,
 				DA3AE21A1A2C193000816EB0 /* HBGCUpcomingEventsObject.h */,
 				DA3AE21B1A2C193000816EB0 /* HBGCUpcomingEventsObject.m */,
 			);
 			path = Objects;
+			sourceTree = "<group>";
+		};
+		DAA5F6E01A2ED54000AFB389 /* Zones */ = {
+			isa = PBXGroup;
+			children = (
+				DAA5F6DD1A2ED53400AFB389 /* HBGCZoneObject.h */,
+				DAA5F6DE1A2ED53400AFB389 /* HBGCZoneObject.m */,
+				DAA5F6E11A2ED55200AFB389 /* HBGCBeaconObject.h */,
+				DAA5F6E21A2ED55200AFB389 /* HBGCBeaconObject.m */,
+				DAA5F6E41A2ED57100AFB389 /* HBGCContentObject.h */,
+				DAA5F6E51A2ED57100AFB389 /* HBGCContentObject.m */,
+				DAA5F6E71A2ED59400AFB389 /* HBGCSocialZoneObject.h */,
+				DAA5F6E81A2ED59400AFB389 /* HBGCSocialZoneObject.m */,
+				DAA5F6EA1A2ED64E00AFB389 /* HBGCSocialNetworksObject.h */,
+				DAA5F6EB1A2ED64E00AFB389 /* HBGCSocialNetworksObject.m */,
+			);
+			name = Zones;
 			sourceTree = "<group>";
 		};
 		DAF4998E1A2E99C1000E27F3 /* Zones */ = {
@@ -333,15 +363,19 @@
 				DAF4998D1A2E9873000E27F3 /* AJGAsyncImageView.m in Sources */,
 				DA3AE2151A2C0CD500816EB0 /* MONActivityIndicatorView.m in Sources */,
 				DA1B5BE21A216BCE006D317A /* HBGCApplicationManager.m in Sources */,
+				DAA5F6E91A2ED59400AFB389 /* HBGCSocialZoneObject.m in Sources */,
 				DA1B5BBD1A216943006D317A /* ViewController.m in Sources */,
 				DA1B5BBA1A216943006D317A /* AppDelegate.m in Sources */,
 				DA1B5BB71A216943006D317A /* main.m in Sources */,
 				DAF499851A2E9684000E27F3 /* HBGCLandingPageContainerViewController.m in Sources */,
 				DAF499921A2E99DE000E27F3 /* HBGCZoneCollectionViewCell.m in Sources */,
 				DA1B5BE71A216E82006D317A /* HBGCNetworkManager.m in Sources */,
+				DAA5F6DF1A2ED53400AFB389 /* HBGCZoneObject.m in Sources */,
 				DA1B5BDF1A216B31006D317A /* HBGCNoBeaconLandingViewController.m in Sources */,
-				DA3AE22B1A2C38E400816EB0 /* KIImagePager.m in Sources */,
+				DAA5F6E61A2ED57100AFB389 /* HBGCContentObject.m in Sources */,
+				DAA5F6EC1A2ED64E00AFB389 /* HBGCSocialNetworksObject.m in Sources */,
 				DA3AE21C1A2C193000816EB0 /* HBGCUpcomingEventsObject.m in Sources */,
+				DAA5F6E31A2ED55200AFB389 /* HBGCBeaconObject.m in Sources */,
 				DAF499891A2E96D0000E27F3 /* HBGCBeaconZonesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,6 +499,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREFIX_HEADER = "/Users/dzqbdf/Documents/Source/Personal/iOS/Gantt/Gantt Center/Gantt Center/PrefixHeader.pch";
 				INFOPLIST_FILE = "Gantt Center/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -477,6 +512,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREFIX_HEADER = "/Users/dzqbdf/Documents/Source/Personal/iOS/Gantt/Gantt Center/Gantt Center/PrefixHeader.pch";
 				INFOPLIST_FILE = "Gantt Center/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -49,6 +49,8 @@ static HBGCApplicationManager *sharedAppManager;
 - (void) didParseResponse:(NSDictionary *)aResponse
 {
     self.currentJSON = aResponse;
+    self.currentEvents = [aResponse objectForKey:UPCOMING_EVENTS_KEY];
+    self.currentZones = [aResponse objectForKey:ZONES_KEY];
     
     // All instances of TestClass will be notified
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_PARSED_JSON

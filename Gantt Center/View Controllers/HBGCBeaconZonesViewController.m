@@ -25,6 +25,13 @@
 {
     [super viewDidLoad];
     
+    /*
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(buildOutUpcomingEventsViewController)
+                                                 name:NOTIFICATION_PARSED_JSON
+                                               object:nil];
+     */
+    
     self.zoneThumbnails = [[NSMutableArray alloc] initWithObjects:
                            @[@"http://upload.wikimedia.org/wikipedia/commons/7/71/Weaved_truncated_square_tiling.png",
                              @"http://upload.wikimedia.org/wikipedia/commons/7/71/Weaved_truncated_square_tiling.png"],
