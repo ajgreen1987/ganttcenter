@@ -26,6 +26,8 @@
 		DAA5F6E61A2ED57100AFB389 /* HBGCContentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA5F6E51A2ED57100AFB389 /* HBGCContentObject.m */; };
 		DAA5F6E91A2ED59400AFB389 /* HBGCSocialZoneObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA5F6E81A2ED59400AFB389 /* HBGCSocialZoneObject.m */; };
 		DAA5F6EC1A2ED64E00AFB389 /* HBGCSocialNetworksObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA5F6EB1A2ED64E00AFB389 /* HBGCSocialNetworksObject.m */; };
+		DAA5F6F21A2FFF3C00AFB389 /* HBGCRegionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA5F6F01A2FFF3C00AFB389 /* HBGCRegionViewController.m */; };
+		DAA5F6F31A2FFF3C00AFB389 /* HBGCRegionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAA5F6F11A2FFF3C00AFB389 /* HBGCRegionViewController.xib */; };
 		DAF499821A2E937D000E27F3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAF499801A2E937D000E27F3 /* LaunchScreen.xib */; };
 		DAF499851A2E9684000E27F3 /* HBGCLandingPageContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF499841A2E9684000E27F3 /* HBGCLandingPageContainerViewController.m */; };
 		DAF499891A2E96D0000E27F3 /* HBGCBeaconZonesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF499871A2E96D0000E27F3 /* HBGCBeaconZonesViewController.m */; };
@@ -82,6 +84,9 @@
 		DAA5F6EA1A2ED64E00AFB389 /* HBGCSocialNetworksObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCSocialNetworksObject.h; sourceTree = "<group>"; };
 		DAA5F6EB1A2ED64E00AFB389 /* HBGCSocialNetworksObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCSocialNetworksObject.m; sourceTree = "<group>"; };
 		DAA5F6ED1A2ED7FB00AFB389 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		DAA5F6EF1A2FFF3C00AFB389 /* HBGCRegionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCRegionViewController.h; sourceTree = "<group>"; };
+		DAA5F6F01A2FFF3C00AFB389 /* HBGCRegionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCRegionViewController.m; sourceTree = "<group>"; };
+		DAA5F6F11A2FFF3C00AFB389 /* HBGCRegionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBGCRegionViewController.xib; sourceTree = "<group>"; };
 		DAF499811A2E937D000E27F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DAF499831A2E9684000E27F3 /* HBGCLandingPageContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCLandingPageContainerViewController.h; sourceTree = "<group>"; };
 		DAF499841A2E9684000E27F3 /* HBGCLandingPageContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCLandingPageContainerViewController.m; sourceTree = "<group>"; };
@@ -195,6 +200,7 @@
 		DA1B5BDB1A216AA7006D317A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DAA5F6EE1A2FFF1C00AFB389 /* Region */,
 				DAF4998E1A2E99C1000E27F3 /* Zones */,
 				DA1B5BBB1A216943006D317A /* ViewController.h */,
 				DA1B5BBC1A216943006D317A /* ViewController.m */,
@@ -243,6 +249,16 @@
 				DAA5F6EB1A2ED64E00AFB389 /* HBGCSocialNetworksObject.m */,
 			);
 			name = Zones;
+			sourceTree = "<group>";
+		};
+		DAA5F6EE1A2FFF1C00AFB389 /* Region */ = {
+			isa = PBXGroup;
+			children = (
+				DAA5F6EF1A2FFF3C00AFB389 /* HBGCRegionViewController.h */,
+				DAA5F6F01A2FFF3C00AFB389 /* HBGCRegionViewController.m */,
+				DAA5F6F11A2FFF3C00AFB389 /* HBGCRegionViewController.xib */,
+			);
+			name = Region;
 			sourceTree = "<group>";
 		};
 		DAF4998E1A2E99C1000E27F3 /* Zones */ = {
@@ -342,6 +358,7 @@
 				DA1B5BC01A216943006D317A /* Main.storyboard in Resources */,
 				DAF499821A2E937D000E27F3 /* LaunchScreen.xib in Resources */,
 				DA1B5BC21A216943006D317A /* Images.xcassets in Resources */,
+				DAA5F6F31A2FFF3C00AFB389 /* HBGCRegionViewController.xib in Resources */,
 				DAF499931A2E99DE000E27F3 /* HBGCZoneCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +381,7 @@
 				DA3AE2151A2C0CD500816EB0 /* MONActivityIndicatorView.m in Sources */,
 				DA1B5BE21A216BCE006D317A /* HBGCApplicationManager.m in Sources */,
 				DAA5F6E91A2ED59400AFB389 /* HBGCSocialZoneObject.m in Sources */,
+				DAA5F6F21A2FFF3C00AFB389 /* HBGCRegionViewController.m in Sources */,
 				DA1B5BBD1A216943006D317A /* ViewController.m in Sources */,
 				DA1B5BBA1A216943006D317A /* AppDelegate.m in Sources */,
 				DA1B5BB71A216943006D317A /* main.m in Sources */,

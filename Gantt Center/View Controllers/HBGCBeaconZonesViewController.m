@@ -9,6 +9,9 @@
 #import "HBGCBeaconZonesViewController.h"
 #import "HBGCZoneCollectionViewCell.h"
 #import "AJGAsyncImageView.h"
+#import "HBGCZoneObject.h"
+#import "HBGCSocialZoneObject.h"
+#import "HBGCRegionViewController.h"
 
 #define COLUMN_LENGTH 3
 #define ROW_LENGTH 2
@@ -25,20 +28,12 @@
 {
     [super viewDidLoad];
     
-    /*
+    self.zoneThumbnails = [[NSMutableArray alloc] initWithObjects:nil];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(buildOutUpcomingEventsViewController)
+                                             selector:@selector(buildOutZones)
                                                  name:NOTIFICATION_PARSED_JSON
                                                object:nil];
-     */
-    
-    self.zoneThumbnails = [[NSMutableArray alloc] initWithObjects:
-                           @[@"http://upload.wikimedia.org/wikipedia/commons/7/71/Weaved_truncated_square_tiling.png",
-                             @"http://upload.wikimedia.org/wikipedia/commons/7/71/Weaved_truncated_square_tiling.png"],
-                           @[@"http://upload.wikimedia.org/wikipedia/commons/7/71/Weaved_truncated_square_tiling.png",
-                             @"http://upload.wikimedia.org/wikipedia/commons/7/71/Weaved_truncated_square_tiling.png"],
-                           @[@"http://upload.wikimedia.org/wikipedia/commons/7/71/Weaved_truncated_square_tiling.png",
-                             @"http://upload.wikimedia.org/wikipedia/commons/7/71/Weaved_truncated_square_tiling.png"],nil];
     
     [self.collectionView setDelegate:self];
     [self.collectionView setDataSource:self];
@@ -58,6 +53,49 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Parse out zone
+- (void) buildOutZones
+{
+    NSArray *zones = [[HBGCApplicationManager appManager] currentZones];
+    NSMutableArray *intermediateThumbnail = [[NSMutableArray alloc] initWithObjects:nil];
+    
+    for (NSDictionary *dictionary in zones)
+    {
+        if ([[dictionary allKeys] containsObject:SOCIAL_KEY])
+        {
+            HBGCSocialZoneObject *socialZone = [[HBGCSocialZoneObject alloc] initWithDictionary:dictionary];
+            
+            [intermediateThumbnail addObject:socialZone];
+        }
+        else
+        {
+            HBGCZoneObject *zone = [[HBGCZoneObject alloc] initWithDictionary:dictionary];
+            
+            [intermediateThumbnail addObject:zone];
+        }
+    }
+    
+    for (int i=0; i<intermediateThumbnail.count; i++)
+    {
+        if (i%2==0)
+        {
+            NSMutableArray *toAddTo = [[NSMutableArray alloc] initWithObjects:nil];
+            
+            [toAddTo addObject:[intermediateThumbnail objectAtIndex:i]];
+            
+            [self.zoneThumbnails addObject:toAddTo];
+        }
+        else
+        {
+            NSInteger lastIndex = i-1;
+            [[self.zoneThumbnails objectAtIndex:lastIndex] addObject:[intermediateThumbnail objectAtIndex:i]];
+        }
+    }
+    
+    [[self collectionView] reloadData];
+
 }
 
 #pragma mark - UICollectionView Data Source
@@ -82,13 +120,28 @@
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
     NSArray *images = [self.zoneThumbnails objectAtIndex:section];
+    HBGCZoneObject *zone = (HBGCZoneObject*)[images objectAtIndex:row];
     
     
-    [cell.imageView beginLoadingImageFromURL:[images objectAtIndex:row]];
-    
-    [cell setBackgroundColor:[UIColor grayColor]];
+    [cell.imageView beginLoadingImageFromURL:zone.thumbnail];
     
     return cell;
+}
+
+#pragma mark - UICollectionView Delegate
+- (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger section = indexPath.section;
+    NSInteger row = indexPath.row;
+    NSArray *images = [self.zoneThumbnails objectAtIndex:section];
+    HBGCZoneObject *zone = (HBGCZoneObject*)[images objectAtIndex:row];
+    
+    HBGCRegionViewController *region = [[HBGCRegionViewController alloc] initWithNibName:HBGCRegion_NIB
+                                                                                  bundle:nil
+                                                                                 andZone:zone];
+    
+    [[self navigationController] pushViewController:region
+                                           animated:YES];
 }
 
 @end

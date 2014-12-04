@@ -20,6 +20,12 @@
 #define DESCRIPTION_KEY @"Description"
 #define HEADERS_KEY @"Headers"
 #define CONTENT_KEY @"Content"
+#define UUID_KEY @"UUID"
+#define MAJOR_KEY @"Major"
+#define MINOR_KEY @"Minor"
+#define TITLE_KEY @"Title"
+#define URL_KEY @"URL"
+#define SOCIAL_KEY @"Social"
 
 
 @interface HBGCApplicationManager : NSObject <HBGCNetworkDelegate>
@@ -29,7 +35,7 @@
 
 @property (nonatomic, strong) HBGCNetworkManager *networkManager;
 @property (nonatomic, strong) NSDictionary *currentJSON;
-@property (nonatomic, strong) NSDictionary *currentEvents;
-@property (nonatomic, strong) NSDictionary *currentZones;
+@property (nonatomic, strong) NSArray *currentEvents;
+@property (nonatomic, strong) NSArray *currentZones;
 
 @end

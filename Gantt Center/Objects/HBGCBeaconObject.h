@@ -12,4 +12,8 @@
 
 - (id) initWithDictionary:(NSDictionary*)aBeaconDictionary;
 
+@property (nonatomic, strong) NSString *uuid;
+@property (nonatomic, strong) NSString *majorID;
+@property (nonatomic, strong) NSString *minorID;
+
 @end

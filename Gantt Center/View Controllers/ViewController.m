@@ -46,7 +46,7 @@
      [[[HBGCApplicationManager appManager] currentActivityIndicator] setCenter:self.view.center];
      */
     
-    NSURL *url = [NSURL URLWithString:@"https://api.myjson.com/bins/s8gv"];
+    NSURL *url = [NSURL URLWithString:@"https://api.myjson.com/bins/4f013"];
     
     [[[HBGCApplicationManager appManager] networkManager] retrieveJSONFromURL:url];
 }
@@ -60,7 +60,7 @@
 #pragma mark - Scroll View Setup
 - (void) buildOutUpcomingEventsViewController
 {
-    NSDictionary *events = [[HBGCApplicationManager appManager] currentEvents];
+    NSArray *events = [[HBGCApplicationManager appManager] currentEvents];
     
     for (NSDictionary *dictionary in events)
     {
@@ -120,7 +120,7 @@
             AJGAsyncImageView *imageView = [[AJGAsyncImageView alloc] initWithFrame:frame];
             [self.upcomingEventsScrollView addSubview:imageView];
             
-            [imageView beginLoadingImageFromURL:[self.eventImages objectAtIndex:i]];
+            [imageView beginLoadingImageFromString:[self.eventImages objectAtIndex:i]];
             
             UIButton *websiteButton = [UIButton buttonWithType:UIButtonTypeCustom];
             

@@ -10,4 +10,18 @@
 
 @implementation HBGCBeaconObject
 
+- (id) initWithDictionary:(NSDictionary*)aBeaconDictionary
+{
+    self = [super init];
+    
+    if (self)
+    {
+        [self setUuid:[aBeaconDictionary objectForKey:UUID_KEY]];
+        [self setMajorID:[aBeaconDictionary objectForKey:MAJOR_KEY]];
+        [self setMinorID:[aBeaconDictionary objectForKey:MINOR_KEY]];
+    }
+    
+    return self;
+}
+
 @end

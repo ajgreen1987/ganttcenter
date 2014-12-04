@@ -8,6 +8,7 @@
 
 #import "HBGCZoneObject.h"
 #import "HBGCBeaconObject.h"
+#import "HBGCContentObject.h"
 
 @implementation HBGCZoneObject
 
@@ -18,17 +19,11 @@
     if (self)
     {
         // Setup properties
-        /*
-         @property (nonatomic, strong) HBGCBeaconObject *beacon;
-         @property (nonatomic, strong) NSURL *thumbnail;
-         @property (nonatomic, strong) NSString *description;
-         @property (nonatomic, strong) NSArray *headerImages;
-         @property (nonatomic, strong) NSArray *content;
-         */
         [self setBeacon:[[HBGCBeaconObject alloc] initWithDictionary:[aZoneDictionary objectForKey:BEACON_KEY]]];
         [self setThumbnail:[NSURL URLWithString:[aZoneDictionary objectForKey:THUMBNAIL_KEY]]];
         [self setZoneDescription:[aZoneDictionary objectForKey:DESCRIPTION_KEY]];
-        [self setHeaderImages:[aZoneDictionary objectForKey:HEADERS_KEY]];
+        [self parseOutHeaders:[aZoneDictionary objectForKey:HEADERS_KEY]];
+        [self parseOutContent:[aZoneDictionary objectForKey:CONTENT_KEY]];
     }
     
     return self;
@@ -36,14 +31,41 @@
 
 - (void) parseOutHeaders:(NSArray*)anArrayOfURLs
 {
-    // Parse through json and pull out Website keys
-    // Add NSURL headers to Header Images array
+    if (anArrayOfURLs != nil)
+    {
+        
+        NSMutableArray *thumbnails = [[NSMutableArray alloc] initWithObjects:nil];
+        
+        for (NSDictionary *website in anArrayOfURLs)
+        {
+            NSString *urlString = [website objectForKey:WEBSITE_KEY];
+            NSURL *url = [NSURL URLWithString:urlString];
+            [thumbnails addObject:url];
+        }
+        // Parse through json and pull out Website keys
+        // Add NSURL headers to Header Images array
+        self.headerImages = [[NSArray alloc] initWithArray:thumbnails];
+    }
 }
 
 - (void) parseOutContent:(NSArray*)anArrayOfContentDictionaries
 {
-    // Parse and create Content objects
-    // Add them to the Content array
+    if (anArrayOfContentDictionaries!=nil)
+    {
+        
+        NSMutableArray *contentArray = [[NSMutableArray alloc] initWithObjects:nil];
+        
+        for (NSDictionary *cont in anArrayOfContentDictionaries)
+        {
+            HBGCContentObject *newContent = [[HBGCContentObject alloc] initWithDictionary:cont];
+            
+            [contentArray addObject:newContent];
+        }
+        
+        // Parse and create Content objects
+        // Add them to the Content array
+        self.content = [[NSArray alloc] initWithArray:contentArray];
+    }
 }
 
 @end

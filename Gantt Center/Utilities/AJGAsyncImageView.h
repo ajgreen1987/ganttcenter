@@ -14,6 +14,7 @@
 @interface AJGAsyncImageView : UIImageView
 
 - (void) setupActivityIndicatorAtCenter:(CGPoint)aCenterPoint;
-- (void) beginLoadingImageFromURL:(NSString*)anURL;
+- (void) beginLoadingImageFromString:(NSString*)anURL;
+- (void) beginLoadingImageFromURL:(NSURL*)anURL;
 
 @end

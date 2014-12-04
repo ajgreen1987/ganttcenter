@@ -10,4 +10,16 @@
 
 @implementation HBGCSocialZoneObject
 
+- (id) initWithDictionary:(NSDictionary *)aZoneDictionary
+{
+    self = [super initWithDictionary:aZoneDictionary];
+    
+    if (self)
+    {
+        
+    }
+    
+    return self;
+}
+
 @end

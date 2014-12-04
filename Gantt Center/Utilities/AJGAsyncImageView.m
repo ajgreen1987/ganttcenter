@@ -62,16 +62,22 @@
     [self addSubview:_activitySpinner];
 }
 
-- (void) beginLoadingImageFromURL:(NSString*)anURL
+- (void) beginLoadingImageFromString:(NSString*)anURL
+{
+    [self beginLoadingImageFromURL:[NSURL URLWithString:anURL]];
+}
+
+- (void) beginLoadingImageFromURL:(NSURL*)anURL
 {
     dispatch_async(_profileImageQueue, ^{
         [self setupActivityIndicatorAtCenter:self.center];
-        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:anURL]];
+        NSData *imageData = [NSData dataWithContentsOfURL:anURL];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self setImage:[UIImage imageWithData:imageData]];
             [_activitySpinner stopAnimating];
         });
     });
+
 }
 
 /*
