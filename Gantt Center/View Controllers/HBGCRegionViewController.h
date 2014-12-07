@@ -12,7 +12,7 @@
 
 @class HBGCZoneObject;
 
-@interface HBGCRegionViewController : UIViewController
+@interface HBGCRegionViewController : UIViewController <UIScrollViewDelegate>
 
 - (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andZone:(HBGCZoneObject*)aZone;
 

@@ -21,6 +21,7 @@
 @property (nonatomic, strong) HBGCZoneObject *zone;
 @property (nonatomic, strong) UIScrollView *regionHeaderScrollView;
 @property (nonatomic, strong) UIScrollView *regionContentScrollView;
+@property (nonatomic, strong) UIPageControl *regionContentPageControl;
 
 - (IBAction) handleExpandingButtonTouchUpInside:(id)sender;
 - (void) setupRegionHeaderScroll;
@@ -105,8 +106,16 @@
     self.regionContentScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 369.0f, 320.0f, 192.0f)];
     [self.regionContentScrollView setPagingEnabled:YES];
     [self.regionContentScrollView setScrollEnabled:YES];
+    [self.regionContentScrollView setDelegate:self];
     
     [self.view addSubview:self.regionContentScrollView];
+
+    self.regionContentPageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0.0f, 530.0f, 320.0f, 40.0f)];
+    
+    [self.regionContentPageControl setNumberOfPages:self.zone.content.count];
+    [self.regionContentPageControl setCurrentPage:0.0f];
+    
+    [self.view addSubview:self.regionContentPageControl];
     
     self.regionContentScrollView.contentSize = CGSizeMake(self.regionContentScrollView.frame.size.width * self.zone.content.count, self.regionContentScrollView.frame.size.height);
     
@@ -135,6 +144,14 @@
         
         [self.regionContentScrollView addSubview:websiteButton];
     }
+}
+
+#pragma mark - Scroll Delegate
+- (void) scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat pageWidth = scrollView.frame.size.width;
+    int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    self.regionContentPageControl.currentPage = page;
 }
 
 #pragma mark - Button handler(s)
