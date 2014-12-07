@@ -12,12 +12,8 @@
 
 - (id) initWithImage:(NSString*)anImage andWebsite:(NSURL*)aURL
 {
-    if (!self)
-    {
-        self = [super init];
-    }
+    self = [super initWithThumbnailImage:anImage];
     
-    [self setThumbnailImage:anImage];
     [self setWebsite:aURL];
     
     return self;

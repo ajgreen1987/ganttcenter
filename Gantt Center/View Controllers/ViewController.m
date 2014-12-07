@@ -46,7 +46,7 @@
      [[[HBGCApplicationManager appManager] currentActivityIndicator] setCenter:self.view.center];
      */
     
-    NSURL *url = [NSURL URLWithString:@"https://api.myjson.com/bins/4f013"];
+    NSURL *url = [NSURL URLWithString:@"https://api.myjson.com/bins/4jjor"];
     
     [[[HBGCApplicationManager appManager] networkManager] retrieveJSONFromURL:url];
 }
@@ -144,18 +144,8 @@
 
 - (void) autoScrollUpcomingEvents
 {
-    CGFloat contentOffset = self.upcomingEventsScrollView.contentOffset.x;
-    
-    int nextPage = (int)(contentOffset/self.upcomingEventsScrollView.frame.size.width) + 1 ;
-    
-    if( nextPage!=self.eventImages.count)
-    {
-        [self.upcomingEventsScrollView scrollRectToVisible:CGRectMake(nextPage*self.upcomingEventsScrollView.frame.size.width, 0, self.upcomingEventsScrollView.frame.size.width, self.upcomingEventsScrollView.frame.size.height) animated:YES];
-    }
-    else
-    {
-        [self.upcomingEventsScrollView scrollRectToVisible:CGRectMake(0, 0, self.upcomingEventsScrollView.frame.size.width, self.upcomingEventsScrollView.frame.size.height) animated:YES];
-    }
+    [HBGCApplicationManager autoScrollScrollView:self.upcomingEventsScrollView
+                                  andMaxPageSize:self.eventImages.count];
 }
 
 #pragma mark - Website Button handler

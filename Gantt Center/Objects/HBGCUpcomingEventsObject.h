@@ -6,14 +6,12 @@
 //  Copyright (c) 2014 Gantt Center. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import "HBGCHeaderObject.h"
 
-@interface HBGCUpcomingEventsObject : NSObject
+@interface HBGCUpcomingEventsObject : HBGCHeaderObject
 
 - (id) initWithImage:(NSString*)anImage andWebsite:(NSURL*)aURL;
 
-@property (nonatomic, strong) NSString *thumbnailImage;
 @property (nonatomic, strong) NSURL *website;
 
 @end

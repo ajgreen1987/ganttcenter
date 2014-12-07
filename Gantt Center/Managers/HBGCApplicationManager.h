@@ -32,6 +32,7 @@
 
 + (instancetype) appManager;
 - (MONActivityIndicatorView*) currentActivityIndicator;
++ (void) autoScrollScrollView:(UIScrollView*)aScrollView andMaxPageSize:(NSInteger)aMaxPageSize;
 
 @property (nonatomic, strong) HBGCNetworkManager *networkManager;
 @property (nonatomic, strong) NSDictionary *currentJSON;

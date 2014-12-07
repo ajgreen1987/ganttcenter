@@ -21,6 +21,8 @@
 		DA3AE21C1A2C193000816EB0 /* HBGCUpcomingEventsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3AE21B1A2C193000816EB0 /* HBGCUpcomingEventsObject.m */; };
 		DA3AE21E1A2C196C00816EB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3AE21D1A2C196C00816EB0 /* Foundation.framework */; };
 		DA3AE2201A2C19A800816EB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3AE21F1A2C19A800816EB0 /* UIKit.framework */; };
+		DA874AD81A33F5A500850E2F /* HBGCHeaderObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DA874AD71A33F5A500850E2F /* HBGCHeaderObject.m */; };
+		DA874ADA1A33FF3400850E2F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA874AD91A33FF3400850E2F /* MediaPlayer.framework */; };
 		DAA5F6DF1A2ED53400AFB389 /* HBGCZoneObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA5F6DE1A2ED53400AFB389 /* HBGCZoneObject.m */; };
 		DAA5F6E31A2ED55200AFB389 /* HBGCBeaconObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA5F6E21A2ED55200AFB389 /* HBGCBeaconObject.m */; };
 		DAA5F6E61A2ED57100AFB389 /* HBGCContentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA5F6E51A2ED57100AFB389 /* HBGCContentObject.m */; };
@@ -73,6 +75,9 @@
 		DA3AE21B1A2C193000816EB0 /* HBGCUpcomingEventsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCUpcomingEventsObject.m; sourceTree = "<group>"; };
 		DA3AE21D1A2C196C00816EB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DA3AE21F1A2C19A800816EB0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DA874AD61A33F5A500850E2F /* HBGCHeaderObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCHeaderObject.h; sourceTree = "<group>"; };
+		DA874AD71A33F5A500850E2F /* HBGCHeaderObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCHeaderObject.m; sourceTree = "<group>"; };
+		DA874AD91A33FF3400850E2F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		DAA5F6DD1A2ED53400AFB389 /* HBGCZoneObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCZoneObject.h; sourceTree = "<group>"; };
 		DAA5F6DE1A2ED53400AFB389 /* HBGCZoneObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCZoneObject.m; sourceTree = "<group>"; };
 		DAA5F6E11A2ED55200AFB389 /* HBGCBeaconObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCBeaconObject.h; sourceTree = "<group>"; };
@@ -105,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA874ADA1A33FF3400850E2F /* MediaPlayer.framework in Frameworks */,
 				DA3AE2201A2C19A800816EB0 /* UIKit.framework in Frameworks */,
 				DA3AE21E1A2C196C00816EB0 /* Foundation.framework in Frameworks */,
 				DA3AE2121A2BA86500816EB0 /* SystemConfiguration.framework in Frameworks */,
@@ -124,6 +130,7 @@
 		DA1B5BA81A216943006D317A = {
 			isa = PBXGroup;
 			children = (
+				DA874AD91A33FF3400850E2F /* MediaPlayer.framework */,
 				DA3AE21F1A2C19A800816EB0 /* UIKit.framework */,
 				DA3AE21D1A2C196C00816EB0 /* Foundation.framework */,
 				DA3AE2111A2BA86500816EB0 /* SystemConfiguration.framework */,
@@ -230,6 +237,8 @@
 				DAA5F6E01A2ED54000AFB389 /* Zones */,
 				DA3AE21A1A2C193000816EB0 /* HBGCUpcomingEventsObject.h */,
 				DA3AE21B1A2C193000816EB0 /* HBGCUpcomingEventsObject.m */,
+				DA874AD61A33F5A500850E2F /* HBGCHeaderObject.h */,
+				DA874AD71A33F5A500850E2F /* HBGCHeaderObject.m */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -377,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA874AD81A33F5A500850E2F /* HBGCHeaderObject.m in Sources */,
 				DAF4998D1A2E9873000E27F3 /* AJGAsyncImageView.m in Sources */,
 				DA3AE2151A2C0CD500816EB0 /* MONActivityIndicatorView.m in Sources */,
 				DA1B5BE21A216BCE006D317A /* HBGCApplicationManager.m in Sources */,

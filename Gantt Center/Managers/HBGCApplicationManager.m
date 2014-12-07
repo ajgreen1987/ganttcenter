@@ -70,4 +70,22 @@ static HBGCApplicationManager *sharedAppManager;
     return sharedAppManager.activityIndicator;
 }
 
+#pragma mark - UI Management
++ (void) autoScrollScrollView:(UIScrollView*)aScrollView andMaxPageSize:(NSInteger)aMaxPageSize
+{
+    CGFloat contentOffset = aScrollView.contentOffset.x;
+    
+    int nextPage = (int)(contentOffset/aScrollView.frame.size.width) + 1 ;
+    
+    if( nextPage!= aMaxPageSize)
+    {
+        [aScrollView scrollRectToVisible:CGRectMake(nextPage*aScrollView.frame.size.width, 0, aScrollView.frame.size.width, aScrollView.frame.size.height) animated:YES];
+    }
+    else
+    {
+        [aScrollView scrollRectToVisible:CGRectMake(0, 0, aScrollView.frame.size.width, aScrollView.frame.size.height) animated:YES];
+    }
+
+}
+
 @end
