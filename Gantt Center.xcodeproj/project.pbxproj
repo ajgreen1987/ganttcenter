@@ -32,6 +32,9 @@
 		DAA5F6F31A2FFF3C00AFB389 /* HBGCRegionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAA5F6F11A2FFF3C00AFB389 /* HBGCRegionViewController.xib */; };
 		DAB24E6C1A349CF700768B13 /* HBGCSocialRegionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB24E6B1A349CF700768B13 /* HBGCSocialRegionViewController.m */; };
 		DAB24E6E1A349D1200768B13 /* HBGCSocialRegionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAB24E6D1A349D1200768B13 /* HBGCSocialRegionViewController.xib */; };
+		DAB24E7F1A3548D400768B13 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB24E7D1A3548D400768B13 /* CoreBluetooth.framework */; };
+		DAB24E801A3548D400768B13 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB24E7E1A3548D400768B13 /* CoreLocation.framework */; };
+		DAC940B21A3550C8008E5B4B /* libEstimoteSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB24E7B1A3548AC00768B13 /* libEstimoteSDK.a */; };
 		DAF499821A2E937D000E27F3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAF499801A2E937D000E27F3 /* LaunchScreen.xib */; };
 		DAF499851A2E9684000E27F3 /* HBGCLandingPageContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF499841A2E9684000E27F3 /* HBGCLandingPageContainerViewController.m */; };
 		DAF499891A2E96D0000E27F3 /* HBGCBeaconZonesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF499871A2E96D0000E27F3 /* HBGCBeaconZonesViewController.m */; };
@@ -97,6 +100,19 @@
 		DAB24E6A1A349CF700768B13 /* HBGCSocialRegionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCSocialRegionViewController.h; sourceTree = "<group>"; };
 		DAB24E6B1A349CF700768B13 /* HBGCSocialRegionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCSocialRegionViewController.m; sourceTree = "<group>"; };
 		DAB24E6D1A349D1200768B13 /* HBGCSocialRegionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBGCSocialRegionViewController.xib; sourceTree = "<group>"; };
+		DAB24E711A3548AC00768B13 /* ESTBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeacon.h; sourceTree = "<group>"; };
+		DAB24E721A3548AC00768B13 /* ESTBeaconDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconDefinitions.h; sourceTree = "<group>"; };
+		DAB24E731A3548AC00768B13 /* ESTBeaconFirmwareInfoVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconFirmwareInfoVO.h; sourceTree = "<group>"; };
+		DAB24E741A3548AC00768B13 /* ESTBeaconFirmwareVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconFirmwareVO.h; sourceTree = "<group>"; };
+		DAB24E751A3548AC00768B13 /* ESTBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconManager.h; sourceTree = "<group>"; };
+		DAB24E761A3548AC00768B13 /* ESTBeaconRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconRegion.h; sourceTree = "<group>"; };
+		DAB24E771A3548AC00768B13 /* ESTBeaconUpdateConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconUpdateConfig.h; sourceTree = "<group>"; };
+		DAB24E781A3548AC00768B13 /* ESTBeaconUpdateInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconUpdateInfo.h; sourceTree = "<group>"; };
+		DAB24E791A3548AC00768B13 /* ESTBeaconVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconVO.h; sourceTree = "<group>"; };
+		DAB24E7A1A3548AC00768B13 /* ESTBulkUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBulkUpdater.h; sourceTree = "<group>"; };
+		DAB24E7B1A3548AC00768B13 /* libEstimoteSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEstimoteSDK.a; sourceTree = "<group>"; };
+		DAB24E7D1A3548D400768B13 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		DAB24E7E1A3548D400768B13 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DAF499811A2E937D000E27F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DAF499831A2E9684000E27F3 /* HBGCLandingPageContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCLandingPageContainerViewController.h; sourceTree = "<group>"; };
 		DAF499841A2E9684000E27F3 /* HBGCLandingPageContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCLandingPageContainerViewController.m; sourceTree = "<group>"; };
@@ -115,6 +131,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAC940B21A3550C8008E5B4B /* libEstimoteSDK.a in Frameworks */,
+				DAB24E7F1A3548D400768B13 /* CoreBluetooth.framework in Frameworks */,
+				DAB24E801A3548D400768B13 /* CoreLocation.framework in Frameworks */,
 				DA874ADA1A33FF3400850E2F /* MediaPlayer.framework in Frameworks */,
 				DA3AE2201A2C19A800816EB0 /* UIKit.framework in Frameworks */,
 				DA3AE21E1A2C196C00816EB0 /* Foundation.framework in Frameworks */,
@@ -135,6 +154,8 @@
 		DA1B5BA81A216943006D317A = {
 			isa = PBXGroup;
 			children = (
+				DAB24E7D1A3548D400768B13 /* CoreBluetooth.framework */,
+				DAB24E7E1A3548D400768B13 /* CoreLocation.framework */,
 				DA874AD91A33FF3400850E2F /* MediaPlayer.framework */,
 				DA3AE21F1A2C19A800816EB0 /* UIKit.framework */,
 				DA3AE21D1A2C196C00816EB0 /* Foundation.framework */,
@@ -228,6 +249,7 @@
 		DA1B5BDC1A216AAC006D317A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				DAB24E6F1A35488200768B13 /* Estimote */,
 				DAF4998B1A2E9873000E27F3 /* AJGAsyncImageView.h */,
 				DAF4998C1A2E9873000E27F3 /* AJGAsyncImageView.m */,
 				DA3AE2131A2C0CD500816EB0 /* MONActivityIndicatorView.h */,
@@ -292,6 +314,32 @@
 				DAA5F6F11A2FFF3C00AFB389 /* HBGCRegionViewController.xib */,
 			);
 			name = Regular;
+			sourceTree = "<group>";
+		};
+		DAB24E6F1A35488200768B13 /* Estimote */ = {
+			isa = PBXGroup;
+			children = (
+				DAB24E701A3548AC00768B13 /* Headers */,
+				DAB24E7B1A3548AC00768B13 /* libEstimoteSDK.a */,
+			);
+			path = Estimote;
+			sourceTree = "<group>";
+		};
+		DAB24E701A3548AC00768B13 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				DAB24E711A3548AC00768B13 /* ESTBeacon.h */,
+				DAB24E721A3548AC00768B13 /* ESTBeaconDefinitions.h */,
+				DAB24E731A3548AC00768B13 /* ESTBeaconFirmwareInfoVO.h */,
+				DAB24E741A3548AC00768B13 /* ESTBeaconFirmwareVO.h */,
+				DAB24E751A3548AC00768B13 /* ESTBeaconManager.h */,
+				DAB24E761A3548AC00768B13 /* ESTBeaconRegion.h */,
+				DAB24E771A3548AC00768B13 /* ESTBeaconUpdateConfig.h */,
+				DAB24E781A3548AC00768B13 /* ESTBeaconUpdateInfo.h */,
+				DAB24E791A3548AC00768B13 /* ESTBeaconVO.h */,
+				DAB24E7A1A3548AC00768B13 /* ESTBulkUpdater.h */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 		DAF4998E1A2E99C1000E27F3 /* Zones */ = {
@@ -554,9 +602,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "/Users/dzqbdf/Documents/Source/Personal/iOS/Gantt/Gantt Center/Gantt Center/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../Utilities/Estimote/EstimoteSDK/Headers",
+				);
 				INFOPLIST_FILE = "Gantt Center/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Gantt",
+					Center/Utilities/Estimote,
+					"$(PROJECT_DIR)/Gantt",
+					Center/Utilities/Estimote,
+					"$(PROJECT_DIR)/Gantt",
+					Center/Utilities/Estimote,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -567,9 +629,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "/Users/dzqbdf/Documents/Source/Personal/iOS/Gantt/Gantt Center/Gantt Center/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../Utilities/Estimote/EstimoteSDK/Headers",
+				);
 				INFOPLIST_FILE = "Gantt Center/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Gantt",
+					Center/Utilities/Estimote,
+					"$(PROJECT_DIR)/Gantt",
+					Center/Utilities/Estimote,
+					"$(PROJECT_DIR)/Gantt",
+					Center/Utilities/Estimote,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

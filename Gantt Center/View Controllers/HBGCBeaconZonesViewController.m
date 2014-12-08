@@ -14,6 +14,7 @@
 #import "HBGCRegionViewController.h"
 #import "HBGCSocialRegionViewController.h"
 
+
 #define COLUMN_LENGTH 3
 #define ROW_LENGTH 2
 

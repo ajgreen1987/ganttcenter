@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Gantt Center. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <UIKit/UICollectionView.h>
 
 #define HBGCBeaconZones_NIB @"HBGCBeaconZonesViewController"
 
