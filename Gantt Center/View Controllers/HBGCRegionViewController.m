@@ -52,6 +52,8 @@
 
     [self setupRegionHeaderScroll];
     [self setupRegionContentScroll];
+    
+    [[self view] bringSubviewToFront:self.descriptionTextView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -157,7 +159,7 @@
 #pragma mark - Button handler(s)
 - (IBAction) handleExpandingButtonTouchUpInside:(id)sender
 {
-    [UIView animateWithDuration:0.6f
+    [UIView animateWithDuration:1.1f
                      animations:^{
                          CGRect frame = self.descriptionTextView.frame;
                          CGFloat missingHeight = (self.view.frame.size.height - 8.0f) - (self.descriptionTextView.frame.size.height*2.0f);

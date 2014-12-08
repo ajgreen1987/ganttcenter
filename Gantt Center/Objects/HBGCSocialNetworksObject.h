@@ -10,4 +10,10 @@
 
 @interface HBGCSocialNetworksObject : NSObject
 
+- (id) initWithDictionary:(NSDictionary*)aDictionary;
+
+@property (nonatomic, strong) NSString *networkTitle;
+@property (nonatomic, strong) NSURL *thumbnail;
+@property (nonatomic, strong) NSURL *networkURL;
+
 @end

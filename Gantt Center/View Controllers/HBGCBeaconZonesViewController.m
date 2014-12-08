@@ -12,6 +12,7 @@
 #import "HBGCZoneObject.h"
 #import "HBGCSocialZoneObject.h"
 #import "HBGCRegionViewController.h"
+#import "HBGCSocialRegionViewController.h"
 
 #define COLUMN_LENGTH 3
 #define ROW_LENGTH 2
@@ -136,12 +137,29 @@
     NSArray *images = [self.zoneThumbnails objectAtIndex:section];
     HBGCZoneObject *zone = (HBGCZoneObject*)[images objectAtIndex:row];
     
-    HBGCRegionViewController *region = [[HBGCRegionViewController alloc] initWithNibName:HBGCRegion_NIB
-                                                                                  bundle:nil
-                                                                                 andZone:zone];
+    if (![zone isKindOfClass:[HBGCSocialZoneObject class]])
+    {
+        HBGCRegionViewController *region = [[HBGCRegionViewController alloc] initWithNibName:HBGCRegion_NIB
+                                                                                      bundle:nil
+                                                                                     andZone:zone];
+        
+        
+        
+        [[self navigationController] pushViewController:region
+                                               animated:YES];
+    }
+    else
+    {
+        // Push the Social View Controller!!!
+        HBGCSocialRegionViewController *socialRegion = [[HBGCSocialRegionViewController alloc] initWithNibName:HBGCSOCIALREGION_NIB
+                                                                                                        bundle:nil
+                                                                                                       andZone:(HBGCSocialZoneObject*)zone];
+        
+        [[self navigationController] pushViewController:socialRegion
+                                               animated:YES];
+    }
     
-    [[self navigationController] pushViewController:region
-                                           animated:YES];
+
 }
 
 @end

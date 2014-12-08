@@ -8,10 +8,9 @@
 
 #import "HBGCZoneObject.h"
 
-@class HBGCSocialNetworksObject;
-
 @interface HBGCSocialZoneObject : HBGCZoneObject
 
-@property (nonatomic, strong) HBGCSocialNetworksObject *networks;
+@property (nonatomic, strong) NSMutableArray *socialNetworks;
+@property (nonatomic, strong) NSString *messageToPost;
 
 @end

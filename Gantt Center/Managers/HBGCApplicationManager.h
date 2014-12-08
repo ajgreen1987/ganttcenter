@@ -26,6 +26,8 @@
 #define TITLE_KEY @"Title"
 #define URL_KEY @"URL"
 #define SOCIAL_KEY @"Social"
+#define POST_KEY @"Post"
+#define NETWORKS_KEY @"Networks"
 
 
 @interface HBGCApplicationManager : NSObject <HBGCNetworkDelegate>

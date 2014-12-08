@@ -46,7 +46,7 @@
      [[[HBGCApplicationManager appManager] currentActivityIndicator] setCenter:self.view.center];
      */
     
-    NSURL *url = [NSURL URLWithString:@"https://api.myjson.com/bins/4jjor"];
+    NSURL *url = [NSURL URLWithString:@"https://api.myjson.com/bins/1ro0b"];
     
     [[[HBGCApplicationManager appManager] networkManager] retrieveJSONFromURL:url];
 }
