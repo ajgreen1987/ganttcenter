@@ -10,7 +10,8 @@
 
 #define HBGCBeaconZones_NIB @"HBGCBeaconZonesViewController"
 
-@interface HBGCBeaconZonesViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface HBGCBeaconZonesViewController : UIViewController <UICollectionViewDataSource,
+                                UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, HBGCBeaconManagerDelegate>
 
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 

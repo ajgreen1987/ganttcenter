@@ -41,6 +41,16 @@ static HBGCApplicationManager *sharedAppManager;
     return _networkManager;
 }
 
+- (HBGCBeaconManager*) beaconManager
+{
+    if(_beaconManager == nil)
+    {
+        _beaconManager = [[HBGCBeaconManager alloc] initWithScanType:ESTScanTypeBeacon];
+    }
+    
+    return _beaconManager;
+}
+
 #pragma mark - Network Delegate
 
 /**

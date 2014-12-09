@@ -13,6 +13,7 @@
 #import "HBGCSocialZoneObject.h"
 #import "HBGCRegionViewController.h"
 #import "HBGCSocialRegionViewController.h"
+#import "HBGCBeaconObject.h"
 
 
 #define COLUMN_LENGTH 3
@@ -32,11 +33,6 @@
     
     self.zoneThumbnails = [[NSMutableArray alloc] initWithObjects:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(buildOutZones)
-                                                 name:NOTIFICATION_PARSED_JSON
-                                               object:nil];
-    
     [self.collectionView setDelegate:self];
     [self.collectionView setDataSource:self];
     
@@ -50,6 +46,19 @@
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     
     [self.collectionView setCollectionViewLayout:flowLayout];
+    
+    if ([[[HBGCApplicationManager appManager] currentZones] count] < 1)
+    {
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(buildOutZones)
+                                                     name:NOTIFICATION_PARSED_JSON
+                                                   object:nil];
+    }
+    else
+    {
+        [self buildOutZones];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -97,7 +106,21 @@
     }
     
     [[self collectionView] reloadData];
+    
+}
 
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [[[HBGCApplicationManager appManager] beaconManager] setDelegate:self];
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [[[HBGCApplicationManager appManager] beaconManager] setDelegate:nil];
 }
 
 #pragma mark - UICollectionView Data Source
@@ -118,7 +141,7 @@
     
     HBGCZoneCollectionViewCell *cell = (HBGCZoneCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier
                                                                                                                forIndexPath:indexPath];
-
+    
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
     NSArray *images = [self.zoneThumbnails objectAtIndex:section];
@@ -132,6 +155,11 @@
 
 #pragma mark - UICollectionView Delegate
 - (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self selectZoneForIndexPath:indexPath];
+}
+
+- (void) selectZoneForIndexPath:(NSIndexPath*)indexPath
 {
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
@@ -159,8 +187,33 @@
         [[self navigationController] pushViewController:socialRegion
                                                animated:YES];
     }
-    
+}
 
+#pragma mark - Beacon Delegate
+- (void) allBeaconsDiscovered
+{
+    // The closest beacon will be at zero
+    ESTBeacon *closestBeacon = (ESTBeacon*)[[[[HBGCApplicationManager appManager] beaconManager] beaconsArray] objectAtIndex:0];
+    NSString *closestBeaconMajorID = [NSString stringWithFormat:@"%@",[closestBeacon major]];
+    NSString *closestBeaconMinorID = [NSString stringWithFormat:@"%@",[closestBeacon minor]];
+    
+    // Compare the beacons to the zones beacon
+    for (NSArray *zoneArray in self.zoneThumbnails)
+    {
+        for (HBGCZoneObject *zone in zoneArray)
+        {
+            
+            HBGCBeaconObject *beacon = zone.beacon;
+            
+            if ([[beacon majorID] isEqualToString:closestBeaconMajorID] && [[beacon minorID] isEqualToString:closestBeaconMinorID] && ([[closestBeacon distance] floatValue] < AUTO_BEACON_DISTANCE))
+            {
+                // Present the beacon for index Path
+                [self selectZoneForIndexPath:[NSIndexPath indexPathForRow:[zoneArray indexOfObject:zone]
+                                                                inSection:0]];
+            }
+        }
+    }
+    
 }
 
 @end

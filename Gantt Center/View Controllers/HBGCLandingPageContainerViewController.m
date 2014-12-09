@@ -8,6 +8,7 @@
 
 #import "HBGCLandingPageContainerViewController.h"
 #import "HBGCBeaconZonesViewController.h"
+#import "HBGCTutorialStartViewController.h"
 
 @interface HBGCLandingPageContainerViewController ()
 
@@ -15,20 +16,36 @@
 
 @implementation HBGCLandingPageContainerViewController
 
-- (void)viewDidLoad
+- (void) viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-
-    // This would need to check the permissions of Location and Bluetooth and present the Tutorial page
-    // Or check the network and present the network outage
-    // Or Present the Zone images that have been parsed out
+    [super viewWillAppear:animated];
     
-    HBGCBeaconZonesViewController *beaconController = [[HBGCBeaconZonesViewController alloc] initWithNibName:HBGCBeaconZones_NIB
-                                                                                                      bundle:nil];
+    if (self.childViewControllers.count > 0)
+    {
+        [self removeOldChildViewController];
+    }
     
-    [self addChildViewController:beaconController];
-    [self.view addSubview:beaconController.view];
-    [beaconController didMoveToParentViewController:self];
+    // Need a No Network Check
+    if ([ESTBeaconManager authorizationStatus] == kCLAuthorizationStatusNotDetermined)
+    {
+        // Show Tutorial Controller
+        HBGCTutorialStartViewController *tutorialController = [[HBGCTutorialStartViewController alloc] initWithNibName:HBGCTUTORIALSTART_NIB
+                                                                                                                bundle:nil];
+        
+        [self addChildViewController:tutorialController];
+        [[self view] addSubview:tutorialController.view];
+        [tutorialController didMoveToParentViewController:self];
+    }
+    else
+    {
+        // Or Present the Zone images that have been parsed out
+        HBGCBeaconZonesViewController *beaconController = [[HBGCBeaconZonesViewController alloc] initWithNibName:HBGCBeaconZones_NIB
+                                                                                                          bundle:nil];
+        
+        [self addChildViewController:beaconController];
+        [self.view addSubview:beaconController.view];
+        [beaconController didMoveToParentViewController:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,14 +53,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) removeOldChildViewController
+{
+    UIViewController *vc = [self.childViewControllers lastObject];
+    [vc.view removeFromSuperview];
+    [vc removeFromParentViewController];
 }
-*/
 
 @end

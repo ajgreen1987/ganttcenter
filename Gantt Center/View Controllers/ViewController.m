@@ -46,7 +46,7 @@
      [[[HBGCApplicationManager appManager] currentActivityIndicator] setCenter:self.view.center];
      */
     
-    NSURL *url = [NSURL URLWithString:@"https://s3.amazonaws.com/hbgcvewdio/gantt.json"];
+    NSURL *url = [NSURL URLWithString:@"https://api.myjson.com/bins/2eeoj"];
     
     [[[HBGCApplicationManager appManager] networkManager] retrieveJSONFromURL:url];
 }

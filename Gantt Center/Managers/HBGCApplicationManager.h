@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "HBGCNetworkManager.h"
+#import "HBGCBeaconManager.h"
 #import "MONActivityIndicatorView.h"
 
 #define NOTIFICATION_PARSED_JSON @"JSON"
@@ -33,10 +34,13 @@
 @interface HBGCApplicationManager : NSObject <HBGCNetworkDelegate>
 
 + (instancetype) appManager;
-- (MONActivityIndicatorView*) currentActivityIndicator;
 + (void) autoScrollScrollView:(UIScrollView*)aScrollView andMaxPageSize:(NSInteger)aMaxPageSize;
++ (void) startBeaconManager;
+- (MONActivityIndicatorView*) currentActivityIndicator;
+
 
 @property (nonatomic, strong) HBGCNetworkManager *networkManager;
+@property (nonatomic, strong) HBGCBeaconManager *beaconManager;
 @property (nonatomic, strong) NSDictionary *currentJSON;
 @property (nonatomic, strong) NSArray *currentEvents;
 @property (nonatomic, strong) NSArray *currentZones;
