@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Gantt Center. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "HBGCBaseViewController.h"
 
 #define HBGCTUTORIALSTART_NIB @"HBGCTutorialStartViewController"
 
-@interface HBGCTutorialStartViewController : UIViewController
+@interface HBGCTutorialStartViewController : HBGCBaseViewController
 
 @end

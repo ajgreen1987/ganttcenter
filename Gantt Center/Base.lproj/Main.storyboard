@@ -8,7 +8,7 @@
         <!--Navigation Controller-->
         <scene sceneID="AaU-Sn-ECw">
             <objects>
-                <navigationController id="jXm-gW-D00" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="jXm-gW-D00" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Z94-tP-fdA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -26,16 +26,20 @@
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="currentContext" id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" id="vnP-Lp-nji">
-                                <rect key="frame" x="0.0" y="100" width="320" height="405"/>
+                                <rect key="frame" x="0.0" y="163" width="320" height="405"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="6lr-cg-Gav" kind="embed" id="LSP-wz-CpE"/>
                                 </connections>
                             </containerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Headerlogo" id="9KU-25-qY1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -49,7 +53,6 @@
         <!--Landing Page Container View Controller-->
         <scene sceneID="hLG-8Z-tp6">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0dC-73-c54" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="6lr-cg-Gav" customClass="HBGCLandingPageContainerViewController" sceneMemberID="viewController">
                     <view key="view" autoresizesSubviews="NO" opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="JNe-sy-5Qi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="405"/>
@@ -58,10 +61,14 @@
                     </view>
                     <toolbarItems/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0dC-73-c54" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-8" y="516"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Headerlogo" width="1080" height="220"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

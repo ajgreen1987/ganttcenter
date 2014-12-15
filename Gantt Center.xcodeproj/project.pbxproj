@@ -22,6 +22,8 @@
 		DA3AE2201A2C19A800816EB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3AE21F1A2C19A800816EB0 /* UIKit.framework */; };
 		DA874AD81A33F5A500850E2F /* HBGCHeaderObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DA874AD71A33F5A500850E2F /* HBGCHeaderObject.m */; };
 		DA874ADA1A33FF3400850E2F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA874AD91A33FF3400850E2F /* MediaPlayer.framework */; };
+		DA98D1131A3E680E000EEBC0 /* libEstimoteSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB24E7B1A3548AC00768B13 /* libEstimoteSDK.a */; };
+		DA98D1161A3E7BA0000EEBC0 /* HBGCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA98D1151A3E7BA0000EEBC0 /* HBGCBaseViewController.m */; };
 		DAA5F6DF1A2ED53400AFB389 /* HBGCZoneObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA5F6DE1A2ED53400AFB389 /* HBGCZoneObject.m */; };
 		DAA5F6E31A2ED55200AFB389 /* HBGCBeaconObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA5F6E21A2ED55200AFB389 /* HBGCBeaconObject.m */; };
 		DAA5F6E61A2ED57100AFB389 /* HBGCContentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA5F6E51A2ED57100AFB389 /* HBGCContentObject.m */; };
@@ -33,7 +35,6 @@
 		DAB24E6E1A349D1200768B13 /* HBGCSocialRegionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAB24E6D1A349D1200768B13 /* HBGCSocialRegionViewController.xib */; };
 		DAB24E7F1A3548D400768B13 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB24E7D1A3548D400768B13 /* CoreBluetooth.framework */; };
 		DAB24E801A3548D400768B13 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB24E7E1A3548D400768B13 /* CoreLocation.framework */; };
-		DAC940B21A3550C8008E5B4B /* libEstimoteSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB24E7B1A3548AC00768B13 /* libEstimoteSDK.a */; };
 		DAC940B51A368D53008E5B4B /* HBGCBeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC940B41A368D53008E5B4B /* HBGCBeaconManager.m */; };
 		DAC940BA1A36954B008E5B4B /* HBGCTutorialStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC940B81A36954B008E5B4B /* HBGCTutorialStartViewController.m */; };
 		DAC940BB1A36954B008E5B4B /* HBGCTutorialStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAC940B91A36954B008E5B4B /* HBGCTutorialStartViewController.xib */; };
@@ -85,6 +86,8 @@
 		DA874AD61A33F5A500850E2F /* HBGCHeaderObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCHeaderObject.h; sourceTree = "<group>"; };
 		DA874AD71A33F5A500850E2F /* HBGCHeaderObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCHeaderObject.m; sourceTree = "<group>"; };
 		DA874AD91A33FF3400850E2F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		DA98D1141A3E7BA0000EEBC0 /* HBGCBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCBaseViewController.h; sourceTree = "<group>"; };
+		DA98D1151A3E7BA0000EEBC0 /* HBGCBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCBaseViewController.m; sourceTree = "<group>"; };
 		DAA5F6DD1A2ED53400AFB389 /* HBGCZoneObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCZoneObject.h; sourceTree = "<group>"; };
 		DAA5F6DE1A2ED53400AFB389 /* HBGCZoneObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCZoneObject.m; sourceTree = "<group>"; };
 		DAA5F6E11A2ED55200AFB389 /* HBGCBeaconObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCBeaconObject.h; sourceTree = "<group>"; };
@@ -141,7 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAC940B21A3550C8008E5B4B /* libEstimoteSDK.a in Frameworks */,
+				DA98D1131A3E680E000EEBC0 /* libEstimoteSDK.a in Frameworks */,
 				DAB24E7F1A3548D400768B13 /* CoreBluetooth.framework in Frameworks */,
 				DAB24E801A3548D400768B13 /* CoreLocation.framework in Frameworks */,
 				DA874ADA1A33FF3400850E2F /* MediaPlayer.framework in Frameworks */,
@@ -252,6 +255,8 @@
 				DA1B5BBC1A216943006D317A /* ViewController.m */,
 				DAF499831A2E9684000E27F3 /* HBGCLandingPageContainerViewController.h */,
 				DAF499841A2E9684000E27F3 /* HBGCLandingPageContainerViewController.m */,
+				DA98D1141A3E7BA0000EEBC0 /* HBGCBaseViewController.h */,
+				DA98D1151A3E7BA0000EEBC0 /* HBGCBaseViewController.m */,
 			);
 			name = Controllers;
 			path = "View Controllers";
@@ -499,6 +504,7 @@
 				DA1B5BB71A216943006D317A /* main.m in Sources */,
 				DAF499851A2E9684000E27F3 /* HBGCLandingPageContainerViewController.m in Sources */,
 				DAF499921A2E99DE000E27F3 /* HBGCZoneCollectionViewCell.m in Sources */,
+				DA98D1161A3E7BA0000EEBC0 /* HBGCBaseViewController.m in Sources */,
 				DA1B5BE71A216E82006D317A /* HBGCNetworkManager.m in Sources */,
 				DAA5F6DF1A2ED53400AFB389 /* HBGCZoneObject.m in Sources */,
 				DAC940B51A368D53008E5B4B /* HBGCBeaconManager.m in Sources */,
@@ -644,8 +650,6 @@
 					Center/Utilities/Estimote,
 					"$(PROJECT_DIR)/Gantt",
 					Center/Utilities/Estimote,
-					"$(PROJECT_DIR)/Gantt",
-					Center/Utilities/Estimote,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -667,8 +671,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Gantt",
-					Center/Utilities/Estimote,
 					"$(PROJECT_DIR)/Gantt",
 					Center/Utilities/Estimote,
 					"$(PROJECT_DIR)/Gantt",

@@ -46,7 +46,7 @@
      [[[HBGCApplicationManager appManager] currentActivityIndicator] setCenter:self.view.center];
      */
     
-    NSURL *url = [NSURL URLWithString:@"https://api.myjson.com/bins/2eeoj"];
+    NSURL *url = [NSURL URLWithString:@"http://hbgcvewdio.s3.amazonaws.com/gantt.json"];
     
     [[[HBGCApplicationManager appManager] networkManager] retrieveJSONFromURL:url];
 }
@@ -84,7 +84,7 @@
     if (imagesCount == 0)
     {
         self.upcomingEventsScrollView = nil;
-        self.upcomingEventsScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 100.0f)];
+        self.upcomingEventsScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 65.0f, 320.0f, 100.0f)];
         [self.upcomingEventsScrollView setPagingEnabled:YES];
         [self.upcomingEventsScrollView setScrollEnabled:YES];
         
@@ -101,7 +101,7 @@
     {
         [self.upcomingEventsScrollView removeFromSuperview];
         self.upcomingEventsScrollView = nil;
-        self.upcomingEventsScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 100.0f)];
+        self.upcomingEventsScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 65.0f, 320.0f, 100.0f)];
         [self.upcomingEventsScrollView setPagingEnabled:YES];
         [self.upcomingEventsScrollView setScrollEnabled:YES];
         

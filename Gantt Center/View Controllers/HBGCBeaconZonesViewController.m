@@ -8,12 +8,12 @@
 
 #import "HBGCBeaconZonesViewController.h"
 #import "HBGCZoneCollectionViewCell.h"
-#import "AJGAsyncImageView.h"
 #import "HBGCZoneObject.h"
 #import "HBGCSocialZoneObject.h"
 #import "HBGCRegionViewController.h"
 #import "HBGCSocialRegionViewController.h"
 #import "HBGCBeaconObject.h"
+#import "AJGAsyncImageView.h"
 
 
 #define COLUMN_LENGTH 3
@@ -88,6 +88,8 @@
         }
     }
     
+    int counter = 1;
+    
     for (int i=0; i<intermediateThumbnail.count; i++)
     {
         if (i%2==0)
@@ -100,8 +102,9 @@
         }
         else
         {
-            NSInteger lastIndex = i-1;
+            NSInteger lastIndex = i-counter;
             [[self.zoneThumbnails objectAtIndex:lastIndex] addObject:[intermediateThumbnail objectAtIndex:i]];
+            counter++;
         }
     }
     
@@ -131,7 +134,8 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return ROW_LENGTH;
+    NSArray *currentThumbnail = (NSArray*)[self.zoneThumbnails objectAtIndex:section];
+    return currentThumbnail.count;
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:

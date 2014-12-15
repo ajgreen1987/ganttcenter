@@ -25,6 +25,7 @@
 
 - (IBAction) handleExpandingButtonTouchUpInside:(id)sender;
 - (void) setupRegionHeaderScroll;
+- (void) setupRegionDescription;
 - (void) setupRegionContentScroll;
 - (void) autoScrollRegionHeader;
 - (void) handleContentButtonTouchUpInside:(id)sender;
@@ -51,9 +52,8 @@
     [super viewDidLoad];
 
     [self setupRegionHeaderScroll];
+    [self setupRegionDescription];
     [self setupRegionContentScroll];
-    
-    [[self view] bringSubviewToFront:self.descriptionTextView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,7 +65,7 @@
 - (void) setupRegionHeaderScroll
 {
     self.regionHeaderScrollView = nil;
-    self.regionHeaderScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 60.0f, 320.0f, 100.0f)];
+    self.regionHeaderScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 196.0f)];
     [self.regionHeaderScrollView setPagingEnabled:YES];
     [self.regionHeaderScrollView setScrollEnabled:YES];
     
@@ -101,13 +101,23 @@
                                   andMaxPageSize:self.zone.headerImages.count];
 }
 
+#pragma mark - Region Description
+- (void) setupRegionDescription
+{
+    [[self view] bringSubviewToFront:self.descriptionTextView];
+    
+    [self.descriptionTextView setText:self.zone.zoneDescription];
+    [self.descriptionTextView setTextColor:[UIColor whiteColor]];
+}
+
 #pragma mark - Region Content
 - (void) setupRegionContentScroll
 {
     self.regionContentScrollView = nil;
-    self.regionContentScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 369.0f, 320.0f, 192.0f)];
+    self.regionContentScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 389.0f, 320.0f, 180.0f)];
     [self.regionContentScrollView setPagingEnabled:YES];
     [self.regionContentScrollView setScrollEnabled:YES];
+    [self.regionContentScrollView setBounces:NO];
     [self.regionContentScrollView setDelegate:self];
     
     [self.view addSubview:self.regionContentScrollView];
@@ -161,9 +171,12 @@
 {
     [UIView animateWithDuration:1.1f
                      animations:^{
+                         
+                         self.regionContentScrollView.alpha = self.isTextExpanded ? 1.0f : 0.0f;
+                         self.regionContentPageControl.alpha = self.isTextExpanded ? 1.0f : 0.0f;
+                         
                          CGRect frame = self.descriptionTextView.frame;
-                         CGFloat missingHeight = (self.view.frame.size.height - 8.0f) - (self.descriptionTextView.frame.size.height*2.0f);
-                         frame.size.height = self.isTextExpanded ? 175.0f : (missingHeight + frame.size.height);
+                         frame.size.height = self.isTextExpanded ? 128.0f : 320.0f;
                          self.descriptionTextView.frame = frame;
                          
                          self.isTextExpanded = !self.isTextExpanded;

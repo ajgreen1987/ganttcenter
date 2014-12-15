@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Gantt Center. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "HBGCBaseViewController.h"
 
 #define HBGCTutorial_NIB @"HBGCTutorialViewController"
 
-@interface HBGCTutorialViewController : UIViewController <HBGCBeaconManagerDelegate>
+@interface HBGCTutorialViewController : HBGCBaseViewController <HBGCBeaconManagerDelegate>
 
 @end

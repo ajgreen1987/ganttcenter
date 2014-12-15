@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Gantt Center. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "HBGCBaseViewController.h"
 
 #define HBGCSOCIALREGION_NIB @"HBGCSocialRegionViewController"
 
 @class HBGCZoneObject;
 
-@interface HBGCSocialRegionViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface HBGCSocialRegionViewController : HBGCBaseViewController <UITableViewDelegate, UITableViewDataSource>
 
 - (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andZone:(HBGCZoneObject*)aZone;
 

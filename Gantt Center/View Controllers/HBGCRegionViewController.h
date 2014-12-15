@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Gantt Center. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "HBGCBaseViewController.h"
 
 #define HBGCRegion_NIB @"HBGCRegionViewController"
 
 @class HBGCZoneObject;
 
-@interface HBGCRegionViewController : UIViewController <UIScrollViewDelegate>
+@interface HBGCRegionViewController : HBGCBaseViewController <UIScrollViewDelegate>
 
 - (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andZone:(HBGCZoneObject*)aZone;
 

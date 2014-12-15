@@ -26,7 +26,7 @@
     }
     
     // Need a No Network Check
-    if ([ESTBeaconManager authorizationStatus] == kCLAuthorizationStatusNotDetermined)
+    if ([ESTBeaconManager authorizationStatus] == (kCLAuthorizationStatusNotDetermined|kCLAuthorizationStatusDenied))
     {
         // Show Tutorial Controller
         HBGCTutorialStartViewController *tutorialController = [[HBGCTutorialStartViewController alloc] initWithNibName:HBGCTUTORIALSTART_NIB

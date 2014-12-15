@@ -12,5 +12,6 @@
 @interface HBGCZoneCollectionViewCell : UICollectionViewCell
 
 @property (nonatomic, weak) IBOutlet AJGAsyncImageView *imageView;
+@property (nonatomic, weak) IBOutlet UILabel *zoneTitle;
 
 @end
