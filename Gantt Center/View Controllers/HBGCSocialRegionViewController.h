@@ -12,10 +12,14 @@
 
 @class HBGCZoneObject;
 
-@interface HBGCSocialRegionViewController : HBGCBaseViewController <UITableViewDelegate, UITableViewDataSource>
+@interface HBGCSocialRegionViewController : HBGCBaseViewController
 
 - (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andZone:(HBGCZoneObject*)aZone;
 
-- (IBAction) handleSocialButtonsTouchUpInside:(id)sender;
+- (IBAction) handleEmailTouchUpInside:(id)sender;
+- (IBAction) handleFacebookTouchUpInside:(id)sender;
+- (IBAction) handleTwitterTouchUpInside:(id)sender;
+- (IBAction) handleYouTubeTouchUpInside:(id)sender;
+- (IBAction) handleDismissTouchUpInside:(id)sender;
 
 @end

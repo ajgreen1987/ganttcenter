@@ -33,15 +33,18 @@
 #define POST_KEY @"Post"
 #define NETWORKS_KEY @"Networks"
 
+#define SCROLL_VIEW_ANIMATION_DURATION 8.0f
+#define SCROLL_VIEW_FADE_DURATION 1.0f
+
 
 @interface HBGCApplicationManager : NSObject <HBGCNetworkDelegate>
 
 + (instancetype) appManager;
 + (void) autoScrollScrollView:(UIScrollView*)aScrollView andMaxPageSize:(NSInteger)aMaxPageSize;
++ (void) autoScrollScrollView:(UIScrollView*)aScrollView andMaxPageSize:(NSInteger)aMaxPageSize withFading:(BOOL)shouldFade;
++ (void) launchURL:(NSURL*)anURL orShowErrorMessage:(NSString*)aMessage;
 
 - (MONActivityIndicatorView*) currentActivityIndicator;
-
-
 
 @property (nonatomic, strong) HBGCNetworkManager *networkManager;
 @property (nonatomic, strong) HBGCBeaconManager *beaconManager;

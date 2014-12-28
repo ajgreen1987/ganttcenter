@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DA03BD581A4F33C600B8321C /* libEstimoteSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB24E7B1A3548AC00768B13 /* libEstimoteSDK.a */; };
 		DA03BD5B1A4F3E1E00B8321C /* AJGFadingSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DA03BD5A1A4F3E1E00B8321C /* AJGFadingSegue.m */; };
+		DA03BD5F1A50534500B8321C /* HBGCGeneralInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA03BD5E1A50534500B8321C /* HBGCGeneralInformationViewController.m */; };
 		DA1B5BB71A216943006D317A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1B5BB61A216943006D317A /* main.m */; };
 		DA1B5BBA1A216943006D317A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1B5BB91A216943006D317A /* AppDelegate.m */; };
 		DA1B5BBD1A216943006D317A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1B5BBC1A216943006D317A /* ViewController.m */; };
@@ -63,6 +64,8 @@
 /* Begin PBXFileReference section */
 		DA03BD591A4F3E1E00B8321C /* AJGFadingSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJGFadingSegue.h; sourceTree = "<group>"; };
 		DA03BD5A1A4F3E1E00B8321C /* AJGFadingSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJGFadingSegue.m; sourceTree = "<group>"; };
+		DA03BD5D1A50534500B8321C /* HBGCGeneralInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCGeneralInformationViewController.h; sourceTree = "<group>"; };
+		DA03BD5E1A50534500B8321C /* HBGCGeneralInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCGeneralInformationViewController.m; sourceTree = "<group>"; };
 		DA1B5BB11A216943006D317A /* Gantt Center.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gantt Center.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1B5BB51A216943006D317A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA1B5BB61A216943006D317A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -168,6 +171,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA03BD5C1A504F1C00B8321C /* About */ = {
+			isa = PBXGroup;
+			children = (
+				DA03BD5D1A50534500B8321C /* HBGCGeneralInformationViewController.h */,
+				DA03BD5E1A50534500B8321C /* HBGCGeneralInformationViewController.m */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
 		DA1B5BA81A216943006D317A = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +263,7 @@
 		DA1B5BDB1A216AA7006D317A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DA03BD5C1A504F1C00B8321C /* About */,
 				DA3A38C21A4F1CE0006D901E /* Loading */,
 				DAC940B61A3693F6008E5B4B /* Tutorial */,
 				DAA5F6EE1A2FFF1C00AFB389 /* Region */,
@@ -506,6 +519,7 @@
 			files = (
 				DA874AD81A33F5A500850E2F /* HBGCHeaderObject.m in Sources */,
 				DAF4998D1A2E9873000E27F3 /* AJGAsyncImageView.m in Sources */,
+				DA03BD5F1A50534500B8321C /* HBGCGeneralInformationViewController.m in Sources */,
 				DA3AE2151A2C0CD500816EB0 /* MONActivityIndicatorView.m in Sources */,
 				DA1B5BE21A216BCE006D317A /* HBGCApplicationManager.m in Sources */,
 				DAC940BF1A369E45008E5B4B /* HBGCTutorialViewController.m in Sources */,

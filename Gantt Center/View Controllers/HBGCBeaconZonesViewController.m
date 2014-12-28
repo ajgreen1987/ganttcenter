@@ -100,6 +100,7 @@
     
     
     [cell.imageView setImage:zone.thumbnail];
+    [cell.zoneTitle setText:zone.zoneTitle];
     
     return cell;
 }
@@ -135,8 +136,9 @@
                                                                                                         bundle:nil
                                                                                                        andZone:(HBGCSocialZoneObject*)zone];
         
-        [[self navigationController] pushViewController:socialRegion
-                                               animated:YES];
+        [self presentViewController:socialRegion
+                           animated:YES
+                         completion:nil];
     }
 }
 

@@ -11,5 +11,7 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction) handleGeneralInformationTouchUpInside:(id)sender;
+
 @end
 

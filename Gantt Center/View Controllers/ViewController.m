@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) UIScrollView *upcomingEventsScrollView;
 @property (nonatomic, strong) NSArray *upcomingEvents;
+@property (nonatomic, strong) NSTimer *scrollTimer;
 
 - (void) setupScrollView;
 - (void) autoScrollUpcomingEvents;
@@ -28,12 +29,12 @@
 {
     [super viewDidLoad];
     
-    [self setupScrollView];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(setupScrollView)
                                                  name:NOTIFICATION_PARSED_JSON
                                                object:nil];
+    
+    [self setupScrollView];
     
     /*
      [[self view] addSubview:[[HBGCApplicationManager appManager] currentActivityIndicator]];
@@ -47,6 +48,21 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    // Automatically Scroll
+    self.scrollTimer = [NSTimer scheduledTimerWithTimeInterval:SCROLL_VIEW_ANIMATION_DURATION
+                                     target:self
+                                   selector:@selector(autoScrollUpcomingEvents)
+                                   userInfo:nil
+                                    repeats:YES];
+}
+
+- (void) viewDidDisappear:(BOOL)animated
+{
+    [self.scrollTimer invalidate];
 }
 
 - (void) setupScrollView
@@ -87,13 +103,6 @@
             
             [self.upcomingEventsScrollView addSubview:websiteButton];
         }
-        
-        // Automatically Scroll
-        [NSTimer scheduledTimerWithTimeInterval:5.0
-                                         target:self
-                                       selector:@selector(autoScrollUpcomingEvents)
-                                       userInfo:nil
-                                        repeats:YES];
 }
 
 - (void) autoScrollUpcomingEvents
@@ -110,6 +119,11 @@
     
     HBGCUpcomingEventsObject *currentEvent = (HBGCUpcomingEventsObject*)[self.upcomingEvents objectAtIndex:tag];
     [[UIApplication sharedApplication] openURL:currentEvent.website];
+}
+
+- (IBAction) handleGeneralInformationTouchUpInside:(id)sender
+{
+    [self performSegueWithIdentifier:@"About" sender:self];
 }
 
 

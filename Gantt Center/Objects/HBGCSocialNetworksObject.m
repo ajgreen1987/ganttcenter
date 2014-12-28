@@ -24,4 +24,24 @@
     return self;
 }
 
+- (Network) typeOfNetwork
+{
+    if ([self.networkTitle isEqualToString:@"Facebook"])
+    {
+        return Facebook;
+    }
+    else if ([self.networkTitle isEqualToString:@"Twitter"])
+    {
+        return Twitter;
+    }
+    else if ([self.networkTitle isEqualToString:@"Email"])
+    {
+        return Email;
+    }
+    else
+    {
+        return Youtube;
+    }
+}
+
 @end

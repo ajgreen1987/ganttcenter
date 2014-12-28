@@ -23,6 +23,7 @@
 @property (nonatomic, strong) UIScrollView *regionHeaderScrollView;
 @property (nonatomic, strong) UIScrollView *regionContentScrollView;
 @property (nonatomic, strong) UIPageControl *regionContentPageControl;
+@property (nonatomic, strong) NSTimer *scrollTimer;
 
 - (IBAction) handleExpandingButtonTouchUpInside:(id)sender;
 - (void) setupRegionHeaderScroll;
@@ -62,6 +63,13 @@
     [super viewDidAppear:animated];
     
     [self makeSelfBeaconDelegate];
+    
+    // Automatically Scroll
+    self.scrollTimer = [NSTimer scheduledTimerWithTimeInterval:SCROLL_VIEW_ANIMATION_DURATION
+                                                        target:self
+                                                      selector:@selector(autoScrollRegionHeader)
+                                                      userInfo:nil
+                                                       repeats:YES];
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -69,6 +77,11 @@
     [super viewWillDisappear:animated];
     
     [[[HBGCApplicationManager appManager] beaconManager] setDelegate:nil];
+}
+
+- (void) viewDidDisappear:(BOOL)animated
+{
+    [self.scrollTimer invalidate];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -103,7 +116,7 @@
     }
     
     // Automatically Scroll
-    [NSTimer scheduledTimerWithTimeInterval:5.0
+    [NSTimer scheduledTimerWithTimeInterval:SCROLL_VIEW_ANIMATION_DURATION
                                      target:self
                                    selector:@selector(autoScrollRegionHeader)
                                    userInfo:nil
@@ -113,7 +126,8 @@
 - (void) autoScrollRegionHeader
 {
     [HBGCApplicationManager autoScrollScrollView:self.regionHeaderScrollView
-                                  andMaxPageSize:self.zone.headerImages.count];
+                                  andMaxPageSize:self.zone.headerImages.count
+                                      withFading:YES];
 }
 
 #pragma mark - Region Description

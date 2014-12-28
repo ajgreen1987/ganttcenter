@@ -35,65 +35,68 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - UITableview Data Source
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.zone.socialNetworks.count;
-}
-
-- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 100.0f;
-}
-
-- (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *identifier = @"Cells";
-    
-    UITableViewCell *toReturn = [tableView dequeueReusableCellWithIdentifier:identifier];
-    
-    if (toReturn == nil)
-    {
-        toReturn = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                          reuseIdentifier:identifier];
-        
-        [toReturn setBackgroundColor:[UIColor clearColor]];
-        
-        AJGAsyncImageView *image = [[AJGAsyncImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 100.0f)];
-        
-        [[toReturn contentView] addSubview:image];
-        
-        HBGCSocialNetworksObject *network = (HBGCSocialNetworksObject*)[self.zone.socialNetworks objectAtIndex:indexPath.row];
-        
-        [image beginLoadingImageFromURL:network.thumbnail];
-    }
-    
-    return toReturn;
-}
-
-#pragma mark - UITableview Delegate
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    HBGCSocialNetworksObject *network = (HBGCSocialNetworksObject*)[self.zone.socialNetworks objectAtIndex:indexPath.row];
-    
-    [[UIApplication sharedApplication] openURL:network.networkURL];
-}
-
 #pragma mark - Post to Social
-- (IBAction) handleSocialButtonsTouchUpInside:(id)sender
+- (IBAction) handleEmailTouchUpInside:(id)sender
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Coming Soon..."
-                                                    message:@"Functionality Pending Development"
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    
-    [alert show];
+    for (HBGCSocialNetworksObject *network in self.zone.socialNetworks)
+    {
+        if (network.typeOfNetwork == Email)
+        {
+            [HBGCApplicationManager launchURL:network.networkURL
+                           orShowErrorMessage:@"Email is unavailble"];
+            break;
+        }
+    }
+}
+
+- (IBAction) handleFacebookTouchUpInside:(id)sender
+{
+    for (HBGCSocialNetworksObject *network in self.zone.socialNetworks)
+    {
+        if (network.typeOfNetwork == Facebook)
+        {
+            [HBGCApplicationManager launchURL:network.networkURL
+                           orShowErrorMessage:@"Facebook is unavailble"];
+            break;
+        }
+    }
+}
+
+- (IBAction) handleTwitterTouchUpInside:(id)sender
+{
+    for (HBGCSocialNetworksObject *network in self.zone.socialNetworks)
+    {
+        if (network.typeOfNetwork == Twitter)
+        {
+            [HBGCApplicationManager launchURL:network.networkURL
+                           orShowErrorMessage:@"Twitter is unavailble"];
+            break;
+        }
+    }
+}
+
+- (IBAction) handleYouTubeTouchUpInside:(id)sender
+{
+    for (HBGCSocialNetworksObject *network in self.zone.socialNetworks)
+    {
+        if (network.typeOfNetwork == Youtube)
+        {
+            [HBGCApplicationManager launchURL:network.networkURL
+                           orShowErrorMessage:@"Youtube is unavailble"];
+            break;
+        }
+    }
+}
+
+- (IBAction) handleDismissTouchUpInside:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
