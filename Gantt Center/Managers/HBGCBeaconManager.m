@@ -60,6 +60,8 @@
     {
         [self.beaconManager startEstimoteBeaconsDiscoveryForRegion:self.region];
     }
+    
+    self.isPrimed = YES;
 }
 
 - (void)beaconManager:(ESTBeaconManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status

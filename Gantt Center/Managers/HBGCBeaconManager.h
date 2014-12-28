@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "ESTBeaconManager.h"
 
-#define AUTO_BEACON_DISTANCE  0.03 // In meters
+#define REGION_BEACON_DISTANCE      17.0f   // In meters
+#define CONTENT_BEACON_DISTANCE     3.0f    // Meters
 
 typedef enum : int
 {
@@ -30,7 +31,10 @@ typedef enum : int
 
 - (id) initWithScanType:(ESTScanType)aScanType;
 - (void) setupBeaconManager;
+- (void) startRangingBeacons;
+- (void) stopRangingBeacons;
 
+@property (nonatomic, assign) BOOL isPrimed;
 @property (nonatomic, weak) id<HBGCBeaconManagerDelegate> delegate;
 @property (nonatomic, strong) NSArray *beaconsArray;
 

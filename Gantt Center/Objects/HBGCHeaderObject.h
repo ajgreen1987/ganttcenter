@@ -12,6 +12,7 @@
 
 - (id) initWithThumbnailImage:(NSString*)anImage;
 
-@property (nonatomic, strong) NSString *thumbnailImage;
+@property (nonatomic, strong) NSString *thumbnailURL;
+@property (nonatomic, strong) UIImage *thumbnail;
 
 @end

@@ -5,6 +5,35 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
+        <!--Loading View Controller-->
+        <scene sceneID="iHj-Bn-Lfx">
+            <objects>
+                <viewController id="LqQ-fd-Csl" customClass="HBGCLoadingViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MrP-p3-eWa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadscreen" id="F1b-Gm-iEI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="fLZ-2u-18V">
+                                <rect key="frame" x="97" y="280" width="127" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TIx-lu-zgx"/>
+                    <connections>
+                        <outlet property="loadingImage" destination="fLZ-2u-18V" id="FPh-HG-9uu"/>
+                        <segue destination="vXZ-lx-hvc" kind="custom" identifier="Landing" customClass="AJGFadingSegue" id="Hct-wy-9k2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t9K-Xo-gYX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-401" y="-143"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="AaU-Sn-ECw">
             <objects>
@@ -14,12 +43,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="AjN-2c-sMu"/>
+                        <segue destination="LqQ-fd-Csl" kind="relationship" relationship="rootViewController" id="4a2-BS-BgT"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zaA-Ia-6Ag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-392.5333333333333" y="-142.94666666666666"/>
+            <point key="canvasLocation" x="-849" y="-148"/>
         </scene>
         <!--Harvey B. Gantt Center-->
         <scene sceneID="ufC-wZ-h7g">
@@ -40,6 +69,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6CA-Nf-blo">
+                                <rect key="frame" x="286" y="20" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="info_button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -68,6 +104,8 @@
     </scenes>
     <resources>
         <image name="Headerlogo" width="1080" height="220"/>
+        <image name="info_button" width="50" height="50"/>
+        <image name="loadscreen" width="1242" height="2208"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

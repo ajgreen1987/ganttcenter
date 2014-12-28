@@ -15,9 +15,11 @@
 - (id) initWithDictionary:(NSDictionary*)aZoneDictionary;
 
 @property (nonatomic, strong) HBGCBeaconObject *beacon;
-@property (nonatomic, strong) NSURL *thumbnail;
+@property (nonatomic, strong) NSURL *thumbnailURL;
+@property (nonatomic, strong) UIImage *thumbnail;
 @property (nonatomic, strong) NSString *zoneDescription;
 @property (nonatomic, strong) NSArray *headerImages;
 @property (nonatomic, strong) NSArray *content;
+@property (nonatomic, strong) NSString *zoneTitle;
 
 @end

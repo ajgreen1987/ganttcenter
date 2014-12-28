@@ -14,7 +14,8 @@
 {
     self = [super init];
     
-    [self setThumbnailImage:anImage];
+    [self setThumbnailURL:anImage];
+    [self setThumbnail:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.thumbnailURL]]]];
     
     return self;
 }

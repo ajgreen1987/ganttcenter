@@ -26,6 +26,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [[[HBGCApplicationManager appManager] beaconManager] setDelegate:nil];
+}
 - (IBAction) handleGetPermissionsTouchUpInside:(id)sender
 {
     [[[HBGCApplicationManager appManager] beaconManager] setupBeaconManager];

@@ -22,29 +22,29 @@
     
     if (self.childViewControllers.count > 0)
     {
-        [self removeOldChildViewController];
-    }
-    
-    // Need a No Network Check
-    if ([ESTBeaconManager authorizationStatus] == (kCLAuthorizationStatusNotDetermined|kCLAuthorizationStatusDenied))
-    {
-        // Show Tutorial Controller
-        HBGCTutorialStartViewController *tutorialController = [[HBGCTutorialStartViewController alloc] initWithNibName:HBGCTUTORIALSTART_NIB
-                                                                                                                bundle:nil];
-        
-        [self addChildViewController:tutorialController];
-        [[self view] addSubview:tutorialController.view];
-        [tutorialController didMoveToParentViewController:self];
+        if (![[self.childViewControllers objectAtIndex:0] isKindOfClass:[HBGCBeaconZonesViewController class]])
+        {
+            [self removeOldChildViewController];
+            
+            // Or Present the Zone images that have been parsed out
+            HBGCBeaconZonesViewController *beaconController = [[HBGCBeaconZonesViewController alloc] initWithNibName:HBGCBeaconZones_NIB
+                                                                                                              bundle:nil];
+            
+            [self addChildViewController:beaconController];
+            [self.view addSubview:beaconController.view];
+            [beaconController didMoveToParentViewController:self];
+        }
     }
     else
     {
-        // Or Present the Zone images that have been parsed out
-        HBGCBeaconZonesViewController *beaconController = [[HBGCBeaconZonesViewController alloc] initWithNibName:HBGCBeaconZones_NIB
-                                                                                                          bundle:nil];
-        
-        [self addChildViewController:beaconController];
-        [self.view addSubview:beaconController.view];
-        [beaconController didMoveToParentViewController:self];
+
+            // Or Present the Zone images that have been parsed out
+            HBGCBeaconZonesViewController *beaconController = [[HBGCBeaconZonesViewController alloc] initWithNibName:HBGCBeaconZones_NIB
+                                                                                                              bundle:nil];
+            
+            [self addChildViewController:beaconController];
+            [self.view addSubview:beaconController.view];
+            [beaconController didMoveToParentViewController:self];
     }
 }
 

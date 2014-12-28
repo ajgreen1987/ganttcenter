@@ -20,7 +20,9 @@
     {
         // Setup properties
         [self setBeacon:[[HBGCBeaconObject alloc] initWithDictionary:[aZoneDictionary objectForKey:BEACON_KEY]]];
-        [self setThumbnail:[NSURL URLWithString:[aZoneDictionary objectForKey:THUMBNAIL_KEY]]];
+        [self setThumbnailURL:[NSURL URLWithString:[aZoneDictionary objectForKey:THUMBNAIL_KEY]]];
+        [self setThumbnail:[UIImage imageWithData:[NSData dataWithContentsOfURL:self.thumbnailURL]]];
+        [self setZoneTitle:[aZoneDictionary objectForKey:TITLE_KEY]];
         [self setZoneDescription:[aZoneDictionary objectForKey:DESCRIPTION_KEY]];
         [self parseOutHeaders:[aZoneDictionary objectForKey:HEADERS_KEY]];
         [self parseOutContent:[aZoneDictionary objectForKey:CONTENT_KEY]];

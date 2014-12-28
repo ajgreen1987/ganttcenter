@@ -7,6 +7,8 @@
 //
 
 #import "HBGCApplicationManager.h"
+#import "HBGCSocialZoneObject.h"
+#import "HBGCUpcomingEventsObject.h"
 
 @interface HBGCApplicationManager ()
 
@@ -62,9 +64,82 @@ static HBGCApplicationManager *sharedAppManager;
     self.currentEvents = [aResponse objectForKey:UPCOMING_EVENTS_KEY];
     self.currentZones = [aResponse objectForKey:ZONES_KEY];
     
+    [self buildOutUpcomingEventsViewController];
+    [self parseOutZones];
+    
     // All instances of TestClass will be notified
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_PARSED_JSON
                                                         object:self];
+}
+
+#pragma mark - Scroll View Setup
+- (void) buildOutUpcomingEventsViewController
+{
+    NSArray *events = self.currentEvents;
+    
+    if ([events count] > 0)
+    {
+        self.events = [[NSMutableArray alloc] initWithObjects:nil];
+        
+        for (NSDictionary *dictionary in events)
+        {
+            NSString *thumbnailURL = [dictionary objectForKey:THUMBNAIL_KEY];
+            NSString *websiteURL = [dictionary objectForKey:WEBSITE_KEY];
+            
+            HBGCUpcomingEventsObject *newEvent = [[HBGCUpcomingEventsObject alloc] initWithImage:thumbnailURL
+                                                                                      andWebsite:[NSURL URLWithString:websiteURL]];
+            
+            [self.events addObject:newEvent];
+        }
+    }
+}
+
+- (void) parseOutZones
+{
+    NSArray *zones = self.currentZones;
+    
+    if ([zones count] > 0)
+    {
+        self.zones = [[NSMutableArray alloc] initWithObjects:nil];
+        
+        NSMutableArray *intermediateThumbnail = [[NSMutableArray alloc] initWithObjects:nil];
+        
+        for (NSDictionary *dictionary in zones)
+        {
+            if ([[dictionary allKeys] containsObject:SOCIAL_KEY])
+            {
+                HBGCSocialZoneObject *socialZone = [[HBGCSocialZoneObject alloc] initWithDictionary:dictionary];
+                
+                [intermediateThumbnail addObject:socialZone];
+            }
+            else
+            {
+                HBGCZoneObject *zone = [[HBGCZoneObject alloc] initWithDictionary:dictionary];
+                
+                [intermediateThumbnail addObject:zone];
+            }
+        }
+        
+        int counter = 1;
+        
+        for (int i=0; i<intermediateThumbnail.count; i++)
+        {
+            if (i%2==0)
+            {
+                NSMutableArray *toAddTo = [[NSMutableArray alloc] initWithObjects:nil];
+                
+                [toAddTo addObject:[intermediateThumbnail objectAtIndex:i]];
+                
+                [self.zones addObject:toAddTo];
+            }
+            else
+            {
+                NSInteger lastIndex = i-counter;
+                [[self.zones objectAtIndex:lastIndex] addObject:[intermediateThumbnail objectAtIndex:i]];
+                counter++;
+            }
+        }
+    }
 }
 
 
@@ -95,7 +170,7 @@ static HBGCApplicationManager *sharedAppManager;
     {
         [aScrollView scrollRectToVisible:CGRectMake(0, 0, aScrollView.frame.size.width, aScrollView.frame.size.height) animated:YES];
     }
-
+    
 }
 
 @end

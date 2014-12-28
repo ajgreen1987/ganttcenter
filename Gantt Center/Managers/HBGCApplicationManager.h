@@ -11,6 +11,9 @@
 #import "HBGCBeaconManager.h"
 #import "MONActivityIndicatorView.h"
 
+#define GANTT_KEY @"gantt_preference"
+#define AUTO_BEACON_CONTENT @"enabled_preference"
+
 #define NOTIFICATION_PARSED_JSON @"JSON"
 
 #define UPCOMING_EVENTS_KEY @"Events"
@@ -35,8 +38,9 @@
 
 + (instancetype) appManager;
 + (void) autoScrollScrollView:(UIScrollView*)aScrollView andMaxPageSize:(NSInteger)aMaxPageSize;
-+ (void) startBeaconManager;
+
 - (MONActivityIndicatorView*) currentActivityIndicator;
+
 
 
 @property (nonatomic, strong) HBGCNetworkManager *networkManager;
@@ -44,5 +48,7 @@
 @property (nonatomic, strong) NSDictionary *currentJSON;
 @property (nonatomic, strong) NSArray *currentEvents;
 @property (nonatomic, strong) NSArray *currentZones;
+@property (nonatomic, strong) NSMutableArray *zones;
+@property (nonatomic, strong) NSMutableArray *events;
 
 @end

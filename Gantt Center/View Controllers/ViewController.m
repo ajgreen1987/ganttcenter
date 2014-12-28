@@ -14,10 +14,8 @@
 @interface ViewController ()
 
 @property (nonatomic, strong) UIScrollView *upcomingEventsScrollView;
-@property (nonatomic, strong) NSMutableArray *upcomingEvents;
-@property (nonatomic, strong) NSMutableArray *eventImages;
+@property (nonatomic, strong) NSArray *upcomingEvents;
 
-- (void) buildOutUpcomingEventsViewController;
 - (void) setupScrollView;
 - (void) autoScrollUpcomingEvents;
 
@@ -33,12 +31,9 @@
     [self setupScrollView];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(buildOutUpcomingEventsViewController)
+                                             selector:@selector(setupScrollView)
                                                  name:NOTIFICATION_PARSED_JSON
                                                object:nil];
-    
-    self.upcomingEvents = [[NSMutableArray alloc] initWithObjects:nil];
-    self.eventImages = [[NSMutableArray alloc] initWithObjects:nil];
     
     /*
      [[self view] addSubview:[[HBGCApplicationManager appManager] currentActivityIndicator]];
@@ -46,9 +41,6 @@
      [[[HBGCApplicationManager appManager] currentActivityIndicator] setCenter:self.view.center];
      */
     
-    NSURL *url = [NSURL URLWithString:@"http://hbgcvewdio.s3.amazonaws.com/gantt.json"];
-    
-    [[[HBGCApplicationManager appManager] networkManager] retrieveJSONFromURL:url];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,48 +49,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Scroll View Setup
-- (void) buildOutUpcomingEventsViewController
-{
-    NSArray *events = [[HBGCApplicationManager appManager] currentEvents];
-    
-    for (NSDictionary *dictionary in events)
-    {
-        NSString *thumbnailURL = [dictionary objectForKey:THUMBNAIL_KEY];
-        NSString *websiteURL = [dictionary objectForKey:WEBSITE_KEY];
-        
-        HBGCUpcomingEventsObject *newEvent = [[HBGCUpcomingEventsObject alloc] initWithImage:thumbnailURL
-                                                                                  andWebsite:[NSURL URLWithString:websiteURL]];
-        
-        [self.upcomingEvents addObject:newEvent];
-        [self.eventImages addObject:thumbnailURL];
-    }
-    
-    [self setupScrollView];
-}
-
 - (void) setupScrollView
 {
-    NSInteger imagesCount = self.eventImages.count;
+        self.upcomingEvents = [[NSArray alloc] initWithArray:[[HBGCApplicationManager appManager] events]];
+    NSInteger imagesCount = self.upcomingEvents.count;
     
-    if (imagesCount == 0)
-    {
-        self.upcomingEventsScrollView = nil;
-        self.upcomingEventsScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 65.0f, 320.0f, 100.0f)];
-        [self.upcomingEventsScrollView setPagingEnabled:YES];
-        [self.upcomingEventsScrollView setScrollEnabled:YES];
-        
-        [self.view addSubview:self.upcomingEventsScrollView];
-        
-        self.upcomingEventsScrollView.contentSize = CGSizeMake(self.upcomingEventsScrollView.frame.size.width * imagesCount, self.upcomingEventsScrollView.frame.size.height);
-        
-        AJGAsyncImageView *imageView = [[AJGAsyncImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 100.0)];
-        [self.upcomingEventsScrollView addSubview:imageView];
-        
-        [imageView setupActivityIndicatorAtCenter:imageView.center];
-    }
-    else
-    {
         [self.upcomingEventsScrollView removeFromSuperview];
         self.upcomingEventsScrollView = nil;
         self.upcomingEventsScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 65.0f, 320.0f, 100.0f)];
@@ -117,10 +72,10 @@
             frame.size = self.upcomingEventsScrollView.frame.size;
             
             // Should refactor this into a view controller with these items
-            AJGAsyncImageView *imageView = [[AJGAsyncImageView alloc] initWithFrame:frame];
+            UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
             [self.upcomingEventsScrollView addSubview:imageView];
             
-            [imageView beginLoadingImageFromString:[self.eventImages objectAtIndex:i]];
+            [imageView setImage:[[self.upcomingEvents objectAtIndex:i] thumbnail]];
             
             UIButton *websiteButton = [UIButton buttonWithType:UIButtonTypeCustom];
             
@@ -139,13 +94,12 @@
                                        selector:@selector(autoScrollUpcomingEvents)
                                        userInfo:nil
                                         repeats:YES];
-    }
 }
 
 - (void) autoScrollUpcomingEvents
 {
     [HBGCApplicationManager autoScrollScrollView:self.upcomingEventsScrollView
-                                  andMaxPageSize:self.eventImages.count];
+                                  andMaxPageSize:self.upcomingEvents.count];
 }
 
 #pragma mark - Website Button handler

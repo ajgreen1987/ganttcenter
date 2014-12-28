@@ -21,7 +21,9 @@
 
 @interface HBGCBeaconZonesViewController ()
 
-@property (nonatomic, strong) NSMutableArray *zoneThumbnails;
+@property (nonatomic, strong) NSArray *zoneThumbnails;
+
+- (void) makeSelfBeaconDelegate;
 
 @end
 
@@ -31,7 +33,7 @@
 {
     [super viewDidLoad];
     
-    self.zoneThumbnails = [[NSMutableArray alloc] initWithObjects:nil];
+    self.zoneThumbnails = [[NSArray alloc] initWithArray:[[HBGCApplicationManager appManager] zones]];
     
     [self.collectionView setDelegate:self];
     [self.collectionView setDataSource:self];
@@ -47,18 +49,7 @@
     
     [self.collectionView setCollectionViewLayout:flowLayout];
     
-    if ([[[HBGCApplicationManager appManager] currentZones] count] < 1)
-    {
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(buildOutZones)
-                                                     name:NOTIFICATION_PARSED_JSON
-                                                   object:nil];
-    }
-    else
-    {
-        [self buildOutZones];
-    }
+    [[self collectionView] reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,56 +58,11 @@
 }
 
 #pragma mark - Parse out zone
-- (void) buildOutZones
-{
-    NSArray *zones = [[HBGCApplicationManager appManager] currentZones];
-    NSMutableArray *intermediateThumbnail = [[NSMutableArray alloc] initWithObjects:nil];
-    
-    for (NSDictionary *dictionary in zones)
-    {
-        if ([[dictionary allKeys] containsObject:SOCIAL_KEY])
-        {
-            HBGCSocialZoneObject *socialZone = [[HBGCSocialZoneObject alloc] initWithDictionary:dictionary];
-            
-            [intermediateThumbnail addObject:socialZone];
-        }
-        else
-        {
-            HBGCZoneObject *zone = [[HBGCZoneObject alloc] initWithDictionary:dictionary];
-            
-            [intermediateThumbnail addObject:zone];
-        }
-    }
-    
-    int counter = 1;
-    
-    for (int i=0; i<intermediateThumbnail.count; i++)
-    {
-        if (i%2==0)
-        {
-            NSMutableArray *toAddTo = [[NSMutableArray alloc] initWithObjects:nil];
-            
-            [toAddTo addObject:[intermediateThumbnail objectAtIndex:i]];
-            
-            [self.zoneThumbnails addObject:toAddTo];
-        }
-        else
-        {
-            NSInteger lastIndex = i-counter;
-            [[self.zoneThumbnails objectAtIndex:lastIndex] addObject:[intermediateThumbnail objectAtIndex:i]];
-            counter++;
-        }
-    }
-    
-    [[self collectionView] reloadData];
-    
-}
-
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
-    [[[HBGCApplicationManager appManager] beaconManager] setDelegate:self];
+    [self makeSelfBeaconDelegate];
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -125,6 +71,7 @@
     
     [[[HBGCApplicationManager appManager] beaconManager] setDelegate:nil];
 }
+
 
 #pragma mark - UICollectionView Data Source
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -152,7 +99,7 @@
     HBGCZoneObject *zone = (HBGCZoneObject*)[images objectAtIndex:row];
     
     
-    [cell.imageView beginLoadingImageFromURL:zone.thumbnail];
+    [cell.imageView setImage:zone.thumbnail];
     
     return cell;
 }
@@ -194,26 +141,41 @@
 }
 
 #pragma mark - Beacon Delegate
+- (void) makeSelfBeaconDelegate
+{
+    if (![[[HBGCApplicationManager appManager] beaconManager] isPrimed])
+    {
+        [[[HBGCApplicationManager appManager] beaconManager] setupBeaconManager];
+    }
+    
+    // Delay execution of my block for 10 seconds.
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2.0f * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [[[HBGCApplicationManager appManager] beaconManager] setDelegate:self];
+    });
+}
+
 - (void) allBeaconsDiscovered
 {
-    // The closest beacon will be at zero
-    ESTBeacon *closestBeacon = (ESTBeacon*)[[[[HBGCApplicationManager appManager] beaconManager] beaconsArray] objectAtIndex:0];
-    NSString *closestBeaconMajorID = [NSString stringWithFormat:@"%@",[closestBeacon major]];
-    NSString *closestBeaconMinorID = [NSString stringWithFormat:@"%@",[closestBeacon minor]];
-    
-    // Compare the beacons to the zones beacon
-    for (NSArray *zoneArray in self.zoneThumbnails)
+    if([[[HBGCApplicationManager appManager] beaconManager]beaconsArray].count > 0)
     {
-        for (HBGCZoneObject *zone in zoneArray)
+        // The closest beacon will be at zero
+        ESTBeacon *closestBeacon = (ESTBeacon*)[[[[HBGCApplicationManager appManager] beaconManager] beaconsArray] objectAtIndex:0];
+        NSString *closestBeaconMajorID = [NSString stringWithFormat:@"%@",[closestBeacon major]];
+        NSString *closestBeaconMinorID = [NSString stringWithFormat:@"%@",[closestBeacon minor]];
+        
+        // Compare the beacons to the zones beacon
+        for (NSArray *zoneArray in self.zoneThumbnails)
         {
-            
-            HBGCBeaconObject *beacon = zone.beacon;
-            
-            if ([[beacon majorID] isEqualToString:closestBeaconMajorID] && [[beacon minorID] isEqualToString:closestBeaconMinorID] && ([[closestBeacon distance] floatValue] < AUTO_BEACON_DISTANCE))
+            for (HBGCZoneObject *zone in zoneArray)
             {
-                // Present the beacon for index Path
-                [self selectZoneForIndexPath:[NSIndexPath indexPathForRow:[zoneArray indexOfObject:zone]
-                                                                inSection:0]];
+                HBGCBeaconObject *beacon = zone.beacon;
+                
+                if ([[beacon majorID] isEqualToString:closestBeaconMajorID] && [[beacon minorID] isEqualToString:closestBeaconMinorID] && ([[closestBeacon distance] floatValue] < REGION_BEACON_DISTANCE))
+                {
+                    // Present the beacon for index Path
+                    [self selectZoneForIndexPath:[NSIndexPath indexPathForRow:[zoneArray indexOfObject:zone]
+                                                                    inSection:0]];
+                }
             }
         }
     }
