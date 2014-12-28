@@ -16,4 +16,6 @@
 
 - (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andZone:(HBGCZoneObject*)aZone;
 
+- (IBAction) handleSocialButtonsTouchUpInside:(id)sender;
+
 @end

@@ -11,6 +11,7 @@
 #import "HBGCHeaderObject.h"
 #import "AJGAsyncImageView.h"
 #import "HBGCContentObject.h"
+#import "HBGCBeaconObject.h"
 
 @interface HBGCRegionViewController ()
 
@@ -50,10 +51,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     [self setupRegionHeaderScroll];
     [self setupRegionDescription];
     [self setupRegionContentScroll];
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self makeSelfBeaconDelegate];
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [[[HBGCApplicationManager appManager] beaconManager] setDelegate:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -121,7 +136,7 @@
     [self.regionContentScrollView setDelegate:self];
     
     [self.view addSubview:self.regionContentScrollView];
-
+    
     self.regionContentPageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0.0f, 530.0f, 320.0f, 40.0f)];
     
     [self.regionContentPageControl setNumberOfPages:self.zone.content.count];
@@ -191,10 +206,51 @@
     
     NSURL *contentURL = content.contentURL;
     MPMoviePlayerViewController *movieController = [[MPMoviePlayerViewController alloc]
-                                      initWithContentURL:contentURL];
+                                                    initWithContentURL:contentURL];
     
     [self.navigationController presentMoviePlayerViewControllerAnimated:movieController];
     
+}
+
+#pragma mark - Beacon Delegate
+- (void) makeSelfBeaconDelegate
+{
+    if (![[[HBGCApplicationManager appManager] beaconManager] isPrimed])
+    {
+        [[[HBGCApplicationManager appManager] beaconManager] setupBeaconManager];
+    }
+    
+    // Delay execution of my block for 10 seconds.
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2.0f * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [[[HBGCApplicationManager appManager] beaconManager] setDelegate:self];
+    });
+}
+
+- (void) allBeaconsDiscovered
+{
+    if([[[HBGCApplicationManager appManager] beaconManager]beaconsArray].count > 0)
+    {
+        // The closest beacon will be at zero
+        ESTBeacon *closestBeacon = (ESTBeacon*)[[[[HBGCApplicationManager appManager] beaconManager] beaconsArray] objectAtIndex:0];
+        NSString *closestBeaconMajorID = [NSString stringWithFormat:@"%@",[closestBeacon major]];
+        NSString *closestBeaconMinorID = [NSString stringWithFormat:@"%@",[closestBeacon minor]];
+        
+        // Compare the beacons to the zones beacon
+        for (HBGCContentObject *content in self.zone.content)
+        {
+            HBGCBeaconObject *beacon = content.beacon;
+            
+            if ([[beacon majorID] isEqualToString:closestBeaconMajorID] && [[beacon minorID] isEqualToString:closestBeaconMinorID] && ([[closestBeacon distance] floatValue] < CONTENT_BEACON_DISTANCE))
+            {
+                // Create single method form button call for this
+                NSURL *contentURL = content.contentURL;
+                MPMoviePlayerViewController *movieController = [[MPMoviePlayerViewController alloc]
+                                                                initWithContentURL:contentURL];
+                
+                [self.navigationController presentMoviePlayerViewControllerAnimated:movieController];
+            }
+        }
+    }
 }
 
 @end

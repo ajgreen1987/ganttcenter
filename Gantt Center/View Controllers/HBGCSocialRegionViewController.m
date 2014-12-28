@@ -84,4 +84,16 @@
     [[UIApplication sharedApplication] openURL:network.networkURL];
 }
 
+#pragma mark - Post to Social
+- (IBAction) handleSocialButtonsTouchUpInside:(id)sender
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Coming Soon..."
+                                                    message:@"Functionality Pending Development"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    
+    [alert show];
+}
+
 @end
