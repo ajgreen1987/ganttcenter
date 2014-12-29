@@ -19,6 +19,7 @@
 
 
 @property (nonatomic, assign) BOOL isTextExpanded;
+@property (nonatomic, weak) IBOutlet UILabel *zoneTitle;
 @property (nonatomic, weak) IBOutlet UITextView *descriptionTextView;
 @property (nonatomic, weak) IBOutlet UIButton *expandingButton;
 @property (nonatomic, strong) HBGCZoneObject *zone;
@@ -96,11 +97,15 @@
 #pragma mark - Region Header
 - (void) setupRegionHeaderScroll
 {
+    
+    [self.zoneTitle setText:[self.zone zoneTitle]];
+    
     self.regionHeaderScrollView = nil;
     self.regionHeaderScrollView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 196.0f)];
     [self.regionHeaderScrollView setUserInteractionEnabled:NO];
     
-    [self.view addSubview:self.regionHeaderScrollView];
+    [self.view insertSubview:self.regionHeaderScrollView
+                belowSubview:self.zoneTitle];
     
     UIImageView *image = [[UIImageView alloc] initWithFrame:self.regionHeaderScrollView.frame];
     [[self regionHeaderScrollView] addSubview:image];

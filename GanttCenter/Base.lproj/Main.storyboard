@@ -157,12 +157,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Headerlogo" width="1080" height="220"/>
-        <image name="dismiss" width="500" height="500"/>
-        <image name="generainfo_background" width="1242" height="2208"/>
-        <image name="info_button" width="50" height="50"/>
+        <image name="Headerlogo" width="540" height="110"/>
+        <image name="dismiss" width="250" height="250"/>
+        <image name="generainfo_background" width="621" height="1104"/>
+        <image name="info_button" width="25" height="25"/>
         <image name="loadscreen" width="621" height="1104"/>
-        <image name="openinmaps_button" width="519" height="77"/>
+        <image name="openinmaps_button" width="259" height="38"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

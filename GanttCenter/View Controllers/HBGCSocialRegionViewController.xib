@@ -4,6 +4,11 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="SemplicitaPro Bold.otf">
+            <string>SemplicitaPro-Bold</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HBGCSocialRegionViewController">
             <connections>
@@ -97,9 +102,9 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect With The Gantt" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M2E-zB-KQ3">
-                    <rect key="frame" x="54" y="8" width="165" height="214"/>
+                    <rect key="frame" x="54" y="8" width="200" height="214"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
+                    <fontDescription key="fontDescription" name="SemplicitaPro-Bold" family="Semplicita Pro" pointSize="49"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -120,16 +125,16 @@
         </view>
     </objects>
     <resources>
-        <image name="dismiss" width="500" height="500"/>
-        <image name="email_button" width="247" height="172"/>
-        <image name="email_logo" width="506" height="82"/>
-        <image name="facebook_button" width="619" height="101"/>
-        <image name="facebook_logo" width="119" height="223"/>
-        <image name="socialbackground" width="1242" height="2208"/>
-        <image name="twitter_button" width="471" height="70"/>
-        <image name="twitter_logo" width="236" height="195"/>
-        <image name="youtube_button" width="539" height="85"/>
-        <image name="youtube_logo" width="245" height="180"/>
+        <image name="dismiss" width="250" height="250"/>
+        <image name="email_button" width="123" height="86"/>
+        <image name="email_logo" width="253" height="41"/>
+        <image name="facebook_button" width="309" height="50"/>
+        <image name="facebook_logo" width="59" height="111"/>
+        <image name="socialbackground" width="621" height="1104"/>
+        <image name="twitter_button" width="235" height="35"/>
+        <image name="twitter_logo" width="118" height="97"/>
+        <image name="youtube_button" width="269" height="42"/>
+        <image name="youtube_logo" width="122" height="90"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
