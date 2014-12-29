@@ -210,12 +210,15 @@
     [UIView animateWithDuration:1.1f
                      animations:^{
                          
-                         self.regionContentScrollView.alpha = self.isTextExpanded ? 1.0f : 0.0f;
                          self.regionContentPageControl.alpha = self.isTextExpanded ? 1.0f : 0.0f;
                          
                          CGRect frame = self.descriptionTextView.frame;
                          frame.size.height = self.isTextExpanded ? 128.0f : 320.0f;
                          self.descriptionTextView.frame = frame;
+                         
+                         CGRect contentFrame = self.regionContentScrollView.frame;
+                         contentFrame.origin.y = self.isTextExpanded ? 389.0f : self.view.frame.size.height;
+                         self.regionContentScrollView.frame = contentFrame;
                          
                          self.isTextExpanded = !self.isTextExpanded;
                      }];
