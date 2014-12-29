@@ -42,8 +42,10 @@
         {
             NSString *urlString = [website objectForKey:WEBSITE_KEY];
             NSURL *url = [NSURL URLWithString:urlString];
-            [thumbnails addObject:url];
+            UIImage *headerImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+            [thumbnails addObject:headerImage];
         }
+        
         // Parse through json and pull out Website keys
         // Add NSURL headers to Header Images array
         self.headerImages = [[NSArray alloc] initWithArray:thumbnails];

@@ -18,7 +18,8 @@
     {
         [self setNetworkTitle:[aDictionary objectForKey:TITLE_KEY]];
         [self setThumbnail:[NSURL URLWithString:[aDictionary objectForKey:THUMBNAIL_KEY]]];
-        [self setNetworkURL:[NSURL URLWithString:[aDictionary objectForKey:URL_KEY]]];
+        NSString *path = [aDictionary objectForKey:URL_KEY];
+        [self setNetworkURL:[NSURL URLWithString:[path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     }
     
     return self;

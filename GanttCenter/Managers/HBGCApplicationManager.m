@@ -171,40 +171,15 @@ static HBGCApplicationManager *sharedAppManager;
     {
         CGRect frame = CGRectMake(nextPage*aScrollView.frame.size.width, 0, aScrollView.frame.size.width, aScrollView.frame.size.height);
         
-        if (!shouldFade)
-        {
-            
             [aScrollView scrollRectToVisible:frame
                                     animated:YES];
-        }
-        else
-        {
-            [UIView animateWithDuration:SCROLL_VIEW_FADE_DURATION
-                                  delay:0
-                                options:UIViewAnimationOptionTransitionCrossDissolve
-                             animations:^{ [aScrollView scrollRectToVisible:frame
-                                                                   animated:NO]; }
-                             completion:NULL];
-        }
     }
     else
     {
         CGRect frame = CGRectMake(0, 0, aScrollView.frame.size.width, aScrollView.frame.size.height);
         
-        if (!shouldFade)
-        {
             [aScrollView scrollRectToVisible:frame
                                     animated:YES];
-        }
-        else
-        {
-            [UIView animateWithDuration:SCROLL_VIEW_FADE_DURATION
-                                  delay:0
-                                options:UIViewAnimationOptionTransitionCrossDissolve
-                             animations:^{ [aScrollView scrollRectToVisible:frame
-                                                                   animated:NO]; }
-                             completion:NULL];
-        }
 
     }
     

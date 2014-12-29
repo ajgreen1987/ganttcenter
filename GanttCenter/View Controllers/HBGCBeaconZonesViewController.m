@@ -62,7 +62,7 @@
 {
     [super viewDidAppear:animated];
     
-    [self makeSelfBeaconDelegate];
+    //[self makeSelfBeaconDelegate];
 }
 
 - (void) viewWillDisappear:(BOOL)animated

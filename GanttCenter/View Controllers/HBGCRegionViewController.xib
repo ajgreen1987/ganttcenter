@@ -18,10 +18,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="text_background_expand" translatesAutoresizingMaskIntoConstraints="NO" id="3NR-9D-rxA">
-                    <rect key="frame" x="0.0" y="196" width="320" height="569"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="569"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WV4-82-QoE">
-                    <rect key="frame" x="256" y="201" width="44" height="39"/>
+                    <rect key="frame" x="279" y="201" width="33" height="33"/>
                     <state key="normal" image="expand">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -37,16 +37,26 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6X-Qa-EUE">
+                    <rect key="frame" x="8" y="201" width="33" height="33"/>
+                    <state key="normal" image="backbutton">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="handleBackTouchUpInside:" destination="-1" eventType="touchUpInside" id="ikn-Rd-vZu"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="124" y="345"/>
+            <point key="canvasLocation" x="165" y="327"/>
         </view>
     </objects>
     <resources>
-        <image name="expand" width="500" height="500"/>
-        <image name="text_background_expand" width="1080" height="1920"/>
+        <image name="backbutton" width="250" height="250"/>
+        <image name="expand" width="250" height="250"/>
+        <image name="text_background_expand" width="540" height="960"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

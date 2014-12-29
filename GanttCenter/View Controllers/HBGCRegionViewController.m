@@ -13,6 +13,8 @@
 #import "HBGCContentObject.h"
 #import "HBGCBeaconObject.h"
 
+#define SCROLL_IMAGE_TAG 10001
+
 @interface HBGCRegionViewController ()
 
 
@@ -20,12 +22,14 @@
 @property (nonatomic, weak) IBOutlet UITextView *descriptionTextView;
 @property (nonatomic, weak) IBOutlet UIButton *expandingButton;
 @property (nonatomic, strong) HBGCZoneObject *zone;
-@property (nonatomic, strong) UIScrollView *regionHeaderScrollView;
+@property (nonatomic, strong) UIView *regionHeaderScrollView;
 @property (nonatomic, strong) UIScrollView *regionContentScrollView;
 @property (nonatomic, strong) UIPageControl *regionContentPageControl;
 @property (nonatomic, strong) NSTimer *scrollTimer;
+@property (nonatomic, assign) NSInteger imageCounter;
 
 - (IBAction) handleExpandingButtonTouchUpInside:(id)sender;
+- (IBAction) handleBackTouchUpInside:(id)sender;
 - (void) setupRegionHeaderScroll;
 - (void) setupRegionDescription;
 - (void) setupRegionContentScroll;
@@ -62,7 +66,7 @@
 {
     [super viewDidAppear:animated];
     
-    [self makeSelfBeaconDelegate];
+    //[self makeSelfBeaconDelegate];
     
     // Automatically Scroll
     self.scrollTimer = [NSTimer scheduledTimerWithTimeInterval:SCROLL_VIEW_ANIMATION_DURATION
@@ -93,41 +97,46 @@
 - (void) setupRegionHeaderScroll
 {
     self.regionHeaderScrollView = nil;
-    self.regionHeaderScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 196.0f)];
-    [self.regionHeaderScrollView setPagingEnabled:YES];
-    [self.regionHeaderScrollView setScrollEnabled:YES];
+    self.regionHeaderScrollView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 196.0f)];
+    [self.regionHeaderScrollView setUserInteractionEnabled:NO];
     
     [self.view addSubview:self.regionHeaderScrollView];
     
-    self.regionHeaderScrollView.contentSize = CGSizeMake(self.regionHeaderScrollView.frame.size.width * self.zone.headerImages.count, self.regionHeaderScrollView.frame.size.height);
+    UIImageView *image = [[UIImageView alloc] initWithFrame:self.regionHeaderScrollView.frame];
+    [[self regionHeaderScrollView] addSubview:image];
+    [image setTag:SCROLL_IMAGE_TAG];
     
-    for (int i = 0; i < self.zone.headerImages.count; i++)
-    {
-        CGRect frame;
-        frame.origin.x = self.regionHeaderScrollView.frame.size.width * i;
-        frame.origin.y = 0;
-        frame.size = self.regionHeaderScrollView.frame.size;
-        
-        // Should refactor this into a view controller with these items
-        AJGAsyncImageView *imageView = [[AJGAsyncImageView alloc] initWithFrame:frame];
-        [self.regionHeaderScrollView addSubview:imageView];
-        
-        [imageView beginLoadingImageFromURL:[self.zone.headerImages objectAtIndex:i]];
-    }
+    self.imageCounter = 0;
+    
+    [image setImage:[[self.zone headerImages] objectAtIndex:self.imageCounter]];
     
     // Automatically Scroll
-    [NSTimer scheduledTimerWithTimeInterval:SCROLL_VIEW_ANIMATION_DURATION
+    [NSTimer scheduledTimerWithTimeInterval:FADE_ANIMATION_DURATION
                                      target:self
                                    selector:@selector(autoScrollRegionHeader)
                                    userInfo:nil
-                                    repeats:YES];
+                                    repeats:NO];
 }
 
 - (void) autoScrollRegionHeader
 {
-    [HBGCApplicationManager autoScrollScrollView:self.regionHeaderScrollView
-                                  andMaxPageSize:self.zone.headerImages.count
-                                      withFading:YES];
+    UIImageView *scrollImage = (UIImageView*)[self.regionHeaderScrollView viewWithTag:SCROLL_IMAGE_TAG];
+    UIImageView *scrollNextImage = [[UIImageView alloc] initWithFrame:scrollImage.frame];
+    [scrollNextImage setTag:SCROLL_IMAGE_TAG];
+    [scrollNextImage setImage:[[self.zone headerImages] objectAtIndex:self.imageCounter]];
+    
+    [self.regionHeaderScrollView insertSubview:scrollNextImage atIndex:0];
+    
+    [UIView animateWithDuration:FADE_IMAGE_DURATION
+                     animations:^{
+                         [scrollImage setAlpha:0.0f];
+                     } completion:^(BOOL finished)
+                    {
+                         [scrollImage removeFromSuperview];
+                        
+                            self.imageCounter = (self.imageCounter == self.zone.headerImages.count-1) ? 0 : self.imageCounter+1;
+                     }];
+    
 }
 
 #pragma mark - Region Description
@@ -145,7 +154,7 @@
     self.regionContentScrollView = nil;
     self.regionContentScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 389.0f, 320.0f, 180.0f)];
     [self.regionContentScrollView setPagingEnabled:YES];
-    [self.regionContentScrollView setScrollEnabled:YES];
+    [self.regionContentScrollView setScrollEnabled:NO];
     [self.regionContentScrollView setBounces:NO];
     [self.regionContentScrollView setDelegate:self];
     
@@ -210,6 +219,11 @@
                          
                          self.isTextExpanded = !self.isTextExpanded;
                      }];
+}
+
+- (IBAction) handleBackTouchUpInside:(id)sender
+{
+    [[self navigationController] popToRootViewControllerAnimated:YES];
 }
 
 - (void) handleContentButtonTouchUpInside:(id)sender

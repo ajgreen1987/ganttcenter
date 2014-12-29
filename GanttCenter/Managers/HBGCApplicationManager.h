@@ -34,7 +34,8 @@
 #define NETWORKS_KEY @"Networks"
 
 #define SCROLL_VIEW_ANIMATION_DURATION 8.0f
-#define SCROLL_VIEW_FADE_DURATION 1.0f
+#define FADE_ANIMATION_DURATION 8.0f
+#define FADE_IMAGE_DURATION 0.8f
 
 
 @interface HBGCApplicationManager : NSObject <HBGCNetworkDelegate>
