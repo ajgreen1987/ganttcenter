@@ -18,7 +18,8 @@
     if (self)
     {
         [self setBeacon:[[HBGCBeaconObject alloc] initWithDictionary:[aContentDictionary objectForKey:BEACON_KEY]]];
-        [self setThumbnail:[NSURL URLWithString:[aContentDictionary objectForKey:THUMBNAIL_KEY]]];
+        [self setThumbnailURL:[NSURL URLWithString:[aContentDictionary objectForKey:THUMBNAIL_KEY]]];
+        [self setThumbnail:[UIImage imageWithData:[NSData dataWithContentsOfURL:self.thumbnailURL]]];
         [self setTitleText:[aContentDictionary objectForKey:TITLE_KEY]];
         [self setContentURL:[NSURL URLWithString:[aContentDictionary objectForKey:URL_KEY]]];
         

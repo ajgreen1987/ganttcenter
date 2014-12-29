@@ -154,7 +154,7 @@
     self.regionContentScrollView = nil;
     self.regionContentScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 389.0f, 320.0f, 180.0f)];
     [self.regionContentScrollView setPagingEnabled:YES];
-    [self.regionContentScrollView setScrollEnabled:NO];
+    [self.regionContentScrollView setScrollEnabled:YES];
     [self.regionContentScrollView setBounces:NO];
     [self.regionContentScrollView setDelegate:self];
     
@@ -177,12 +177,12 @@
         frame.size = self.regionContentScrollView.frame.size;
         
         // Should refactor this into a view controller with these items
-        AJGAsyncImageView *imageView = [[AJGAsyncImageView alloc] initWithFrame:frame];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
         [self.regionContentScrollView addSubview:imageView];
         
         HBGCContentObject *content = (HBGCContentObject*)[self.zone.content objectAtIndex:i];
         
-        [imageView beginLoadingImageFromURL:[content thumbnail]];
+        [imageView setImage:[content thumbnail]];
         
         UIButton *websiteButton = [UIButton buttonWithType:UIButtonTypeCustom];
         
@@ -223,7 +223,19 @@
 
 - (IBAction) handleBackTouchUpInside:(id)sender
 {
-    [[self navigationController] popToRootViewControllerAnimated:YES];
+    [[self navigationController] popViewControllerAnimated:YES];
+}
+
+- (void)playContentFromURL:(NSURL *)contentURL
+{
+    MPMoviePlayerViewController *movieController = [[MPMoviePlayerViewController alloc]
+                                                    initWithContentURL:contentURL];
+    
+    [[movieController view] setBounds:CGRectMake(0, 0, 480, 320)];
+    [[movieController view] setCenter:CGPointMake(160, 240)];
+    [[movieController view] setTransform:CGAffineTransformMakeRotation(M_PI / 2)];
+    
+    [self.navigationController presentMoviePlayerViewControllerAnimated:movieController];
 }
 
 - (void) handleContentButtonTouchUpInside:(id)sender
@@ -233,10 +245,7 @@
     HBGCContentObject *content = [self.zone.content objectAtIndex:tag];
     
     NSURL *contentURL = content.contentURL;
-    MPMoviePlayerViewController *movieController = [[MPMoviePlayerViewController alloc]
-                                                    initWithContentURL:contentURL];
-    
-    [self.navigationController presentMoviePlayerViewControllerAnimated:movieController];
+    [self playContentFromURL:contentURL];
     
 }
 
@@ -272,10 +281,7 @@
             {
                 // Create single method form button call for this
                 NSURL *contentURL = content.contentURL;
-                MPMoviePlayerViewController *movieController = [[MPMoviePlayerViewController alloc]
-                                                                initWithContentURL:contentURL];
-                
-                [self.navigationController presentMoviePlayerViewControllerAnimated:movieController];
+                [self playContentFromURL:contentURL];
             }
         }
     }
