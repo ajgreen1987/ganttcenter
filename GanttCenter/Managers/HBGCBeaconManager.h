@@ -11,6 +11,7 @@
 
 #define REGION_BEACON_DISTANCE      17.0f   // In meters
 #define CONTENT_BEACON_DISTANCE     3.0f    // Meters
+#define BEACON_TIMEOUT_INTERVAL     15.0f    // In seconds
 
 typedef enum : int
 {
@@ -34,6 +35,7 @@ typedef enum : int
 - (void) startRangingBeacons;
 - (void) stopRangingBeacons;
 
+@property (nonatomic, assign) BOOL isAuthorized;
 @property (nonatomic, assign) BOOL isPrimed;
 @property (nonatomic, weak) id<HBGCBeaconManagerDelegate> delegate;
 @property (nonatomic, strong) NSArray *beaconsArray;

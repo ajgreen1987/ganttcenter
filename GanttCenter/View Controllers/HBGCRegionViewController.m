@@ -14,6 +14,7 @@
 #import "HBGCBeaconObject.h"
 
 #define SCROLL_IMAGE_TAG 10001
+#define CONTENT_TIMER_INTERVAL 5.0f
 
 @interface HBGCRegionViewController ()
 
@@ -28,6 +29,9 @@
 @property (nonatomic, strong) UIPageControl *regionContentPageControl;
 @property (nonatomic, strong) NSTimer *scrollTimer;
 @property (nonatomic, assign) NSInteger imageCounter;
+@property (nonatomic, strong) JFMinimalNotification *contentNotification;
+@property (nonatomic, strong) NSURL *currentContentURL;
+@property (nonatomic, strong) NSTimer *contentTimer;
 
 - (IBAction) handleExpandingButtonTouchUpInside:(id)sender;
 - (IBAction) handleBackTouchUpInside:(id)sender;
@@ -36,6 +40,9 @@
 - (void) setupRegionContentScroll;
 - (void) autoScrollRegionHeader;
 - (void) handleContentButtonTouchUpInside:(id)sender;
+- (void) setupContentNotificationWithTitle:(NSString*)aContentTitle;
+- (void) playDefaultContent;
+- (void)playContentFromURL:(NSURL *)contentURL;
 
 @end
 
@@ -67,7 +74,7 @@
 {
     [super viewDidAppear:animated];
     
-    //[self makeSelfBeaconDelegate];
+    [self makeSelfBeaconDelegate];
     
     // Automatically Scroll
     self.scrollTimer = [NSTimer scheduledTimerWithTimeInterval:SCROLL_VIEW_ANIMATION_DURATION
@@ -234,6 +241,12 @@
     [[self navigationController] popViewControllerAnimated:YES];
 }
 
+- (void) playDefaultContent
+{
+    [self playContentFromURL:self.currentContentURL];
+    [self.contentNotification dismiss];
+}
+
 - (void)playContentFromURL:(NSURL *)contentURL
 {
     MPMoviePlayerViewController *movieController = [[MPMoviePlayerViewController alloc]
@@ -268,6 +281,7 @@
     // Delay execution of my block for 10 seconds.
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2.0f * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         [[[HBGCApplicationManager appManager] beaconManager] setDelegate:self];
+        [[[HBGCApplicationManager appManager] beaconManager] startRangingBeacons];
     });
 }
 
@@ -285,14 +299,90 @@
         {
             HBGCBeaconObject *beacon = content.beacon;
             
-            if ([[beacon majorID] isEqualToString:closestBeaconMajorID] && [[beacon minorID] isEqualToString:closestBeaconMinorID] && ([[closestBeacon distance] floatValue] < CONTENT_BEACON_DISTANCE))
+            if ([[beacon majorID] isEqualToString:closestBeaconMajorID] && [[beacon minorID] isEqualToString:closestBeaconMinorID])
             {
-                // Create single method form button call for this
-                NSURL *contentURL = content.contentURL;
-                [self playContentFromURL:contentURL];
+                BOOL withinReach = ((closestBeacon.proximity == CLProximityImmediate) || (closestBeacon.proximity == CLProximityNear));
+                
+                if (withinReach)
+                {
+                    self.currentContentURL =  content.contentURL;
+                    [self setupContentNotificationWithTitle:content.titleText];
+                    
+                    [self.contentNotification show];
+                    
+                    [[[HBGCApplicationManager appManager] beaconManager] stopRangingBeacons];
+                }
             }
         }
     }
+}
+
+#pragma mark - Setup Content Notification
+- (void) setupContentNotificationWithTitle:(NSString*)aContentTitle
+{
+    /**
+     * Create the notification
+     */
+    if (self.contentNotification != nil)
+    {
+        self.contentNotification = nil;
+    }
+    
+    self.contentNotification = [JFMinimalNotification notificationWithStyle:JFMinimalNotificationStyleDefault
+                                                                      title:[NSString stringWithFormat:@"Upcoming Content: %@",aContentTitle]
+                                                                   subTitle:@"Tap here to cancel playing this content"
+                                                             dismissalDelay:0.0f
+                                                               touchHandler:^{
+                                                                   [self.contentNotification dismiss];
+                                                               }];
+    
+    /**
+     * Set the desired font for the title and sub-title labels
+     * Default is System Normal
+     */
+    UIFont* titleFont = [UIFont fontWithName:@"SemplicitaPro Bold" size:22];
+    [self.contentNotification setTitleFont:titleFont];
+    UIFont* subTitleFont = [UIFont fontWithName:@"SemplicitaPro Bold" size:16];
+    [self.contentNotification setSubTitleFont:subTitleFont];
+    
+    
+    /**
+     * Add the notification to a view
+     */
+    [self.view addSubview:self.contentNotification];
+    
+    [self.contentNotification setPresentFromTop:YES];
+    [self.contentNotification setDelegate:self];
+}
+
+#pragma mark - Notification Delegate
+- (void)willShowNotification:(JFMinimalNotification*)notification
+{
+    
+}
+
+- (void)didShowNotification:(JFMinimalNotification*)notification
+{
+    // Automatically Scroll
+    self.contentTimer = [NSTimer scheduledTimerWithTimeInterval:CONTENT_TIMER_INTERVAL
+                                                        target:self
+                                                      selector:@selector(playDefaultContent)
+                                                      userInfo:nil
+                                                       repeats:NO];
+}
+
+- (void)willDisimissNotification:(JFMinimalNotification*)notification
+{
+    [self.contentTimer invalidate];
+    
+    [[[HBGCApplicationManager appManager] beaconManager] performSelector:@selector(startRangingBeacons)
+                                                              withObject:nil
+                                                              afterDelay:BEACON_TIMEOUT_INTERVAL];
+}
+
+- (void)didDismissNotification:(JFMinimalNotification*)notification
+{
+
 }
 
 @end

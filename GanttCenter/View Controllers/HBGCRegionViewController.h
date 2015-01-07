@@ -7,12 +7,13 @@
 //
 
 #import "HBGCBaseViewController.h"
+#import "JFMinimalNotification.h"
 
 #define HBGCRegion_NIB @"HBGCRegionViewController"
 
 @class HBGCZoneObject;
 
-@interface HBGCRegionViewController : HBGCBaseViewController <UIScrollViewDelegate, HBGCBeaconManagerDelegate>
+@interface HBGCRegionViewController : HBGCBaseViewController <UIScrollViewDelegate, HBGCBeaconManagerDelegate, JFMinimalNotificationDelegate>
 
 - (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andZone:(HBGCZoneObject*)aZone;
 

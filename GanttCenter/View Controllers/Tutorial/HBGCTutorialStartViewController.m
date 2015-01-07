@@ -11,6 +11,7 @@
 
 @interface HBGCTutorialStartViewController ()
 
+- (IBAction) handleDismissalTouchUpInside:(id)sender;
 - (IBAction) handleTutorialStartTouchUpInside:(id)sender;
 
 @end
@@ -28,6 +29,12 @@
 }
 
 #pragma mark - Tutorial Start
+- (IBAction) handleDismissalTouchUpInside:(id)sender
+{
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
+}
+
 - (IBAction) handleTutorialStartTouchUpInside:(id)sender
 {
     HBGCTutorialViewController *tutorial = [[HBGCTutorialViewController alloc] initWithNibName:HBGCTutorial_NIB

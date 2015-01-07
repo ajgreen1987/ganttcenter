@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HBGCBeaconZonesViewController">
             <connections>
                 <outlet property="collectionView" destination="HGu-k2-GmR" id="qNc-qb-Wdh"/>
+                <outlet property="enhanceButton" destination="68u-tI-fDn" id="3mD-MO-jjd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="405"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="HGu-k2-GmR">
+                <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="HGu-k2-GmR">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="405"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="GA5-zN-4x1">
@@ -27,19 +28,26 @@
                     </collectionViewFlowLayout>
                     <cells/>
                 </collectionView>
+                <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68u-tI-fDn">
+                    <rect key="frame" x="0.0" y="381" width="320" height="24"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="enhance_bar_button">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="handleBeaconTutorialTouchUpInside:" destination="-1" eventType="touchUpInside" id="kqK-97-yJh"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="HGu-k2-GmR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="c9c-uj-YFF"/>
-                <constraint firstItem="HGu-k2-GmR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gca-5g-D1v"/>
-                <constraint firstAttribute="trailing" secondItem="HGu-k2-GmR" secondAttribute="trailing" id="nQB-rP-Cla"/>
-                <constraint firstAttribute="bottom" secondItem="HGu-k2-GmR" secondAttribute="bottom" id="pll-CF-Ngr"/>
-            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="243" y="72.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="enhance_bar_button" width="540" height="24"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -10,6 +10,7 @@
 
 @interface HBGCTutorialViewController ()
 
+- (IBAction) handleDismissalTouchUpInside:(id)sender;
 - (IBAction) handleGetPermissionsTouchUpInside:(id)sender;
 
 @end
@@ -30,6 +31,7 @@
 {
     [[[HBGCApplicationManager appManager] beaconManager] setDelegate:nil];
 }
+
 - (IBAction) handleGetPermissionsTouchUpInside:(id)sender
 {
     [[[HBGCApplicationManager appManager] beaconManager] setupBeaconManager];
@@ -39,7 +41,18 @@
 #pragma mark - Beacon Delegate
 - (void) allBeaconsDiscovered
 {
-    [[self navigationController] popToRootViewControllerAnimated:YES];
+    [self dismiss];
+}
+
+- (IBAction) handleDismissalTouchUpInside:(id)sender
+{
+    [self dismiss];
+}
+
+- (void) dismiss
+{
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
 }
 
 @end

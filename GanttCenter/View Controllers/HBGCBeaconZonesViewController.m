@@ -13,6 +13,7 @@
 #import "HBGCRegionViewController.h"
 #import "HBGCSocialRegionViewController.h"
 #import "HBGCBeaconObject.h"
+#import "HBGCTutorialStartViewController.h"
 #import "AJGAsyncImageView.h"
 
 
@@ -22,8 +23,10 @@
 @interface HBGCBeaconZonesViewController ()
 
 @property (nonatomic, strong) NSArray *zoneThumbnails;
+@property (nonatomic, weak) IBOutlet UIButton *enhanceButton;
 
 - (void) makeSelfBeaconDelegate;
+- (IBAction) handleBeaconTutorialTouchUpInside:(id)sender;
 
 @end
 
@@ -62,7 +65,10 @@
 {
     [super viewDidAppear:animated];
     
-    //[self makeSelfBeaconDelegate];
+    // If Permissions are turned off show the banner
+    [self.enhanceButton setHidden:[[[HBGCApplicationManager appManager] beaconManager] isAuthorized]];
+    
+    [self makeSelfBeaconDelegate];
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -70,6 +76,20 @@
     [super viewWillDisappear:animated];
     
     [[[HBGCApplicationManager appManager] beaconManager] setDelegate:nil];
+}
+
+#pragma mark - Beacon Tutorial
+- (IBAction) handleBeaconTutorialTouchUpInside:(id)sender
+{
+    HBGCTutorialStartViewController *tutorial = [[HBGCTutorialStartViewController alloc] initWithNibName:HBGCTUTORIALSTART_NIB
+                                                                                                  bundle:nil];
+    
+    UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:tutorial];
+    [navigation setNavigationBarHidden:YES];
+    
+    [self presentViewController:navigation
+                       animated:YES
+                     completion:nil];
 }
 
 

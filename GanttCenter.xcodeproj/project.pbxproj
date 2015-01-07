@@ -36,6 +36,11 @@
 		DAA5F6EC1A2ED64E00AFB389 /* HBGCSocialNetworksObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA5F6EB1A2ED64E00AFB389 /* HBGCSocialNetworksObject.m */; };
 		DAA5F6F21A2FFF3C00AFB389 /* HBGCRegionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA5F6F01A2FFF3C00AFB389 /* HBGCRegionViewController.m */; };
 		DAA5F6F31A2FFF3C00AFB389 /* HBGCRegionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAA5F6F11A2FFF3C00AFB389 /* HBGCRegionViewController.xib */; };
+		DAA604AE1A5CDB8900D1B4F4 /* JFMinimalNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA604A51A5CDB8900D1B4F4 /* JFMinimalNotification.m */; };
+		DAA604AF1A5CDB8900D1B4F4 /* JFMinimalNotificationArt.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA604A71A5CDB8900D1B4F4 /* JFMinimalNotificationArt.m */; };
+		DAA604B01A5CDB8900D1B4F4 /* NSInvocation+Constructors.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA604A91A5CDB8900D1B4F4 /* NSInvocation+Constructors.m */; };
+		DAA604B11A5CDB8900D1B4F4 /* UIColor+JFMinimalNotificationColors.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA604AB1A5CDB8900D1B4F4 /* UIColor+JFMinimalNotificationColors.m */; };
+		DAA604B21A5CDB8900D1B4F4 /* UIView+Round.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA604AD1A5CDB8900D1B4F4 /* UIView+Round.m */; };
 		DAB24E6C1A349CF700768B13 /* HBGCSocialRegionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB24E6B1A349CF700768B13 /* HBGCSocialRegionViewController.m */; };
 		DAB24E6E1A349D1200768B13 /* HBGCSocialRegionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAB24E6D1A349D1200768B13 /* HBGCSocialRegionViewController.xib */; };
 		DAB24E7F1A3548D400768B13 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB24E7D1A3548D400768B13 /* CoreBluetooth.framework */; };
@@ -115,6 +120,16 @@
 		DAA5F6EF1A2FFF3C00AFB389 /* HBGCRegionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCRegionViewController.h; sourceTree = "<group>"; };
 		DAA5F6F01A2FFF3C00AFB389 /* HBGCRegionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCRegionViewController.m; sourceTree = "<group>"; };
 		DAA5F6F11A2FFF3C00AFB389 /* HBGCRegionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBGCRegionViewController.xib; sourceTree = "<group>"; };
+		DAA604A41A5CDB8900D1B4F4 /* JFMinimalNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFMinimalNotification.h; sourceTree = "<group>"; };
+		DAA604A51A5CDB8900D1B4F4 /* JFMinimalNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFMinimalNotification.m; sourceTree = "<group>"; };
+		DAA604A61A5CDB8900D1B4F4 /* JFMinimalNotificationArt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFMinimalNotificationArt.h; sourceTree = "<group>"; };
+		DAA604A71A5CDB8900D1B4F4 /* JFMinimalNotificationArt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFMinimalNotificationArt.m; sourceTree = "<group>"; };
+		DAA604A81A5CDB8900D1B4F4 /* NSInvocation+Constructors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+Constructors.h"; sourceTree = "<group>"; };
+		DAA604A91A5CDB8900D1B4F4 /* NSInvocation+Constructors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+Constructors.m"; sourceTree = "<group>"; };
+		DAA604AA1A5CDB8900D1B4F4 /* UIColor+JFMinimalNotificationColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+JFMinimalNotificationColors.h"; sourceTree = "<group>"; };
+		DAA604AB1A5CDB8900D1B4F4 /* UIColor+JFMinimalNotificationColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JFMinimalNotificationColors.m"; sourceTree = "<group>"; };
+		DAA604AC1A5CDB8900D1B4F4 /* UIView+Round.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Round.h"; sourceTree = "<group>"; };
+		DAA604AD1A5CDB8900D1B4F4 /* UIView+Round.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Round.m"; sourceTree = "<group>"; };
 		DAB24E6A1A349CF700768B13 /* HBGCSocialRegionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCSocialRegionViewController.h; sourceTree = "<group>"; };
 		DAB24E6B1A349CF700768B13 /* HBGCSocialRegionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCSocialRegionViewController.m; sourceTree = "<group>"; };
 		DAB24E6D1A349D1200768B13 /* HBGCSocialRegionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBGCSocialRegionViewController.xib; sourceTree = "<group>"; };
@@ -290,6 +305,7 @@
 		DA1B5BDC1A216AAC006D317A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				DAA604A31A5CDB6200D1B4F4 /* Notification */,
 				DAB24E6F1A35488200768B13 /* Estimote */,
 				DAF4998B1A2E9873000E27F3 /* AJGAsyncImageView.h */,
 				DAF4998C1A2E9873000E27F3 /* AJGAsyncImageView.m */,
@@ -348,6 +364,23 @@
 				DAB24E681A349CDC00768B13 /* Social */,
 			);
 			name = Region;
+			sourceTree = "<group>";
+		};
+		DAA604A31A5CDB6200D1B4F4 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				DAA604A41A5CDB8900D1B4F4 /* JFMinimalNotification.h */,
+				DAA604A51A5CDB8900D1B4F4 /* JFMinimalNotification.m */,
+				DAA604A61A5CDB8900D1B4F4 /* JFMinimalNotificationArt.h */,
+				DAA604A71A5CDB8900D1B4F4 /* JFMinimalNotificationArt.m */,
+				DAA604A81A5CDB8900D1B4F4 /* NSInvocation+Constructors.h */,
+				DAA604A91A5CDB8900D1B4F4 /* NSInvocation+Constructors.m */,
+				DAA604AA1A5CDB8900D1B4F4 /* UIColor+JFMinimalNotificationColors.h */,
+				DAA604AB1A5CDB8900D1B4F4 /* UIColor+JFMinimalNotificationColors.m */,
+				DAA604AC1A5CDB8900D1B4F4 /* UIView+Round.h */,
+				DAA604AD1A5CDB8900D1B4F4 /* UIView+Round.m */,
+			);
+			name = Notification;
 			sourceTree = "<group>";
 		};
 		DAB24E681A349CDC00768B13 /* Social */ = {
@@ -529,6 +562,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA874AD81A33F5A500850E2F /* HBGCHeaderObject.m in Sources */,
+				DAA604B01A5CDB8900D1B4F4 /* NSInvocation+Constructors.m in Sources */,
 				DAF4998D1A2E9873000E27F3 /* AJGAsyncImageView.m in Sources */,
 				DA03BD5F1A50534500B8321C /* HBGCGeneralInformationViewController.m in Sources */,
 				DA3AE2151A2C0CD500816EB0 /* MONActivityIndicatorView.m in Sources */,
@@ -542,16 +576,20 @@
 				DA950DED1A51E34E00451C7E /* AJGLineView.m in Sources */,
 				DAC940BA1A36954B008E5B4B /* HBGCTutorialStartViewController.m in Sources */,
 				DA1B5BB71A216943006D317A /* main.m in Sources */,
+				DAA604AF1A5CDB8900D1B4F4 /* JFMinimalNotificationArt.m in Sources */,
 				DAF499851A2E9684000E27F3 /* HBGCLandingPageContainerViewController.m in Sources */,
 				DAF499921A2E99DE000E27F3 /* HBGCZoneCollectionViewCell.m in Sources */,
 				DA98D1161A3E7BA0000EEBC0 /* HBGCBaseViewController.m in Sources */,
 				DA1B5BE71A216E82006D317A /* HBGCNetworkManager.m in Sources */,
 				DAA5F6DF1A2ED53400AFB389 /* HBGCZoneObject.m in Sources */,
+				DAA604B21A5CDB8900D1B4F4 /* UIView+Round.m in Sources */,
 				DAC940B51A368D53008E5B4B /* HBGCBeaconManager.m in Sources */,
+				DAA604B11A5CDB8900D1B4F4 /* UIColor+JFMinimalNotificationColors.m in Sources */,
 				DAA5F6E61A2ED57100AFB389 /* HBGCContentObject.m in Sources */,
 				DAA5F6EC1A2ED64E00AFB389 /* HBGCSocialNetworksObject.m in Sources */,
 				DA3AE21C1A2C193000816EB0 /* HBGCUpcomingEventsObject.m in Sources */,
 				DAA5F6E31A2ED55200AFB389 /* HBGCBeaconObject.m in Sources */,
+				DAA604AE1A5CDB8900D1B4F4 /* JFMinimalNotification.m in Sources */,
 				DA03BD5B1A4F3E1E00B8321C /* AJGFadingSegue.m in Sources */,
 				DAF499891A2E96D0000E27F3 /* HBGCBeaconZonesViewController.m in Sources */,
 				DA3A38C61A4F1D03006D901E /* HBGCLoadingViewController.m in Sources */,

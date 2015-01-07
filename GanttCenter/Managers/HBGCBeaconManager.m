@@ -32,6 +32,12 @@
     return self;
 }
 
+#pragma mark - Authorization
+- (BOOL) isAuthorized
+{
+    return ([ESTBeaconManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways);
+}
+
 #pragma mark - Beacons
 - (void) setupBeaconManager
 {
