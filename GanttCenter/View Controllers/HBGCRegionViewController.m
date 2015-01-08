@@ -235,9 +235,9 @@
                          self.regionContentPageControl.alpha = self.isTextExpanded ? 1.0f : 0.0f;
                          
                          CGRect frame = self.descriptionTextView.frame;
-                         frame.size.height = self.isTextExpanded ? 128.0f : 320.0f;
+                         frame.size.height = self.isTextExpanded ? 128.0f : 400.0f;
 
-                         UIFont *expandingFont = self.isTextExpanded ? [UIFont fontWithName:@"SemplicitaPro Bold" size:14.0f] : [UIFont fontWithName:@"SemplicitaPro Bold" size:22.0f];
+                         UIFont *expandingFont = self.isTextExpanded ? [UIFont fontWithName:CUSTOM_FONT_NAME size:14.0f] : [UIFont fontWithName:CUSTOM_FONT_NAME size:18.0f];
                          [self.descriptionTextView setFont:expandingFont];
                          self.descriptionTextView.frame = frame;
                          
@@ -354,9 +354,9 @@
      * Set the desired font for the title and sub-title labels
      * Default is System Normal
      */
-    UIFont* titleFont = [UIFont fontWithName:@"SemplicitaPro Bold" size:22];
+    UIFont* titleFont = [UIFont fontWithName:CUSTOM_FONT_NAME size:22];
     [self.contentNotification setTitleFont:titleFont];
-    UIFont* subTitleFont = [UIFont fontWithName:@"SemplicitaPro Bold" size:16];
+    UIFont* subTitleFont = [UIFont fontWithName:CUSTOM_FONT_NAME size:16];
     [self.contentNotification setSubTitleFont:subTitleFont];
     
     
