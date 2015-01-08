@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Loading View Controller-->
@@ -15,7 +14,7 @@
                         <viewControllerLayoutGuide type="bottom" id="fBD-qo-zEc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MrP-p3-eWa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="loadscreen" translatesAutoresizingMaskIntoConstraints="NO" id="F1b-Gm-iEI">
@@ -36,7 +35,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="TIx-lu-zgx"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="loadingImage" destination="fLZ-2u-18V" id="FPh-HG-9uu"/>
                         <segue destination="vXZ-lx-hvc" kind="custom" identifier="Landing" customClass="AJGFadingSegue" id="Hct-wy-9k2"/>
@@ -97,69 +95,10 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Harvey B. Gantt Center" id="k0q-K6-oWB"/>
-                    <connections>
-                        <segue destination="FXd-LY-rnv" kind="modal" identifier="About" id="Zok-jx-VHS"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-8" y="-142.99999999999997"/>
-        </scene>
-        <!--General Information View Controller-->
-        <scene sceneID="DhT-1N-SgB">
-            <objects>
-                <viewController id="FXd-LY-rnv" customClass="HBGCGeneralInformationViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="EhV-Zq-ebu"/>
-                        <viewControllerLayoutGuide type="bottom" id="wEU-NS-JCR"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vDL-Ex-fKf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="generainfo_background" translatesAutoresizingMaskIntoConstraints="NO" id="Kvy-F2-NzR">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CpK-r8-pTc">
-                                <rect key="frame" x="83" y="187" width="155" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="DNp-oA-d6G"/>
-                                    <constraint firstAttribute="width" constant="155" id="xsn-dB-TWQ"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="openinmaps_button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="handleMapsTouchUpInside:" destination="FXd-LY-rnv" eventType="touchUpInside" id="hwH-vS-ZJG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGh-hK-jA6">
-                                <rect key="frame" x="279" y="9" width="25" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="j9c-42-Pbb"/>
-                                    <constraint firstAttribute="height" constant="25" id="tS1-OU-fJ1"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="dismiss">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="handleDismissTouchUpInside:" destination="FXd-LY-rnv" eventType="touchUpInside" id="DQm-SY-3lE"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="Kvy-F2-NzR" secondAttribute="bottom" constant="-88" id="BSM-Yf-dq4"/>
-                            <constraint firstAttribute="trailing" secondItem="Kvy-F2-NzR" secondAttribute="trailing" id="E8n-g5-6gw"/>
-                            <constraint firstItem="Kvy-F2-NzR" firstAttribute="centerX" secondItem="CpK-r8-pTc" secondAttribute="centerX" id="P00-CL-Ses"/>
-                            <constraint firstItem="Kvy-F2-NzR" firstAttribute="top" secondItem="vDL-Ex-fKf" secondAttribute="top" id="VpS-Qy-1BV"/>
-                            <constraint firstItem="Kvy-F2-NzR" firstAttribute="leading" secondItem="vDL-Ex-fKf" secondAttribute="leading" id="kHM-Z7-loB"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bep-ia-n9y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="421" y="-142.99999999999997"/>
         </scene>
         <!--Landing Page Container View Controller-->
         <scene sceneID="hLG-8Z-tp6">
@@ -183,11 +122,8 @@
     </scenes>
     <resources>
         <image name="Headerlogo" width="540" height="110"/>
-        <image name="dismiss" width="250" height="250"/>
-        <image name="generainfo_background" width="621" height="1104"/>
         <image name="info_button" width="25" height="25"/>
         <image name="loadscreen" width="621" height="1104"/>
-        <image name="openinmaps_button" width="259" height="38"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

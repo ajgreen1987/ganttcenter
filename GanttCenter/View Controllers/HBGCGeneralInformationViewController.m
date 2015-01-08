@@ -10,13 +10,37 @@
 
 @interface HBGCGeneralInformationViewController ()
 
+@property (nonatomic, weak) IBOutlet UIButton *mapsButton;
+
 @end
 
 @implementation HBGCGeneralInformationViewController
 
-- (void)viewDidLoad {
+- (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    if ([HBGCApplicationManager isSmallScreenDevice])
+    {
+        NSString *nibName = [HBGCApplicationManager isSmallScreenDevice] ? HBGCGeneralInfo_NIB_SMALL : HBGCGeneralInfo_NIB;
+        self = [super initWithNibName:nibName
+                               bundle:nil];
+    }
+    
+    if (self)
+    {
+        
+    }
+    
+    return self;
+}
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self.mapsButton removeFromSuperview];
+    
+    [self.view addSubview:self.mapsButton];
 }
 
 - (void)didReceiveMemoryWarning {

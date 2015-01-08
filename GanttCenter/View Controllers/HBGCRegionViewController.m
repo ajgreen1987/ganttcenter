@@ -50,7 +50,12 @@
 
 - (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andZone:(HBGCZoneObject*)aZone
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if ([HBGCApplicationManager isSmallScreenDevice])
+    {
+        NSString *nibName = [HBGCApplicationManager isSmallScreenDevice] ? HBGCRegion_NIB_SMALL : HBGCRegion_NIB;
+        self = [super initWithNibName:nibName
+                               bundle:nil];
+    }
     
     if (self)
     {
@@ -74,7 +79,10 @@
 {
     [super viewDidAppear:animated];
     
-    [self makeSelfBeaconDelegate];
+    if ([[[HBGCApplicationManager appManager] beaconManager] isAuthorized])
+    {
+        [self makeSelfBeaconDelegate];        
+    }
     
     // Automatically Scroll
     self.scrollTimer = [NSTimer scheduledTimerWithTimeInterval:SCROLL_VIEW_ANIMATION_DURATION
@@ -108,7 +116,8 @@
     [self.zoneTitle setText:[self.zone zoneTitle]];
     
     self.regionHeaderScrollView = nil;
-    self.regionHeaderScrollView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 196.0f)];
+    CGFloat height = [HBGCApplicationManager isSmallScreenDevice] ? 119.0f : 196.0f;
+    self.regionHeaderScrollView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, height)];
     [self.regionHeaderScrollView setUserInteractionEnabled:NO];
     
     [self.view insertSubview:self.regionHeaderScrollView
@@ -164,7 +173,8 @@
 - (void) setupRegionContentScroll
 {
     self.regionContentScrollView = nil;
-    self.regionContentScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 389.0f, 320.0f, 180.0f)];
+    CGFloat yOrigin = [HBGCApplicationManager isSmallScreenDevice] ? 308.0f : 389.0f;
+    self.regionContentScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, yOrigin, 320.0f, 180.0f)];
     [self.regionContentScrollView setPagingEnabled:YES];
     [self.regionContentScrollView setScrollEnabled:YES];
     [self.regionContentScrollView setBounces:NO];
@@ -232,7 +242,8 @@
                          self.descriptionTextView.frame = frame;
                          
                          CGRect contentFrame = self.regionContentScrollView.frame;
-                         contentFrame.origin.y = self.isTextExpanded ? 389.0f : self.view.frame.size.height;
+                         CGFloat yOrigin = [HBGCApplicationManager isSmallScreenDevice] ? 308.0f : 389.0f;
+                         contentFrame.origin.y = self.isTextExpanded ? yOrigin : self.view.frame.size.height;
                          self.regionContentScrollView.frame = contentFrame;
                          
                          self.isTextExpanded = !self.isTextExpanded;

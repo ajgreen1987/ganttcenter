@@ -11,6 +11,8 @@
 #import "HBGCBeaconManager.h"
 #import "MONActivityIndicatorView.h"
 
+#define CUSTOM_FONT_NAME @"SemplicitaPro-Bold"
+
 #define GANTT_KEY @"gantt_preference"
 #define AUTO_BEACON_CONTENT @"enabled_preference"
 

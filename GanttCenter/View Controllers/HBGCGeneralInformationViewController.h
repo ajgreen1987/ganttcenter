@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#define HBGCGeneralInfo_NIB @"HBGCGeneralInformationViewController"
+#define HBGCGeneralInfo_NIB_SMALL @"HBGCGeneralInformationViewController_Small"
+
 @interface HBGCGeneralInformationViewController : UIViewController
 
 - (IBAction) handleMapsTouchUpInside:(id)sender;

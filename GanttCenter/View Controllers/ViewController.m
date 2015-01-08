@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "HBGCApplicationManager.h"
 #import "HBGCUpcomingEventsObject.h"
+#import "HBGCGeneralInformationViewController.h"
 #import "AJGAsyncImageView.h"
 
 @interface ViewController ()
@@ -123,7 +124,12 @@
 
 - (IBAction) handleGeneralInformationTouchUpInside:(id)sender
 {
-    [self performSegueWithIdentifier:@"About" sender:self];
+    HBGCGeneralInformationViewController *generalInfoController = [[HBGCGeneralInformationViewController alloc] initWithNibName:@""
+                                                                                                                         bundle:nil];
+    
+    [self presentViewController:generalInfoController
+                       animated:YES
+                     completion:nil];
 }
 
 

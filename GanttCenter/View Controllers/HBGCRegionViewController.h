@@ -10,6 +10,7 @@
 #import "JFMinimalNotification.h"
 
 #define HBGCRegion_NIB @"HBGCRegionViewController"
+#define HBGCRegion_NIB_SMALL @"HBGCRegionViewController_Small"
 
 @class HBGCZoneObject;
 
