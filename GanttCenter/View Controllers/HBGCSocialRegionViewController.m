@@ -14,6 +14,7 @@
 @interface HBGCSocialRegionViewController ()
 
 @property (nonatomic, weak) IBOutlet UITableView *socialTableView;
+@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 @property (nonatomic, strong) HBGCSocialZoneObject *zone;
 
 @end
@@ -33,6 +34,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    if ([HBGCApplicationManager isSmallScreenDevice])
+    {
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning
