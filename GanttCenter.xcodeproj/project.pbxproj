@@ -41,6 +41,7 @@
 		DAA604B01A5CDB8900D1B4F4 /* NSInvocation+Constructors.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA604A91A5CDB8900D1B4F4 /* NSInvocation+Constructors.m */; };
 		DAA604B11A5CDB8900D1B4F4 /* UIColor+JFMinimalNotificationColors.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA604AB1A5CDB8900D1B4F4 /* UIColor+JFMinimalNotificationColors.m */; };
 		DAA604B21A5CDB8900D1B4F4 /* UIView+Round.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA604AD1A5CDB8900D1B4F4 /* UIView+Round.m */; };
+		DAA604B41A5DA20E00D1B4F4 /* HBGCBeaconZonesViewController_Small.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAA604B31A5DA20E00D1B4F4 /* HBGCBeaconZonesViewController_Small.xib */; };
 		DAB24E6C1A349CF700768B13 /* HBGCSocialRegionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB24E6B1A349CF700768B13 /* HBGCSocialRegionViewController.m */; };
 		DAB24E6E1A349D1200768B13 /* HBGCSocialRegionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAB24E6D1A349D1200768B13 /* HBGCSocialRegionViewController.xib */; };
 		DAB24E7F1A3548D400768B13 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB24E7D1A3548D400768B13 /* CoreBluetooth.framework */; };
@@ -130,6 +131,7 @@
 		DAA604AB1A5CDB8900D1B4F4 /* UIColor+JFMinimalNotificationColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JFMinimalNotificationColors.m"; sourceTree = "<group>"; };
 		DAA604AC1A5CDB8900D1B4F4 /* UIView+Round.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Round.h"; sourceTree = "<group>"; };
 		DAA604AD1A5CDB8900D1B4F4 /* UIView+Round.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Round.m"; sourceTree = "<group>"; };
+		DAA604B31A5DA20E00D1B4F4 /* HBGCBeaconZonesViewController_Small.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBGCBeaconZonesViewController_Small.xib; sourceTree = "<group>"; };
 		DAB24E6A1A349CF700768B13 /* HBGCSocialRegionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCSocialRegionViewController.h; sourceTree = "<group>"; };
 		DAB24E6B1A349CF700768B13 /* HBGCSocialRegionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCSocialRegionViewController.m; sourceTree = "<group>"; };
 		DAB24E6D1A349D1200768B13 /* HBGCSocialRegionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBGCSocialRegionViewController.xib; sourceTree = "<group>"; };
@@ -448,6 +450,7 @@
 				DAF499861A2E96D0000E27F3 /* HBGCBeaconZonesViewController.h */,
 				DAF499871A2E96D0000E27F3 /* HBGCBeaconZonesViewController.m */,
 				DAF499881A2E96D0000E27F3 /* HBGCBeaconZonesViewController.xib */,
+				DAA604B31A5DA20E00D1B4F4 /* HBGCBeaconZonesViewController_Small.xib */,
 				DAF4998F1A2E99DE000E27F3 /* HBGCZoneCollectionViewCell.h */,
 				DAF499901A2E99DE000E27F3 /* HBGCZoneCollectionViewCell.m */,
 				DAF499911A2E99DE000E27F3 /* HBGCZoneCollectionViewCell.xib */,
@@ -543,6 +546,7 @@
 				DAB24E6E1A349D1200768B13 /* HBGCSocialRegionViewController.xib in Resources */,
 				DA950DEF1A51E6EA00451C7E /* SemplicitaPro Bold.otf in Resources */,
 				DAA5F6F31A2FFF3C00AFB389 /* HBGCRegionViewController.xib in Resources */,
+				DAA604B41A5DA20E00D1B4F4 /* HBGCBeaconZonesViewController_Small.xib in Resources */,
 				DAF499931A2E99DE000E27F3 /* HBGCZoneCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

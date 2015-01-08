@@ -44,6 +44,7 @@
 + (void) autoScrollScrollView:(UIScrollView*)aScrollView andMaxPageSize:(NSInteger)aMaxPageSize;
 + (void) autoScrollScrollView:(UIScrollView*)aScrollView andMaxPageSize:(NSInteger)aMaxPageSize withFading:(BOOL)shouldFade;
 + (void) launchURL:(NSURL*)anURL orShowErrorMessage:(NSString*)aMessage;
++ (BOOL) isSmallScreenDevice;
 
 - (MONActivityIndicatorView*) currentActivityIndicator;
 

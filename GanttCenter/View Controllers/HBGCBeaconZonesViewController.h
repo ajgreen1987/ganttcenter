@@ -9,6 +9,7 @@
 #import <UIKit/UICollectionView.h>
 
 #define HBGCBeaconZones_NIB @"HBGCBeaconZonesViewController"
+#define HBGCBeaconZones_Small_NIB @"HBGCBeaconZonesViewController_Small"
 
 @interface HBGCBeaconZonesViewController : UIViewController <UICollectionViewDataSource,
                                 UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, HBGCBeaconManagerDelegate>

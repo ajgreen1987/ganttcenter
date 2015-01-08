@@ -226,6 +226,9 @@
                          
                          CGRect frame = self.descriptionTextView.frame;
                          frame.size.height = self.isTextExpanded ? 128.0f : 320.0f;
+
+                         UIFont *expandingFont = self.isTextExpanded ? [UIFont fontWithName:@"SemplicitaPro Bold" size:14.0f] : [UIFont fontWithName:@"SemplicitaPro Bold" size:22.0f];
+                         [self.descriptionTextView setFont:expandingFont];
                          self.descriptionTextView.frame = frame;
                          
                          CGRect contentFrame = self.regionContentScrollView.frame;

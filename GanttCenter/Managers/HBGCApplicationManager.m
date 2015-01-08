@@ -206,4 +206,14 @@ static HBGCApplicationManager *sharedAppManager;
 
 }
 
++ (BOOL) isSmallScreenDevice
+{
+    if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone)
+    {
+        return [[UIScreen mainScreen] bounds].size.height == 480.0f;
+    }
+    
+    return false;
+}
+
 @end

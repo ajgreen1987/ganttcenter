@@ -32,6 +32,23 @@
 
 @implementation HBGCBeaconZonesViewController
 
+- (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    if ([HBGCApplicationManager isSmallScreenDevice])
+    {
+        NSString *nibName = [HBGCApplicationManager isSmallScreenDevice] ? HBGCBeaconZones_Small_NIB : HBGCBeaconZones_NIB;
+        self = [super initWithNibName:nibName
+                               bundle:nil];
+    }
+    
+    if (self)
+    {
+        
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -47,7 +64,7 @@
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     [flowLayout setMinimumInteritemSpacing:0.0f];
     [flowLayout setMinimumLineSpacing:0.0f];
-    [flowLayout setItemSize:CGSizeMake(160.0f, 160.0f)];
+    [flowLayout setItemSize:CGSizeMake(160.0f, 132.0f)];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     
     [self.collectionView setCollectionViewLayout:flowLayout];
@@ -68,7 +85,11 @@
     // If Permissions are turned off show the banner
     [self.enhanceButton setHidden:[[[HBGCApplicationManager appManager] beaconManager] isAuthorized]];
     
-    [self makeSelfBeaconDelegate];
+    if ([[[HBGCApplicationManager appManager] beaconManager] isAuthorized])
+    {
+        [self makeSelfBeaconDelegate];
+    }
+    
 }
 
 - (void) viewWillDisappear:(BOOL)animated
