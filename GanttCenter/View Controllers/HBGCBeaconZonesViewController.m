@@ -96,6 +96,7 @@
 {
     [super viewWillDisappear:animated];
     
+    [[[HBGCApplicationManager appManager] beaconManager] stopRangingBeacons];
     [[[HBGCApplicationManager appManager] beaconManager] setDelegate:nil];
 }
 
@@ -189,6 +190,10 @@
     if (![[[HBGCApplicationManager appManager] beaconManager] isPrimed])
     {
         [[[HBGCApplicationManager appManager] beaconManager] setupBeaconManager];
+    }
+    else
+    {
+        [[[HBGCApplicationManager appManager]beaconManager] startRangingBeacons];
     }
     
     // Delay execution of my block for 10 seconds.

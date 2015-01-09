@@ -73,7 +73,7 @@
     
         [self.upcomingEventsScrollView removeFromSuperview];
         self.upcomingEventsScrollView = nil;
-        self.upcomingEventsScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 65.0f, 320.0f, 100.0f)];
+        self.upcomingEventsScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 71.0f, 320.0f, 100.0f)];
         [self.upcomingEventsScrollView setPagingEnabled:YES];
         [self.upcomingEventsScrollView setScrollEnabled:YES];
         

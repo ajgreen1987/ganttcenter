@@ -32,7 +32,8 @@ typedef NS_ENUM(NSInteger, JFMinimalNotificationStytle) {
     JFMinimalNotificationStyleError,
     JFMinimalNotificationStyleSuccess,
     JFMinimalNotificationStyleInfo,
-    JFMinimalNotificationStyleWarning
+    JFMinimalNotificationStyleWarning,
+    JFMinimalNotificationStyleGantt
 };
 
 typedef void (^JFMinimalNotificationTouchHandler)(void);

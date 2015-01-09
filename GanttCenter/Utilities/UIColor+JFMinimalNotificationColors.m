@@ -111,4 +111,16 @@
     return orange;
 }
 
++ (instancetype)notificationGanttColor
+{
+    static UIColor *yellow = nil;
+    static dispatch_once_t dispatchToken;
+    
+    dispatch_once(&dispatchToken, ^{
+        yellow = hsb(57, 68, 87);
+    });
+    
+    return yellow;
+}
+
 @end

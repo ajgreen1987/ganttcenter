@@ -125,6 +125,12 @@
     
     UIImageView *image = [[UIImageView alloc] initWithFrame:self.regionHeaderScrollView.frame];
     [[self regionHeaderScrollView] addSubview:image];
+    
+    if ([HBGCApplicationManager isSmallScreenDevice])
+    {
+        [image setContentMode:UIViewContentModeScaleAspectFill];
+    }
+    
     [image setTag:SCROLL_IMAGE_TAG];
     
     self.imageCounter = 0;
@@ -145,6 +151,11 @@
     UIImageView *scrollNextImage = [[UIImageView alloc] initWithFrame:scrollImage.frame];
     [scrollNextImage setTag:SCROLL_IMAGE_TAG];
     [scrollNextImage setImage:[[self.zone headerImages] objectAtIndex:self.imageCounter]];
+    
+    if ([HBGCApplicationManager isSmallScreenDevice])
+    {
+        [scrollNextImage setContentMode:UIViewContentModeScaleAspectFill];
+    }
     
     [self.regionHeaderScrollView insertSubview:scrollNextImage atIndex:0];
     
@@ -167,6 +178,9 @@
     
     [self.descriptionTextView setText:self.zone.zoneDescription];
     [self.descriptionTextView setTextColor:[UIColor whiteColor]];
+    
+    UIFont *expandingFont = [UIFont fontWithName:CUSTOM_FONT_NAME size:14.0f];
+    [self.descriptionTextView setFont:expandingFont];
 }
 
 #pragma mark - Region Content
@@ -235,12 +249,9 @@
                          self.regionContentPageControl.alpha = self.isTextExpanded ? 1.0f : 0.0f;
                          
                          CGRect frame = self.descriptionTextView.frame;
-                         frame.size.height = self.isTextExpanded ? 128.0f : 400.0f;
-
-                         UIFont *expandingFont = self.isTextExpanded ? [UIFont fontWithName:CUSTOM_FONT_NAME size:14.0f] : [UIFont fontWithName:CUSTOM_FONT_NAME size:18.0f];
-                         [self.descriptionTextView setFont:expandingFont];
+                         CGFloat height = [HBGCApplicationManager isSmallScreenDevice] ? 285.0f : 320.0f;
+                         frame.size.height = self.isTextExpanded ? 128.0f : height;
                          self.descriptionTextView.frame = frame;
-                         
                          CGRect contentFrame = self.regionContentScrollView.frame;
                          CGFloat yOrigin = [HBGCApplicationManager isSmallScreenDevice] ? 308.0f : 389.0f;
                          contentFrame.origin.y = self.isTextExpanded ? yOrigin : self.view.frame.size.height;
@@ -342,7 +353,7 @@
         self.contentNotification = nil;
     }
     
-    self.contentNotification = [JFMinimalNotification notificationWithStyle:JFMinimalNotificationStyleDefault
+    self.contentNotification = [JFMinimalNotification notificationWithStyle:JFMinimalNotificationStyleGantt
                                                                       title:[NSString stringWithFormat:@"Upcoming Content: %@",aContentTitle]
                                                                    subTitle:@"Tap here to cancel playing this content"
                                                              dismissalDelay:0.0f

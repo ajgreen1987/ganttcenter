@@ -316,6 +316,17 @@ static CGFloat const kNotificationAccessoryPadding = 10.0f;
             break;
         }
             
+        case JFMinimalNotificationStyleGantt:
+        {
+            UIColor* primaryColor = [UIColor notificationGanttColor];
+            UIColor* secondaryColor = [UIColor notificationWhiteColor];
+            self.contentView.backgroundColor = primaryColor;
+            self.titleLabel.textColor = secondaryColor;
+            self.subTitleLabel.textColor = secondaryColor;
+            image = [UIImage imageNamed:@"notification_icon"];
+            break;
+        }
+            
         case JFMinimalNotificationStyleDefault:
         default: {
             UIColor* primaryColor = [UIColor notificationBlueColor];
@@ -330,7 +341,7 @@ static CGFloat const kNotificationAccessoryPadding = 10.0f;
     }
 
     UIImageView* imageView = [[UIImageView alloc] initWithImage:image];
-    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    //imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.accessoryView addSubview:imageView];
     NSDictionary* views = NSDictionaryOfVariableBindings(imageView);

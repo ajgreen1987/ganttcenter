@@ -36,5 +36,6 @@
 + (instancetype)notificationBlackColor;
 + (instancetype)notificationWhiteColor;
 + (instancetype)notificationOrangeColor;
++ (instancetype)notificationGanttColor;
 
 @end
