@@ -179,7 +179,7 @@
     [self.descriptionTextView setText:self.zone.zoneDescription];
     [self.descriptionTextView setTextColor:[UIColor whiteColor]];
     
-    UIFont *expandingFont = [UIFont fontWithName:CUSTOM_FONT_NAME size:14.0f];
+    UIFont *expandingFont = [UIFont fontWithName:CUSTOM_FONT_NAME2 size:14.0f];
     [self.descriptionTextView setFont:expandingFont];
 }
 

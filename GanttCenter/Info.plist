@@ -42,6 +42,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>SemplicitaPro Bold.otf</string>
+		<string>SemplicitaPro Medium.otf</string>
+		<string>SemplicitaPro Semibold.otf</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>

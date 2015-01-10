@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EA8068D1A6088000070252C /* SemplicitaPro Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5EA8068B1A6088000070252C /* SemplicitaPro Medium.otf */; };
+		5EA8068E1A6088000070252C /* SemplicitaPro Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5EA8068C1A6088000070252C /* SemplicitaPro Semibold.otf */; };
 		DA03BD5B1A4F3E1E00B8321C /* AJGFadingSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DA03BD5A1A4F3E1E00B8321C /* AJGFadingSegue.m */; };
 		DA03BD5F1A50534500B8321C /* HBGCGeneralInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA03BD5E1A50534500B8321C /* HBGCGeneralInformationViewController.m */; };
 		DA1B5BB71A216943006D317A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1B5BB61A216943006D317A /* main.m */; };
@@ -73,6 +75,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5EA8068B1A6088000070252C /* SemplicitaPro Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SemplicitaPro Medium.otf"; sourceTree = "<group>"; };
+		5EA8068C1A6088000070252C /* SemplicitaPro Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SemplicitaPro Semibold.otf"; sourceTree = "<group>"; };
 		DA03BD591A4F3E1E00B8321C /* AJGFadingSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJGFadingSegue.h; sourceTree = "<group>"; };
 		DA03BD5A1A4F3E1E00B8321C /* AJGFadingSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJGFadingSegue.m; sourceTree = "<group>"; };
 		DA03BD5D1A50534500B8321C /* HBGCGeneralInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCGeneralInformationViewController.h; sourceTree = "<group>"; };
@@ -254,6 +258,8 @@
 		DA1B5BB41A216943006D317A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5EA8068B1A6088000070252C /* SemplicitaPro Medium.otf */,
+				5EA8068C1A6088000070252C /* SemplicitaPro Semibold.otf */,
 				DA950DEE1A51E6EA00451C7E /* SemplicitaPro Bold.otf */,
 				DA1B5BB51A216943006D317A /* Info.plist */,
 				DA1B5BB61A216943006D317A /* main.m */,
@@ -555,8 +561,10 @@
 				DA1B5BC01A216943006D317A /* Main.storyboard in Resources */,
 				DA1B5BC21A216943006D317A /* Images.xcassets in Resources */,
 				DAB24E6E1A349D1200768B13 /* HBGCSocialRegionViewController.xib in Resources */,
+				5EA8068D1A6088000070252C /* SemplicitaPro Medium.otf in Resources */,
 				DA950DEF1A51E6EA00451C7E /* SemplicitaPro Bold.otf in Resources */,
 				DAA604BB1A5E4BE900D1B4F4 /* HBGCGeneralInformationViewController_Small.xib in Resources */,
+				5EA8068E1A6088000070252C /* SemplicitaPro Semibold.otf in Resources */,
 				DAA5F6F31A2FFF3C00AFB389 /* HBGCRegionViewController.xib in Resources */,
 				DAA604B41A5DA20E00D1B4F4 /* HBGCBeaconZonesViewController_Small.xib in Resources */,
 				DAF499931A2E99DE000E27F3 /* HBGCZoneCollectionViewCell.xib in Resources */,
@@ -723,7 +731,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PREFIX_HEADER = "/Users/dzqbdf/Documents/Source/Personal/iOS/Gantt/Gantt Center/GanttCenter/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = GanttCenter/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -755,7 +763,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PREFIX_HEADER = "/Users/dzqbdf/Documents/Source/Personal/iOS/Gantt/Gantt Center/GanttCenter/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = GanttCenter/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,

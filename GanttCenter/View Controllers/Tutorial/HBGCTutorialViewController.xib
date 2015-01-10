@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="SemplicitaPro Bold.otf">
-            <string>SemplicitaPro-Bold</string>
+        <mutableArray key="SemplicitaPro Medium.otf">
+            <string>SemplicitaPro-Medium</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -24,8 +24,8 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tutscreen2" translatesAutoresizingMaskIntoConstraints="NO" id="Mtl-hn-hXJ">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2k3-3G-9mQ">
-                    <rect key="frame" x="287" y="8" width="25" height="25"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2k3-3G-9mQ">
+                    <rect key="frame" x="288" y="13" width="22" height="22"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="Knv-fU-188"/>
                         <constraint firstAttribute="width" constant="25" id="dtJ-Fd-mhC"/>
@@ -37,8 +37,18 @@
                         <action selector="handleDismissalTouchUpInside:" destination="-1" eventType="touchUpInside" id="1nd-it-wCz"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woq-jY-Ra0">
-                    <rect key="frame" x="35" y="403" width="250" height="59"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNl-Og-I4m">
+                    <rect key="frame" x="22" y="34" width="277" height="86"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="86" id="RAI-NT-9Ob"/>
+                    </constraints>
+                    <string key="text">Using Apple® developed technology, iBeacons™, the Gantt Center has enhanced the overall experience by seamlessly providing content with minimal user input while visiting the facility.</string>
+                    <fontDescription key="fontDescription" name="SemplicitaPro-Medium" family="Semplicita Pro" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woq-jY-Ra0">
+                    <rect key="frame" x="61" y="401" width="199" height="46"/>
                     <state key="normal" image="allowlocation">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,16 +57,6 @@
                         <action selector="handleGetPermissionsTouchUpInside:" destination="-1" eventType="touchUpInside" id="nmu-IC-H9U"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNl-Og-I4m">
-                    <rect key="frame" x="8" y="33" width="304" height="86"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="86" id="RAI-NT-9Ob"/>
-                    </constraints>
-                    <string key="text">Using Apple® developed technology, iBeacons™, the Gantt Center has enhanced the overall experience by seamlessly providing content with minimal user input while visiting the facility.</string>
-                    <fontDescription key="fontDescription" name="SemplicitaPro-Bold" family="Semplicita Pro" pointSize="15"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -64,9 +64,7 @@
                 <constraint firstAttribute="bottom" secondItem="Mtl-hn-hXJ" secondAttribute="bottom" id="BYt-oF-lmV"/>
                 <constraint firstItem="Mtl-hn-hXJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Dpf-Pl-aBF"/>
                 <constraint firstItem="Mtl-hn-hXJ" firstAttribute="centerX" secondItem="eNl-Og-I4m" secondAttribute="centerX" id="Md0-I2-Y47"/>
-                <constraint firstAttribute="bottom" secondItem="woq-jY-Ra0" secondAttribute="bottom" constant="18" id="Sic-1t-uHB"/>
                 <constraint firstAttribute="trailing" secondItem="Mtl-hn-hXJ" secondAttribute="trailing" id="Ud4-h8-bb6"/>
-                <constraint firstItem="eNl-Og-I4m" firstAttribute="centerX" secondItem="woq-jY-Ra0" secondAttribute="centerX" id="VLU-6d-tts"/>
                 <constraint firstItem="2k3-3G-9mQ" firstAttribute="trailing" secondItem="eNl-Og-I4m" secondAttribute="trailing" id="mOa-nc-97k"/>
                 <constraint firstItem="2k3-3G-9mQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" id="oPm-xr-F4v"/>
                 <constraint firstItem="Mtl-hn-hXJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="pMd-JY-JGY"/>

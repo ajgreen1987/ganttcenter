@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="SemplicitaPro Bold.otf">
-            <string>SemplicitaPro-Bold</string>
-            <string>SemplicitaPro-Bold</string>
+        <mutableArray key="SemplicitaPro Medium.otf">
+            <string>SemplicitaPro-Medium</string>
+            <string>SemplicitaPro-Medium</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -21,23 +21,17 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" alpha="0.84999999999999987" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tutscreen1" translatesAutoresizingMaskIntoConstraints="NO" id="QE2-gI-wDZ">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tutscreen1" translatesAutoresizingMaskIntoConstraints="NO" id="QE2-gI-wDZ">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This application can enhance your Gantt Center experience through the use of location awareness! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKI-Pi-NmU">
-                    <rect key="frame" x="32" y="96" width="257" height="86"/>
-                    <fontDescription key="fontDescription" name="SemplicitaPro-Bold" family="Semplicita Pro" pointSize="16"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Simply explore our galleries to discover exclusive content!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQN-UM-i6B">
-                    <rect key="frame" x="32" y="153" width="257" height="86"/>
-                    <fontDescription key="fontDescription" name="SemplicitaPro-Bold" family="Semplicita Pro" pointSize="16"/>
+                    <rect key="frame" x="32" y="94" width="257" height="86"/>
+                    <fontDescription key="fontDescription" name="SemplicitaPro-Medium" family="Semplicita Pro" pointSize="15"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bu-dg-955">
-                    <rect key="frame" x="56" y="234" width="208" height="33"/>
+                    <rect key="frame" x="67" y="220" width="186" height="29"/>
                     <state key="normal" image="howdoesitwork">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,7 +41,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0O-HL-6ul">
-                    <rect key="frame" x="287" y="8" width="25" height="25"/>
+                    <rect key="frame" x="288" y="12" width="22" height="22"/>
                     <state key="normal" backgroundImage="dismiss">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -55,6 +49,12 @@
                         <action selector="handleDismissalTouchUpInside:" destination="-1" eventType="touchUpInside" id="478-or-SAP"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Simply explore our galleries to discover exclusive content!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQN-UM-i6B">
+                    <rect key="frame" x="32" y="144" width="257" height="86"/>
+                    <fontDescription key="fontDescription" name="SemplicitaPro-Medium" family="Semplicita Pro" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <point key="canvasLocation" x="220" y="348"/>
