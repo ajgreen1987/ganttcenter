@@ -22,15 +22,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="160" height="132"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <view contentMode="scaleToFill" id="uTm-yO-9qn" customClass="AJGLineView">
-                        <rect key="frame" x="10" y="37" width="140" height="1"/>
+                    <view alpha="0.79999999999999982" contentMode="scaleToFill" id="uTm-yO-9qn" customClass="AJGLineView">
+                        <rect key="frame" x="14" y="43" width="131" height="1"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <view contentMode="scaleToFill" id="4qI-uN-g1e" customClass="AJGLineView">
-                        <rect key="frame" x="10" y="92" width="140" height="1"/>
+                    <view alpha="0.79999999999999982" contentMode="scaleToFill" id="4qI-uN-g1e" customClass="AJGLineView">
+                        <rect key="frame" x="14" y="86" width="131" height="1"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UoZ-UL-nmb">
                         <rect key="frame" x="8" y="40" width="144" height="52"/>
