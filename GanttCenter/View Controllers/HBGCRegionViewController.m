@@ -14,7 +14,7 @@
 #import "HBGCBeaconObject.h"
 
 #define SCROLL_IMAGE_TAG 10001
-#define CONTENT_TIMER_INTERVAL 5.0f
+#define CONTENT_TIMER_INTERVAL 10.0f
 
 @interface HBGCRegionViewController ()
 

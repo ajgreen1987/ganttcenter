@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "Gantt_loading_green_fast-19 (dragged).png"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "Gantt_loading_green_fast-19 (dragged).png"
     },
     {
       "idiom" : "universal",
