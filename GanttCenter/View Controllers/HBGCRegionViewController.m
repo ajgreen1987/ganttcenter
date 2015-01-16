@@ -31,7 +31,9 @@
 @property (nonatomic, assign) NSInteger imageCounter;
 @property (nonatomic, strong) JFMinimalNotification *contentNotification;
 @property (nonatomic, strong) NSURL *currentContentURL;
+@property (nonatomic, strong) NSURL *previousContentURL;
 @property (nonatomic, strong) NSTimer *contentTimer;
+
 
 - (IBAction) handleExpandingButtonTouchUpInside:(id)sender;
 - (IBAction) handleBackTouchUpInside:(id)sender;
@@ -269,6 +271,7 @@
 - (void) playDefaultContent
 {
     [self playContentFromURL:self.currentContentURL];
+    self.previousContentURL = self.currentContentURL;
     [self.contentNotification dismiss];
 }
 
@@ -330,12 +333,23 @@
                 
                 if (withinReach)
                 {
-                    self.currentContentURL =  content.contentURL;
-                    [self setupContentNotificationWithTitle:content.titleText];
-                    
-                    [self.contentNotification show];
-                    
                     [[[HBGCApplicationManager appManager] beaconManager] stopRangingBeacons];
+                    self.currentContentURL =  content.contentURL;
+                    
+                    if (![self.previousContentURL isEqual:self.currentContentURL])
+                    {
+                        [self setupContentNotificationWithTitle:content.titleText];
+                        
+                        [self.contentNotification show];
+                    }
+                    else
+                    {
+                        self.previousContentURL = nil;
+                        
+                        [[[HBGCApplicationManager appManager] beaconManager] performSelector:@selector(startRangingBeacons)
+                                                                                  withObject:nil
+                                                                                  afterDelay:BEACON_TIMEOUT_INTERVAL];
+                    }
                 }
             }
         }
