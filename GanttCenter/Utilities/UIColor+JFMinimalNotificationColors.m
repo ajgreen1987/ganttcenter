@@ -117,7 +117,7 @@
     static dispatch_once_t dispatchToken;
     
     dispatch_once(&dispatchToken, ^{
-        yellow = hsb(57, 68, 87);
+        yellow = hsb(71, 60, 61);
     });
     
     return yellow;

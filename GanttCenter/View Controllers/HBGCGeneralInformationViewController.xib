@@ -30,8 +30,8 @@
                         <action selector="handleDismissTouchUpInside:" destination="-1" eventType="touchUpInside" id="7mR-bj-gIt"/>
                     </connections>
                 </button>
-                <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xbr-xL-0Mc">
-                    <rect key="frame" x="83" y="181" width="155" height="24"/>
+                <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xbr-xL-0Mc">
+                    <rect key="frame" x="81" y="180" width="159" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" backgroundImage="openinmaps_button">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>

@@ -379,7 +379,7 @@
      * Set the desired font for the title and sub-title labels
      * Default is System Normal
      */
-    UIFont* titleFont = [UIFont fontWithName:CUSTOM_FONT_NAME size:22];
+    UIFont* titleFont = [UIFont fontWithName:CUSTOM_FONT_NAME size:26];
     [self.contentNotification setTitleFont:titleFont];
     UIFont* subTitleFont = [UIFont fontWithName:CUSTOM_FONT_NAME size:16];
     [self.contentNotification setSubTitleFont:subTitleFont];
