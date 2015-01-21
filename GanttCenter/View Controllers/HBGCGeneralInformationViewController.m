@@ -18,12 +18,10 @@
 
 - (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    if ([HBGCApplicationManager isSmallScreenDevice])
-    {
+
         NSString *nibName = [HBGCApplicationManager isSmallScreenDevice] ? HBGCGeneralInfo_NIB_SMALL : HBGCGeneralInfo_NIB;
         self = [super initWithNibName:nibName
                                bundle:nil];
-    }
     
     if (self)
     {

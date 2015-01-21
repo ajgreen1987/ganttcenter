@@ -25,6 +25,7 @@
 		DA3AE21C1A2C193000816EB0 /* HBGCUpcomingEventsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3AE21B1A2C193000816EB0 /* HBGCUpcomingEventsObject.m */; };
 		DA3AE21E1A2C196C00816EB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3AE21D1A2C196C00816EB0 /* Foundation.framework */; };
 		DA3AE2201A2C19A800816EB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3AE21F1A2C19A800816EB0 /* UIKit.framework */; };
+		DA7D7D421A6F53D6009B87CC /* HBGCSocialRegionViewController_Small.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA7D7D411A6F53D6009B87CC /* HBGCSocialRegionViewController_Small.xib */; };
 		DA8642421A50DE9C0050A012 /* libEstimoteSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB24E7B1A3548AC00768B13 /* libEstimoteSDK.a */; };
 		DA874AD81A33F5A500850E2F /* HBGCHeaderObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DA874AD71A33F5A500850E2F /* HBGCHeaderObject.m */; };
 		DA874ADA1A33FF3400850E2F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA874AD91A33FF3400850E2F /* MediaPlayer.framework */; };
@@ -106,6 +107,7 @@
 		DA3AE21B1A2C193000816EB0 /* HBGCUpcomingEventsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCUpcomingEventsObject.m; sourceTree = "<group>"; };
 		DA3AE21D1A2C196C00816EB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DA3AE21F1A2C19A800816EB0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DA7D7D411A6F53D6009B87CC /* HBGCSocialRegionViewController_Small.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBGCSocialRegionViewController_Small.xib; sourceTree = "<group>"; };
 		DA874AD61A33F5A500850E2F /* HBGCHeaderObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGCHeaderObject.h; sourceTree = "<group>"; };
 		DA874AD71A33F5A500850E2F /* HBGCHeaderObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGCHeaderObject.m; sourceTree = "<group>"; };
 		DA874AD91A33FF3400850E2F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -405,6 +407,7 @@
 				DAB24E6A1A349CF700768B13 /* HBGCSocialRegionViewController.h */,
 				DAB24E6B1A349CF700768B13 /* HBGCSocialRegionViewController.m */,
 				DAB24E6D1A349D1200768B13 /* HBGCSocialRegionViewController.xib */,
+				DA7D7D411A6F53D6009B87CC /* HBGCSocialRegionViewController_Small.xib */,
 			);
 			name = Social;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				DAA604B71A5E2C4600D1B4F4 /* HBGCRegionViewController_Small.xib in Resources */,
 				DAF4998A1A2E96D0000E27F3 /* HBGCBeaconZonesViewController.xib in Resources */,
 				DAC940BB1A36954B008E5B4B /* HBGCTutorialStartViewController.xib in Resources */,
+				DA7D7D421A6F53D6009B87CC /* HBGCSocialRegionViewController_Small.xib in Resources */,
 				DAC940C01A369E45008E5B4B /* HBGCTutorialViewController.xib in Resources */,
 				DAA604B91A5E4B6600D1B4F4 /* HBGCGeneralInformationViewController.xib in Resources */,
 				DA1B5BC01A216943006D317A /* Main.storyboard in Resources */,

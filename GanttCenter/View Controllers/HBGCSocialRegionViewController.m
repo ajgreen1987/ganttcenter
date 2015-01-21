@@ -21,9 +21,13 @@
 
 @implementation HBGCSocialRegionViewController
 
+
+
 - (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andZone:(HBGCSocialZoneObject *)aZone
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+        NSString *nibName = [HBGCApplicationManager isSmallScreenDevice] ? HBGCSOCIALREGION_NIB_SMALL : HBGCSOCIALREGION_NIB;
+        self = [super initWithNibName:nibName
+                               bundle:nil];
     
     self.zone = aZone;
     

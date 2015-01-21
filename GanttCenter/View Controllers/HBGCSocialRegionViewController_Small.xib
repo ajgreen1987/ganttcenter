@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="SemplicitaPro Bold.otf">
+            <string>SemplicitaPro-Bold</string>
+            <string>SemplicitaPro-Bold</string>
+            <string>SemplicitaPro-Bold</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HBGCSocialRegionViewController">
+            <connections>
+                <outlet property="view" destination="fu1-Ie-xIy" id="emq-Su-RaS"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="fu1-Ie-xIy">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="socialbackground" translatesAutoresizingMaskIntoConstraints="NO" id="KXk-Zp-T2A">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                </imageView>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="socialheader" translatesAutoresizingMaskIntoConstraints="NO" id="pMg-Ij-fnw">
+                    <rect key="frame" x="38" y="19" width="221" height="151"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mas-0h-FA0">
+                    <rect key="frame" x="288" y="13" width="22" height="22"/>
+                    <state key="normal" backgroundImage="dismiss">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="handleDismissTouchUpInside:" destination="-1" eventType="touchUpInside" id="trX-sC-wrD"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="email_button" translatesAutoresizingMaskIntoConstraints="NO" id="OfZ-it-4V8">
+                    <rect key="frame" x="59" y="195" width="60" height="42"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4Y-jq-cRc">
+                    <rect key="frame" x="138" y="200" width="123" height="20"/>
+                    <state key="normal" image="email_logo">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="handleEmailTouchUpInside:" destination="-1" eventType="touchUpInside" id="gPQ-Fv-pge"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="info@ganttcenter.org" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wi-oh-AUB">
+                    <rect key="frame" x="138" y="218" width="123" height="21"/>
+                    <fontDescription key="fontDescription" name="SemplicitaPro-Bold" family="Semplicita Pro" pointSize="12"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="facebook_logo" translatesAutoresizingMaskIntoConstraints="NO" id="9d5-PZ-xnF">
+                    <rect key="frame" x="53" y="254" width="32" height="60"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nkf-Nd-R8g">
+                    <rect key="frame" x="96" y="270" width="172" height="27"/>
+                    <state key="normal" image="facebook_button">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="handleFacebookTouchUpInside:" destination="-1" eventType="touchUpInside" id="R3n-3w-tU8"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter_logo" translatesAutoresizingMaskIntoConstraints="NO" id="AEF-3Y-nP4">
+                    <rect key="frame" x="61" y="338" width="60" height="42"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jzn-ul-eLf">
+                    <rect key="frame" x="136" y="341" width="123" height="20"/>
+                    <state key="normal" image="twitter_button">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="handleTwitterTouchUpInside:" destination="-1" eventType="touchUpInside" id="WCQ-CM-PiV"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@HBGanttCenter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x47-g5-jl2">
+                    <rect key="frame" x="136" y="362" width="123" height="21"/>
+                    <fontDescription key="fontDescription" name="SemplicitaPro-Bold" family="Semplicita Pro" pointSize="12"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="youtube_logo" translatesAutoresizingMaskIntoConstraints="NO" id="nGa-wO-644">
+                    <rect key="frame" x="53" y="412" width="60" height="42"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ya3-o4-8va">
+                    <rect key="frame" x="126" y="416" width="141" height="23"/>
+                    <state key="normal" image="youtube_button">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="handleYouTubeTouchUpInside:" destination="-1" eventType="touchUpInside" id="tBr-iw-8Hn"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="www.youtube.com/hbgc" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kW4-7V-ItA">
+                    <rect key="frame" x="128" y="437" width="137" height="21"/>
+                    <fontDescription key="fontDescription" name="SemplicitaPro-Bold" family="Semplicita Pro" pointSize="11"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="325" y="254"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="dismiss" width="250" height="250"/>
+        <image name="email_button" width="123" height="86"/>
+        <image name="email_logo" width="253" height="41"/>
+        <image name="facebook_button" width="309" height="50"/>
+        <image name="facebook_logo" width="59" height="111"/>
+        <image name="socialbackground" width="621" height="1104"/>
+        <image name="socialheader" width="327" height="223"/>
+        <image name="twitter_button" width="235" height="35"/>
+        <image name="twitter_logo" width="118" height="97"/>
+        <image name="youtube_button" width="269" height="42"/>
+        <image name="youtube_logo" width="122" height="90"/>
+    </resources>
+</document>

@@ -34,12 +34,10 @@
 
 - (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    if ([HBGCApplicationManager isSmallScreenDevice])
-    {
+
         NSString *nibName = [HBGCApplicationManager isSmallScreenDevice] ? HBGCBeaconZones_Small_NIB : HBGCBeaconZones_NIB;
         self = [super initWithNibName:nibName
                                bundle:nil];
-    }
     
     if (self)
     {

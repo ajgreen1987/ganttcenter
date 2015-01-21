@@ -52,12 +52,10 @@
 
 - (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andZone:(HBGCZoneObject*)aZone
 {
-    if ([HBGCApplicationManager isSmallScreenDevice])
-    {
+
         NSString *nibName = [HBGCApplicationManager isSmallScreenDevice] ? HBGCRegion_NIB_SMALL : HBGCRegion_NIB;
         self = [super initWithNibName:nibName
                                bundle:nil];
-    }
     
     if (self)
     {

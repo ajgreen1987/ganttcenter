@@ -9,6 +9,7 @@
 #import "HBGCBaseViewController.h"
 
 #define HBGCSOCIALREGION_NIB @"HBGCSocialRegionViewController"
+#define HBGCSOCIALREGION_NIB_SMALL @"HBGCSocialRegionViewController_Small"
 
 @class HBGCZoneObject;
 
