@@ -37,10 +37,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [self.mapsButton removeFromSuperview];
-    
-    [self.view addSubview:self.mapsButton];
 }
 
 - (void)didReceiveMemoryWarning {
