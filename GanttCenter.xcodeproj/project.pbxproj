@@ -522,9 +522,11 @@
 				TargetAttributes = {
 					DA1B5BB01A216943006D317A = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = Z38RPLT952;
 					};
 					DA1B5BC91A216943006D317A = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = Z38RPLT952;
 						TestTargetID = DA1B5BB01A216943006D317A;
 					};
 				};
@@ -794,6 +796,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -805,6 +809,7 @@
 				INFOPLIST_FILE = GanttCenterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = GanttCenterTests;
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GanttCenter.app/GanttCenter";
 			};
 			name = Debug;
@@ -813,6 +818,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -820,6 +827,7 @@
 				INFOPLIST_FILE = GanttCenterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = GanttCenterTests;
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GanttCenter.app/GanttCenter";
 			};
 			name = Release;
